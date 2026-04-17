@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ministries at Landmark Baptist Church in Grand Junction, CO — RU Recovery Program, Landmark Baptist School, Bus Ministry, Music Ministry, Media Ministry, and Discipleship.">
+    <meta name="keywords" content="Landmark Baptist Church, ministries, RU Recovery, Landmark Baptist School, LBS Eagles, bus ministry, music ministry, discipleship, Grand Junction Colorado">
+    <meta name="author" content="Landmark Baptist Church">
+
+    <title>Ministries | Landmark Baptist Church | Grand Junction, CO</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP & Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ministries.css">
+</head>
+<body>
+
+    <!-- =============================================
+         NAVIGATION
+         ============================================= -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <a href="index.html" class="nav__logo">
+                    <img src="logo.png" alt="Landmark Baptist Church Logo - Mountain emblem with Grand Junction Colorado" class="nav__logo-img">
+                </a>
+
+                <ul class="nav__menu" id="navMenu">
+                    <li class="nav__item"><a href="index.html"       class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="connect.html"     class="nav__link">Connect</a></li>
+                    <li class="nav__item"><a href="ministries.html"  class="nav__link nav__link--active">Ministries</a></li>
+                    <li class="nav__item"><a href="index.html#members" class="nav__link">Members</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="index.html#spanish" class="nav__link">Español</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw"
+                       target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Livestream
+                    </a>
+                    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate"
+                       target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        Give
+                    </a>
+                </div>
+
+                <button class="nav__toggle" id="navToggle"
+                        aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <!-- =============================================
+             PAGE HERO
+             ============================================= -->
+        <section class="page-hero min-hero" id="min-hero" aria-label="Ministries page hero">
+            <div class="page-hero__bg min-hero__bg" id="minHeroBg"></div>
+            <div class="page-hero__overlay"></div>
+
+            <div class="page-hero__content">
+                <span class="page-hero__eyebrow">Landmark Baptist Church</span>
+                <h1 class="page-hero__title">Our Ministries</h1>
+                <p class="page-hero__sub">Serving our community and growing together.</p>
+
+                <!-- Section jump pills -->
+                <nav class="page-hero__pills" aria-label="Section navigation">
+                    <a href="#ru-recovery" class="pill">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        RU Recovery
+                    </a>
+                    <a href="#school" class="pill">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        LBS School
+                    </a>
+                    <a href="#church-ministries" class="pill">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        More Ministries
+                    </a>
+                </nav>
+            </div>
+
+            <div class="page-hero__scroll-hint" aria-hidden="true">
+                <span>Explore</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 1 — RU RECOVERY PROGRAM
+             ============================================= -->
+        <section class="min-section min-section--ru" id="ru-recovery" aria-labelledby="ru-title">
+            <div class="container">
+
+                <div class="ru__grid">
+
+                    <!-- LEFT — Logo + logistical details -->
+                    <div class="ru__visual mst-reveal">
+                        <div class="ru__logo-wrap neu-card">
+                            <img src="ruprogram.png"
+                                 alt="RU Recovery Program — Reformers Unanimous, a Christ-centered addiction recovery ministry"
+                                 class="ru__logo-img">
+                        </div>
+
+                        <div class="ru__meta-cards">
+                            <div class="ru__meta-item neu-card">
+                                <div class="ru__meta-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="ru__meta-label">When</span>
+                                    <strong class="ru__meta-value">Fridays at 6:30 PM</strong>
+                                </div>
+                            </div>
+
+                            <div class="ru__meta-item neu-card">
+                                <div class="ru__meta-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="ru__meta-label">Where</span>
+                                    <strong class="ru__meta-value">1600 Ute Avenue<br>Grand Junction, CO 81501</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT — Copy + verse -->
+                    <div class="ru__content mst-reveal">
+                        <span class="section__label">Recovery Ministry</span>
+                        <h2 class="section__title" id="ru-title">RU Recovery Program</h2>
+
+                        <p class="ru__body">
+                            RU (Reformers Unanimous) Recovery Program is a Bible-based, Christ-centered recovery program designed to rescue, recover, and restore those in addictive behaviors with the power of the victorious life found only in Jesus Christ.
+                        </p>
+                        <p class="ru__body">
+                            Through consistent Bible teaching, accountability, and a caring family atmosphere, individuals are equipped with the spiritual tools they need to walk in lasting freedom. No matter where you've been, there is hope.
+                        </p>
+
+                        <blockquote class="ru__verse">
+                            <svg class="ru__verse-icon" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M14.017 21v-7.391c0-5.704 3.748-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h3.983v10h-9.966z"/>
+                            </svg>
+                            <p>"And ye shall know the truth, and the truth shall make you free."</p>
+                            <cite>— John 8:32 KJV</cite>
+                        </blockquote>
+
+                        <div class="ru__cta-row">
+                            <a href="index.html#contact" class="btn btn--primary">
+                                Get in Touch
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                            <div class="ru__cta-note">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                                </svg>
+                                Open to all. No registration required.
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.ru__grid -->
+
+            </div>
+        </section>
+
+        <!-- Decorative wave divider -->
+        <div class="min-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,35 C360,70 720,0 1080,35 C1260,52 1380,20 1440,35 L1440,70 L0,70 Z"
+                      fill="#AF5C33" opacity="0.07"/>
+                <path d="M0,50 C480,10 960,65 1440,25 L1440,70 L0,70 Z"
+                      fill="#4A6D7C" opacity="0.05"/>
+            </svg>
+        </div>
+
+        <!-- =============================================
+             SECTION 2 — LANDMARK BAPTIST SCHOOL
+             Burgundy & White theme block
+             ============================================= -->
+        <section class="min-section school-section" id="school" aria-labelledby="school-title">
+
+            <!-- Full-bleed burgundy band at top -->
+            <div class="school-section__band mst-reveal">
+                <div class="container">
+                    <div class="school-section__band-inner">
+                        <div class="school-section__logo-wrap">
+                            <img src="school.PNG"
+                                 alt="Landmark Baptist School Eagle Logo — Christian education in Grand Junction, Colorado"
+                                 class="school-section__logo">
+                        </div>
+                        <div class="school-section__band-text">
+                            <p class="school-section__band-eyebrow">Excellence in Christian Education</p>
+                            <h2 class="school-section__band-title" id="school-title">
+                                Landmark Baptist School
+                            </h2>
+                            <p class="school-section__band-sub">
+                                Building tomorrow's leaders on the foundation of God's Word.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- White content body -->
+            <div class="school-section__body">
+                <div class="container">
+                    <div class="school-section__grid">
+
+                        <!-- Info cards column -->
+                        <div class="school-section__cards mst-reveal">
+                            <div class="school-card">
+                                <div class="school-card__icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 3 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div class="school-card__content">
+                                    <span class="school-card__label">Support</span>
+                                    <a href="tel:9702437617" class="school-card__value">970-243-7617</a>
+                                </div>
+                            </div>
+
+                            <div class="school-card">
+                                <div class="school-card__icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div class="school-card__content">
+                                    <span class="school-card__label">Email</span>
+                                    <a href="mailto:info@lbseagles.org" class="school-card__value">info@lbseagles.org</a>
+                                </div>
+                            </div>
+
+                            <div class="school-card">
+                                <div class="school-card__icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div class="school-card__content">
+                                    <span class="school-card__label">Location</span>
+                                    <span class="school-card__value">1600 Ute Avenue<br>Grand Junction, CO 81501</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Copy + CTA column -->
+                        <div class="school-section__copy mst-reveal">
+                            <p class="school-section__body-text">
+                                Landmark Baptist School is a Christ-centered institution committed to academic excellence and biblical truth. Every subject, every lesson, and every interaction is shaped by the conviction that God's Word is the foundation for all of life.
+                            </p>
+                            <p class="school-section__body-text">
+                                Located on our 1600 Ute Avenue campus, LBS partners with families to equip students with the knowledge, character, and faith they need to glorify God in everything they do.
+                            </p>
+
+                            <div class="school-section__cta-wrap">
+                                <a href="https://www.lbseagles.org"
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="btn school-section__cta-btn">
+                                    Visit LBS Eagles Website
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                        <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+                                    </svg>
+                                </a>
+                                <p class="school-section__cta-note">
+                                    Opens the official Landmark Baptist School website.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div><!-- /.school-section__grid -->
+                </div>
+            </div><!-- /.school-section__body -->
+
+        </section>
+
+        <!-- Decorative wave divider -->
+        <div class="min-divider min-divider--flip" aria-hidden="true">
+            <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,20 C480,65 960,5 1440,45 L1440,70 L0,70 Z"
+                      fill="#4A6D7C" opacity="0.06"/>
+                <path d="M0,45 C360,10 720,60 1080,30 C1300,10 1400,45 1440,45 L1440,70 L0,70 Z"
+                      fill="#AF5C33" opacity="0.05"/>
+            </svg>
+        </div>
+
+        <!-- =============================================
+             SECTION 3 — CHURCH MINISTRIES GRID
+             ============================================= -->
+        <section class="min-section min-section--other" id="church-ministries" aria-labelledby="other-title">
+            <div class="container">
+
+                <div class="min-section__header mst-reveal">
+                    <span class="section__label">Also at Landmark</span>
+                    <h2 class="section__title" id="other-title">More Ways to Get Involved</h2>
+                    <p class="min-section__lead">
+                        From the bus ministry reaching every corner of the Grand Valley to a discipleship program that builds lasting foundations — there is a place for you to serve.
+                    </p>
+                </div>
+
+                <div class="other-grid">
+
+                    <!-- Bus Ministry -->
+                    <article class="other-card neu-card mst-reveal" aria-label="Bus Ministry">
+                        <div class="other-card__icon-wrap other-card__icon-wrap--orange" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="1" y="3" width="15" height="13" rx="2"/>
+                                <path d="M16 8h4l3 3v5h-7V8z"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                        </div>
+                        <h3 class="other-card__title">Bus Ministry</h3>
+                        <p class="other-card__copy">
+                            Four buses run every Sunday picking up riders of all ages from Palisade to Fruita, serving the Grand Valley. No ride? No problem — we'll come to you.
+                        </p>
+                        <div class="other-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            Every Sunday
+                        </div>
+                    </article>
+
+                    <!-- Music Ministry -->
+                    <article class="other-card neu-card mst-reveal" aria-label="Music Ministry">
+                        <div class="other-card__icon-wrap other-card__icon-wrap--blue" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M9 18V5l12-2v13"/>
+                                <circle cx="6" cy="18" r="3"/>
+                                <circle cx="18" cy="16" r="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="other-card__title">Music Ministry</h3>
+                        <p class="other-card__copy">
+                            Inspiring Christ-centered music featuring our choir, church orchestra, and special groups every week. Our music is Christ-honoring and Christ-centered in every note.
+                        </p>
+                        <div class="other-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            Every Service
+                        </div>
+                    </article>
+
+                    <!-- Media Ministry -->
+                    <article class="other-card neu-card mst-reveal" aria-label="Media Ministry">
+                        <div class="other-card__icon-wrap other-card__icon-wrap--espresso" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <polygon points="23 7 16 12 23 17 23 7"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="other-card__title">Media Ministry</h3>
+                        <p class="other-card__copy">
+                            Overseeing all graphic design, web design, video production, and our sound room. The team behind the scenes that keeps every service running smoothly.
+                        </p>
+                        <div class="other-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 3 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6z"/>
+                            </svg>
+                            Behind the Scenes
+                        </div>
+                    </article>
+
+                    <!-- Discipleship Program -->
+                    <article class="other-card other-card--wide neu-card mst-reveal" aria-label="Discipleship Program">
+                        <div class="other-card__icon-wrap other-card__icon-wrap--orange" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <div class="other-card__body-wide">
+                            <div>
+                                <h3 class="other-card__title">The Discipleship Program</h3>
+                                <p class="other-card__copy">
+                                    A 20-lesson course building a rock-solid foundation for your Christian life. The first four weeks take place Sundays at 10:00 AM in Room 206. After completing those lessons, you'll be paired with a church member who disciples you one-on-one through the rest of the series during Wednesday Night Bible Study.
+                                </p>
+                            </div>
+                            <div class="other-card__schedule">
+                                <div class="other-card__schedule-item">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <span>Weeks 1–4: Sundays, 10:00 AM · Room 206</span>
+                                </div>
+                                <div class="other-card__schedule-item">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    </svg>
+                                    <span>Weeks 5–20: One-on-one · Wednesday Bible Study</span>
+                                </div>
+                                <a href="index.html#contact" class="other-card__link">
+                                    Start Your Journey
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div><!-- /.other-grid -->
+
+            </div>
+        </section>
+
+        <!-- =============================================
+             CLOSING CTA STRIP
+             ============================================= -->
+        <section class="min-cta" aria-label="Get involved callout">
+            <div class="container">
+                <div class="min-cta__inner mst-reveal">
+                    <div class="min-cta__text">
+                        <h2 class="min-cta__title">There's a place here for you.</h2>
+                        <p class="min-cta__sub">Whether you're looking for recovery, education, worship, or discipleship — Landmark Baptist Church is a place to find purpose, community, and the truth of God's Word.</p>
+                    </div>
+                    <div class="min-cta__actions">
+                        <a href="index.html#contact" class="btn btn--primary">
+                            Contact Us
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                        <a href="connect.html" class="btn btn--secondary">Explore Connect</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- /.main -->
+
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="logo.png" alt="Landmark Baptist Church Logo" class="footer__logo">
+                    <p class="footer__tagline">Looking Forward to Great Things</p>
+                </div>
+
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                        <li><a href="ministries.html">Ministries</a></li>
+                        <li><a href="index.html#members">Members</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__links">
+                    <h4>Ministries</h4>
+                    <ul>
+                        <li><a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer">LBS School</a></li>
+                        <li><a href="https://ctxyouth.com/"      target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li>
+                        <li><a href="#ru-recovery">RU Recovery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h4>Contact</h4>
+                    <p>1600 Ute Avenue<br>Grand Junction, CO 81501</p>
+                    <p><a href="tel:9702571047">970.257.1047</a></p>
+                    <p class="footer__hours">Office Hours: Tue–Fri 8am–5pm</p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 Landmark Baptist Church. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="ministries.js"></script>
+
+</body>
+</html>
