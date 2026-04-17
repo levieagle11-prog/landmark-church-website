@@ -1,13 +1,12 @@
 /* ============================================
-   MINISTRIES PAGE — ministries.js
-   GSAP + ScrollTrigger + Lenis animations
+   CONTACT PAGE — contact.js
+   GSAP + ScrollTrigger + Form Validation
    ============================================ */
 
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================
-   MOBILE NAV + HEADER SCROLL STATE
-   (self-contained for standalone page)
+   NAV + HEADER SCROLL STATE
    ============================================ */
 function initNav() {
     const toggle = document.getElementById('navToggle');
@@ -40,130 +39,103 @@ function initNav() {
 }
 
 /* ============================================
-   PAGE HERO — staggered entrance timeline
+   HERO ENTRANCE TIMELINE
    ============================================ */
 function initHeroEntrance() {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    tl.from('.page-hero__eyebrow', { y: 22, opacity: 0, duration: 0.65 })
-      .from('.page-hero__title',   { y: 44, opacity: 0, duration: 0.9  }, '-=0.4')
-      .from('.page-hero__sub',     { y: 28, opacity: 0, duration: 0.7  }, '-=0.55')
-      .from('.pill', {
-          y: 20, opacity: 0, stagger: 0.1,
-          duration: 0.6, ease: 'back.out(1.6)',
-      }, '-=0.4')
-      .from('.page-hero__scroll-hint', { opacity: 0, y: 12, duration: 0.55 }, '-=0.3');
+    tl.from('.page-hero__eyebrow', { y: 20,  opacity: 0, duration: 0.6  })
+      .from('.page-hero__title',   { y: 48,  opacity: 0, duration: 1.0  }, '-=0.4')
+      .from('.page-hero__sub',     { y: 28,  opacity: 0, duration: 0.7  }, '-=0.55')
+      .from('.con-hero__mark',     { scale: 0, opacity: 0, stagger: 0.1,
+                                     duration: 0.6, ease: 'back.out(2)' }, '-=0.5')
+      .from('.page-hero__scroll-hint', { opacity: 0, y: 10, duration: 0.5 }, '-=0.3');
 }
 
 /* ============================================
-   PAGE HERO BG — smooth parallax on scroll
+   HERO PARALLAX
    ============================================ */
 function initHeroParallax() {
-    const bg = document.getElementById('minHeroBg');
+    const bg = document.getElementById('conHeroBg');
     if (!bg) return;
 
     gsap.to(bg, {
-        y: 180,
+        y: 160,
         ease: 'none',
         scrollTrigger: {
-            trigger: '.min-hero',
+            trigger: '.con-hero',
             start: 'top top',
-            end:   'bottom top',
-            scrub: 1.5,
+            end: 'bottom top',
+            scrub: 1.4,
         },
     });
 }
 
 /* ============================================
-   PILL HOVER — magnetic bounce
-   ============================================ */
-function initPillHover() {
-    document.querySelectorAll('.pill').forEach(pill => {
-        pill.addEventListener('mouseenter', () =>
-            gsap.to(pill, { scale: 1.07, duration: 0.28, ease: 'back.out(2)' }));
-        pill.addEventListener('mouseleave', () =>
-            gsap.to(pill, { scale: 1,    duration: 0.28, ease: 'power2.out' }));
-    });
-}
-
-/* ============================================
-   STAGGERED SCROLL REVEALS — .mst-reveal
+   SCROLL REVEALS — .cnt-reveal
    ============================================ */
 function initScrollReveals() {
-    /* --- Grouped stagger sets --- */
-    const groups = [
-        { selector: '.ru__meta-cards .ru__meta-item', stagger: 0.12 },
-        { selector: '.school-section__cards .school-card', stagger: 0.1 },
-        { selector: '.other-grid .other-card:not(.other-card--wide)', stagger: 0.1 },
-    ];
-
-    groups.forEach(({ selector, stagger }) => {
-        const els = document.querySelectorAll(selector);
-        if (!els.length) return;
-
-        gsap.from(els, {
-            scrollTrigger: {
-                trigger: els[0].closest('section') || els[0].parentElement,
-                start: 'top 78%',
-                toggleActions: 'play none none reverse',
-            },
-            y: 45,
-            opacity: 0,
-            stagger,
-            duration: 0.75,
-            ease: 'power3.out',
-            clearProps: 'transform,opacity',
-        });
-    });
-
-    /* --- Singleton .mst-reveal elements --- */
-    const grouped = groups.map(g => g.selector).join(', ');
-
-    document.querySelectorAll('.mst-reveal').forEach(el => {
-        if (el.matches(grouped)) return; // already handled above
-
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 82%',
-                toggleActions: 'play none none reverse',
-            },
-            y: 48,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            clearProps: 'transform,opacity',
-        });
-    });
-}
-
-/* ============================================
-   RU LOGO WRAP — scale-in reveal
-   ============================================ */
-function initRuLogoReveal() {
-    gsap.from('.ru__logo-wrap', {
+    /* Detail list items — staggered */
+    gsap.from('.con-detail-list .con-detail', {
         scrollTrigger: {
-            trigger: '.ru__grid',
-            start: 'top 78%',
+            trigger: '.con-detail-list',
+            start: 'top 80%',
         },
-        scale: 0.88,
+        x: -40,
         opacity: 0,
-        duration: 0.9,
-        ease: 'back.out(1.4)',
+        stagger: 0.12,
+        duration: 0.75,
+        ease: 'power3.out',
         clearProps: 'transform,opacity',
     });
-}
 
-/* ============================================
-   RU VERSE — slide up with slight delay
-   ============================================ */
-function initRuVerseReveal() {
-    gsap.from('.ru__verse', {
+    /* Con-times + livestream — slide up */
+    ['.con-times', '.con-livestream'].forEach((sel, i) => {
+        gsap.from(sel, {
+            scrollTrigger: { trigger: sel, start: 'top 82%' },
+            y: 36,
+            opacity: 0,
+            duration: 0.8,
+            delay: i * 0.1,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity',
+        });
+    });
+
+    /* Form wrapper — scale-in from slightly small */
+    gsap.from('.con-form-wrap', {
         scrollTrigger: {
-            trigger: '.ru__verse',
+            trigger: '.con-form-wrap',
+            start: 'top 78%',
+        },
+        y: 60,
+        opacity: 0,
+        scale: 0.97,
+        duration: 0.9,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+    });
+
+    /* Intro text */
+    gsap.from('.con-info__intro', {
+        scrollTrigger: {
+            trigger: '.con-info__intro',
             start: 'top 82%',
         },
-        y: 36,
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+    });
+
+    /* Map strip */
+    gsap.from('.con-map-strip__inner', {
+        scrollTrigger: {
+            trigger: '.con-map-strip',
+            start: 'top 80%',
+        },
+        y: 44,
         opacity: 0,
         duration: 0.85,
         ease: 'power3.out',
@@ -172,127 +144,275 @@ function initRuVerseReveal() {
 }
 
 /* ============================================
-   SCHOOL BAND — dramatic slide from left
+   FORM FIELDS — floating label micro-animations
+   GSAP adds a subtle scale-up on focus that
+   the pure-CSS transition can't do smoothly.
    ============================================ */
-function initSchoolBandReveal() {
-    const band = document.querySelector('.school-section__band-inner');
-    if (!band) return;
+function initFieldAnimations() {
+    const fields = document.querySelectorAll('.fld__input');
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.school-section__band',
-            start: 'top 75%',
-        },
+    fields.forEach(input => {
+        const wrapper = input.closest('.fld');
+        const line    = wrapper?.querySelector('.fld__line');
+
+        input.addEventListener('focus', () => {
+            gsap.to(input, {
+                scale: 1.005,
+                duration: 0.25,
+                ease: 'power2.out',
+            });
+        });
+
+        input.addEventListener('blur', () => {
+            gsap.to(input, {
+                scale: 1,
+                duration: 0.25,
+                ease: 'power2.out',
+            });
+        });
     });
-
-    tl.from('.school-section__logo-wrap', {
-        scale: 0.7, opacity: 0, rotation: -8,
-        duration: 0.9, ease: 'back.out(1.5)',
-    })
-    .from('.school-section__band-eyebrow', {
-        x: -30, opacity: 0, duration: 0.55, ease: 'power3.out',
-    }, '-=0.5')
-    .from('.school-section__band-title', {
-        x: -40, opacity: 0, duration: 0.65, ease: 'power3.out',
-    }, '-=0.4')
-    .from('.school-section__band-sub', {
-        x: -24, opacity: 0, duration: 0.55, ease: 'power3.out',
-    }, '-=0.4');
 }
 
 /* ============================================
-   SCHOOL CTA BUTTON — pulse on hover
-   (CSS handles transform; GSAP adds shadow pulse)
+   CHARACTER COUNTER — textarea
    ============================================ */
-function initSchoolCtaHover() {
-    const btn = document.querySelector('.school-section__cta-btn');
+function initCharCounter() {
+    const textarea = document.getElementById('message');
+    const counter  = document.getElementById('charCount');
+    if (!textarea || !counter) return;
+
+    const max = parseInt(textarea.getAttribute('maxlength'), 10) || 1000;
+    const counterWrap = document.getElementById('message-count');
+
+    textarea.addEventListener('input', () => {
+        const len = textarea.value.length;
+        counter.textContent = len;
+
+        // Warn when approaching limit
+        if (counterWrap) {
+            counterWrap.classList.toggle('fld__counter--warn', len >= max * 0.9);
+        }
+    });
+}
+
+/* ============================================
+   INLINE VALIDATION
+   Shows error messages on blur for required fields.
+   ============================================ */
+const validationRules = {
+    firstName: { test: v => v.trim().length >= 2,    msg: 'Please enter your first name.' },
+    lastName:  { test: v => v.trim().length >= 2,    msg: 'Please enter your last name.' },
+    email:     { test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+                              msg: 'Please enter a valid email address.' },
+    message:   { test: v => v.trim().length >= 10,   msg: 'Please write a message (at least 10 characters).' },
+};
+
+function validateField(input) {
+    const name = input.name;
+    const rule = validationRules[name];
+    if (!rule) return true; // optional field — always passes
+
+    const errEl = document.getElementById(`${name}-err`);
+    const valid = rule.test(input.value);
+
+    if (!valid && input.value.length > 0) {
+        if (errEl) errEl.textContent = rule.msg;
+        input.setAttribute('aria-invalid', 'true');
+    } else {
+        if (errEl) errEl.textContent = '';
+        input.removeAttribute('aria-invalid');
+    }
+
+    return valid;
+}
+
+function initInlineValidation() {
+    const inputs = document.querySelectorAll('.fld__input[required]');
+
+    inputs.forEach(input => {
+        // Validate on blur
+        input.addEventListener('blur', () => {
+            if (input.value.length > 0) validateField(input);
+        });
+
+        // Clear error as soon as user starts correcting
+        input.addEventListener('input', () => {
+            const errEl = document.getElementById(`${input.name}-err`);
+            if (input.value.length === 0 && errEl) {
+                errEl.textContent = '';
+                input.removeAttribute('aria-invalid');
+            }
+        });
+    });
+}
+
+/* ============================================
+   FORM SUBMISSION HANDLER
+   Front-end only — shows loading state then
+   transitions to success card with GSAP.
+   ============================================ */
+function initFormSubmission() {
+    const form       = document.getElementById('contactForm');
+    const submitBtn  = document.getElementById('submitBtn');
+    const successEl  = document.getElementById('formSuccess');
+    const resetBtn   = document.getElementById('resetBtn');
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Honeypot check
+        const honeypot = form.querySelector('input[name="_honeypot"]');
+        if (honeypot && honeypot.value) return; // silently drop bot submissions
+
+        // Full validation pass
+        const requiredInputs = [...form.querySelectorAll('.fld__input[required]')];
+        const allValid = requiredInputs.every(input => {
+            const valid = validateField(input);
+            if (!valid) {
+                // Shake invalid field
+                gsap.fromTo(input, { x: -8 }, {
+                    x: 0, duration: 0.5,
+                    ease: 'elastic.out(1, 0.3)',
+                });
+            }
+            return valid;
+        });
+
+        if (!allValid) return;
+
+        // Loading state
+        submitBtn.classList.add('is-loading');
+        submitBtn.disabled = true;
+
+        // Simulated async delay (replace with real fetch() to your backend)
+        await new Promise(resolve => setTimeout(resolve, 1200));
+
+        // Transition form → success
+        gsap.to(form, {
+            opacity: 0,
+            y: -20,
+            duration: 0.45,
+            ease: 'power2.in',
+            onComplete: () => {
+                form.hidden = true;
+                submitBtn.classList.remove('is-loading');
+                submitBtn.disabled = false;
+
+                successEl.hidden = false;
+
+                // Animate success card in
+                gsap.from(successEl, {
+                    opacity: 0,
+                    scale: 0.94,
+                    y: 20,
+                    duration: 0.6,
+                    ease: 'back.out(1.4)',
+                });
+
+                // Animate the check icon
+                gsap.from('.con-success__icon', {
+                    scale: 0,
+                    rotation: -90,
+                    duration: 0.8,
+                    delay: 0.2,
+                    ease: 'back.out(1.6)',
+                });
+            },
+        });
+    });
+
+    // Reset: return to blank form
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            gsap.to(successEl, {
+                opacity: 0,
+                y: -16,
+                duration: 0.35,
+                ease: 'power2.in',
+                onComplete: () => {
+                    successEl.hidden = true;
+                    form.reset();
+                    form.hidden = false;
+
+                    // Clear all error messages and aria-invalid
+                    form.querySelectorAll('.fld__error').forEach(el => el.textContent = '');
+                    form.querySelectorAll('[aria-invalid]').forEach(el => el.removeAttribute('aria-invalid'));
+
+                    // Reset char counter
+                    const charCount = document.getElementById('charCount');
+                    if (charCount) charCount.textContent = '0';
+
+                    gsap.from(form, {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.5,
+                        ease: 'power3.out',
+                    });
+                },
+            });
+        });
+    }
+}
+
+/* ============================================
+   SUBMIT BUTTON — enhanced hover
+   ============================================ */
+function initSubmitHover() {
+    const btn = document.getElementById('submitBtn');
     if (!btn) return;
 
     btn.addEventListener('mouseenter', () => {
         gsap.to(btn, {
-            boxShadow: '0 10px 40px rgba(107,26,46,0.5)',
-            duration: 0.35, ease: 'power2.out',
+            boxShadow: '0 14px 44px rgba(175,92,51,0.5)',
+            duration: 0.3, ease: 'power2.out',
         });
     });
     btn.addEventListener('mouseleave', () => {
         gsap.to(btn, {
-            boxShadow: '0 4px 22px rgba(107,26,46,0.3)',
-            duration: 0.35, ease: 'power2.out',
+            boxShadow: '0 6px 24px rgba(175,92,51,0.3)',
+            duration: 0.3, ease: 'power2.out',
         });
     });
 }
 
 /* ============================================
-   OTHER MINISTRY CARDS — icon rotation on hover
+   DETAIL CARDS — horizontal lift on hover
    ============================================ */
-function initOtherCardHover() {
-    document.querySelectorAll('.other-card').forEach(card => {
-        const icon = card.querySelector('.other-card__icon-wrap');
-
+function initDetailHover() {
+    document.querySelectorAll('.con-detail').forEach(card => {
         card.addEventListener('mouseenter', () => {
-            gsap.to(card, { y: -6, duration: 0.32, ease: 'back.out(2)' });
+            gsap.to(card, { x: 6, duration: 0.3, ease: 'back.out(2)' });
         });
         card.addEventListener('mouseleave', () => {
-            gsap.to(card, { y: 0, duration: 0.32, ease: 'power2.out' });
+            gsap.to(card, { x: 0, duration: 0.3, ease: 'power2.out' });
         });
     });
 }
 
 /* ============================================
-   DISCIPLESHIP WIDE CARD — stagger schedule items
+   MAP PIN — pulse animation on load
    ============================================ */
-function initDiscipleshipReveal() {
-    const items = document.querySelectorAll('.other-card__schedule-item');
-    if (!items.length) return;
+function initMapPin() {
+    const pin = document.querySelector('.con-map-strip__pin');
+    if (!pin) return;
 
-    gsap.from(items, {
+    gsap.from(pin, {
         scrollTrigger: {
-            trigger: '.other-card--wide',
-            start: 'top 78%',
+            trigger: '.con-map-strip',
+            start: 'top 80%',
+            once: true,
         },
-        x: 30,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.65,
-        ease: 'power3.out',
-        clearProps: 'transform,opacity',
+        scale: 0,
+        rotation: -30,
+        duration: 0.8,
+        ease: 'back.out(1.8)',
     });
 }
 
 /* ============================================
-   CLOSING CTA — sequential text + buttons
-   ============================================ */
-function initCtaReveal() {
-    const inner = document.querySelector('.min-cta__inner');
-    if (!inner) return;
-
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: inner,
-            start: 'top 82%',
-        },
-    })
-    .from('.min-cta__title',  { y: 32, opacity: 0, duration: 0.7, ease: 'power3.out' })
-    .from('.min-cta__sub',    { y: 24, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.45')
-    .from('.min-cta__actions .btn', {
-        y: 20, opacity: 0, stagger: 0.12, duration: 0.55, ease: 'back.out(1.4)',
-    }, '-=0.35');
-}
-
-/* ============================================
-   SECTION LABEL SLIDE-IN
-   ============================================ */
-function initLabelSlide() {
-    document.querySelectorAll('.section__label').forEach(label => {
-        gsap.from(label, {
-            scrollTrigger: { trigger: label, start: 'top 86%' },
-            x: -28, opacity: 0, duration: 0.6, ease: 'power3.out',
-        });
-    });
-}
-
-/* ============================================
-   SMOOTH ANCHOR SCROLLING — uses Lenis
+   SMOOTH ANCHOR SCROLLING
    ============================================ */
 function initAnchorScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -313,26 +433,42 @@ function initAnchorScrolling() {
 }
 
 /* ============================================
-   BOOT — run everything on load
+   STAGGER SERVICE TIME ROWS on scroll
+   ============================================ */
+function initServiceTimesReveal() {
+    gsap.from('.con-times__service', {
+        scrollTrigger: {
+            trigger: '.con-times',
+            start: 'top 80%',
+        },
+        x: -24,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.6,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+    });
+}
+
+/* ============================================
+   BOOT
    ============================================ */
 window.addEventListener('load', () => {
     initNav();
     initHeroEntrance();
     initHeroParallax();
-    initPillHover();
-    initLabelSlide();
-    initRuLogoReveal();
-    initRuVerseReveal();
-    initSchoolBandReveal();
-    initSchoolCtaHover();
     initScrollReveals();
-    initOtherCardHover();
-    initDiscipleshipReveal();
-    initCtaReveal();
+    initFieldAnimations();
+    initCharCounter();
+    initInlineValidation();
+    initFormSubmission();
+    initSubmitHover();
+    initDetailHover();
+    initServiceTimesReveal();
+    initMapPin();
     initAnchorScrolling();
 
-    // Let ScrollTrigger recalculate after all assets have painted
     ScrollTrigger.refresh();
 
-    console.log('%c🏔️ Ministries Page Ready', 'font-size:14px;font-weight:bold;color:#6B1A2E;');
+    console.log('%c🏔️ Contact Page Ready', 'font-size:14px;font-weight:bold;color:#4A6D7C;');
 });
