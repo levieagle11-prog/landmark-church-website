@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Member resources for Landmark Baptist Church — Grand Junction, CO. Access online giving, the 2026 church calendar, livestream, and more.">
-    <meta name="keywords" content="Landmark Baptist Church members, online giving, church calendar 2026, livestream, Colorado Teen Extreme, Grand Junction Colorado">
+    <meta name="description" content="Member Resources at Landmark Baptist Church — giving, calendar, livestream, and more.">
     <meta name="author" content="Landmark Baptist Church">
-
     <title>Members | Landmark Baptist Church | Grand Junction, CO</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- GSAP & Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="members.css">
 </head>
 <body>
 
-    <!-- =============================================
-         NAVIGATION
-         ============================================= -->
     <header class="header" id="header">
         <nav class="nav">
             <div class="nav__container">
                 <a href="index.html" class="nav__logo">
-                    <img src="logo.png"
-                         alt="Landmark Baptist Church Logo - Mountain emblem with Grand Junction Colorado"
-                         class="nav__logo-img">
+                    <img src="logo.png" alt="Landmark Baptist Church Logo" class="nav__logo-img">
                 </a>
-
                 <ul class="nav__menu" id="navMenu">
                     <li class="nav__item"><a href="index.html"      class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="connect.html"    class="nav__link">Connect</a></li>
@@ -49,390 +32,231 @@
                     <li class="nav__item"><a href="contact.html"    class="nav__link">Contact</a></li>
                     <li class="nav__item"><a href="index.html#spanish" class="nav__link">Español</a></li>
                 </ul>
-
                 <div class="nav__actions">
-                    <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw"
-                       target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
+                    <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                         Livestream
                     </a>
-                    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate"
-                       target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
+                    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         Give
                     </a>
                 </div>
-
-                <button class="nav__toggle" id="navToggle"
-                        aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <main>
 
-        <!-- =============================================
-             PAGE HERO — warm, intimate
-             ============================================= -->
-        <section class="mem-hero" aria-label="Members page hero">
-            <div class="mem-hero__bg" id="memHeroBg"></div>
+        <!-- MEMBER HERO -->
+        <section class="mem-hero" aria-label="Member Resources hero">
+            <div class="mem-hero__bg"></div>
             <div class="mem-hero__overlay"></div>
-
-            <!-- Greeting badge — JS populates day/time -->
-            <div class="mem-hero__greeting" id="heroGreeting" aria-live="polite"></div>
-
-            <div class="mem-hero__content">
-                <span class="mem-hero__eyebrow">Welcome, Church Family</span>
-                <h1 class="mem-hero__title">Member Resources</h1>
-                <p class="mem-hero__sub">Everything you need to stay connected with your church family.</p>
+            <div class="mem-hero__greeting" id="heroGreeting" aria-live="polite">
+                <span aria-hidden="true">☀️</span> Good Morning, Church Family
             </div>
-
+            <div class="mem-hero__content">
+                <span class="mem-hero__eyebrow">Landmark Baptist Church</span>
+                <h1 class="mem-hero__title">Member Resources</h1>
+                <p class="mem-hero__sub">Everything you need to stay connected and give generously.</p>
+            </div>
             <div class="mem-hero__scroll-hint" aria-hidden="true">
                 <span>Explore</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
             </div>
         </section>
 
-        <!-- =============================================
-             VERSE OF THE DAY
-             ============================================= -->
-        <section class="mem-verse" aria-labelledby="verse-label">
+        <!-- VERSE OF THE DAY -->
+        <section class="mem-verse" aria-label="Verse of the Day">
             <div class="container">
-                <div class="mem-verse__card mbd-reveal" id="verseCard">
+                <div class="mem-verse__card">
                     <div class="mem-verse__icon" aria-hidden="true">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                     </div>
                     <div class="mem-verse__body">
-                        <span class="mem-verse__label" id="verse-label">Verse of the Day</span>
-                        <blockquote class="mem-verse__text" id="verseText">
-                            <!-- Populated by JS -->
-                        </blockquote>
-                        <cite class="mem-verse__ref" id="verseRef">
-                            <!-- Populated by JS -->
-                        </cite>
+                        <span class="mem-verse__label">Verse of the Day</span>
+                        <p class="mem-verse__text" id="verseText">"The LORD is my shepherd; I shall not want."</p>
+                        <span class="mem-verse__ref"  id="verseRef">— Psalm 23:1 KJV</span>
                     </div>
-                    <div class="mem-verse__date" id="verseDate" aria-label="Today's date">
-                        <!-- Populated by JS -->
-                    </div>
+                    <div class="mem-verse__date" id="verseDate"></div>
                 </div>
             </div>
         </section>
 
-        <!-- =============================================
-             PRIMARY DASHBOARD — Bento Tile Grid
-             ============================================= -->
-        <section class="mem-dashboard" aria-label="Member resource tiles">
+        <!-- PRIMARY BENTO DASHBOARD -->
+        <section class="mem-dashboard" aria-label="Member Dashboard">
             <div class="container">
-
                 <div class="mem-bento">
 
-                    <!-- ===========================
-                         TILE 1 — ONLINE GIVING
-                         Featured hero tile, full width
-                         =========================== -->
-                    <article class="mem-tile mem-tile--giving mbd-reveal"
-                             aria-label="Online Giving">
-                        <!-- Background texture -->
-                        <div class="mem-tile__bg-texture" aria-hidden="true"></div>
-
+                    <!-- TILE 1: GIVING -->
+                    <div class="mem-tile mem-tile--giving">
+                        <div class="mem-tile__bg-texture"></div>
                         <div class="mem-tile__giving-inner">
                             <div class="mem-tile__giving-left">
                                 <div class="mem-tile__badge mem-tile__badge--white" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                                    </svg>
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                                 </div>
-                                <span class="mem-tile__eyebrow">Support the Church</span>
-                                <h2 class="mem-tile__title">Online Giving</h2>
-                                <p class="mem-tile__copy">
-                                    Support the ministry and missions of Landmark Baptist Church safely and securely. Every gift directly funds the work of the gospel here in Grand Junction and beyond.
-                                </p>
+                                <div>
+                                    <p class="mem-tile__eyebrow">Online Giving</p>
+                                    <h2 class="mem-tile__title">Give to Landmark</h2>
+                                </div>
+                                <p class="mem-tile__copy">Your faithful giving supports the ministries, missions, and community outreach that make Landmark Baptist Church possible. Every gift matters.</p>
                                 <div class="mem-tile__giving-trust">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                                    </svg>
-                                    Secure &amp; encrypted giving via Anedot
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    Secure giving powered by Anedot
                                 </div>
-                                <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="mem-tile__btn mem-tile__btn--orange">
-                                    Give Online
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                        <line x1="7" y1="17" x2="17" y2="7"/>
-                                        <polyline points="7 7 17 7 17 17"/>
-                                    </svg>
+                                <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="mem-tile__btn mem-tile__btn--orange">
+                                    Give Now
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
                                 </a>
                             </div>
-
-                            <!-- Decorative giving graphic -->
                             <div class="mem-tile__giving-graphic" aria-hidden="true">
                                 <div class="mem-tile__giving-ring mem-tile__giving-ring--outer"></div>
                                 <div class="mem-tile__giving-ring mem-tile__giving-ring--middle"></div>
                                 <div class="mem-tile__giving-ring mem-tile__giving-ring--inner">
-                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/>
-                                    </svg>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                                 </div>
                             </div>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- ===========================
-                         TILE 2 — 2026 CALENDAR
-                         =========================== -->
-                    <article class="mem-tile mem-tile--calendar mbd-reveal"
-                             aria-label="2026 Church Calendar">
+                    <!-- TILE 2: CALENDAR -->
+                    <div class="mem-tile mem-tile--calendar">
                         <div class="mem-tile__header">
                             <div class="mem-tile__badge mem-tile__badge--orange" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="16" y1="2" x2="16" y2="6"/>
-                                    <line x1="8" y1="2" x2="8" y2="6"/>
-                                    <line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                             </div>
                             <div>
-                                <span class="mem-tile__eyebrow mem-tile__eyebrow--dark">Plan Ahead</span>
-                                <h2 class="mem-tile__title mem-tile__title--dark">2026 Calendar</h2>
+                                <p class="mem-tile__eyebrow--dark">Church Calendar</p>
+                                <h3 class="mem-tile__title--dark" style="font-family:'Crimson Pro',serif;font-size:1.45rem;color:#3A2A1E;font-weight:700">2026 Events</h3>
                             </div>
                         </div>
-
-                        <p class="mem-tile__copy mem-tile__copy--dark">
-                            Stay up to date with our upcoming events, fellowships, and special services throughout the year.
-                        </p>
-
-                        <!-- Calendar image -->
                         <div class="mem-tile__calendar-img-wrap">
-                            <img src="2026calendar.PNG"
-                                 alt="2026 Landmark Baptist Church Event Calendar — full year schedule of services, fellowships, and special events"
-                                 class="mem-tile__calendar-img"
-                                 loading="lazy">
+                            <img src="2026calendar.PNG" alt="Landmark Baptist Church 2026 Event Calendar" class="mem-tile__calendar-img">
                         </div>
+                    </div>
 
-                        <a href="2026calendar.PNG"
-                           target="_blank" rel="noopener noreferrer"
-                           class="mem-tile__btn mem-tile__btn--dark">
-                            View Full Calendar
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                <line x1="7" y1="17" x2="17" y2="7"/>
-                                <polyline points="7 7 17 7 17 17"/>
-                            </svg>
-                        </a>
-                    </article>
-
-                    <!-- ===========================
-                         TILE 3 — LIVESTREAM
-                         =========================== -->
-                    <article class="mem-tile mem-tile--stream mbd-reveal"
-                             aria-label="Livestream and Archives">
-
-                        <!-- Live indicator dot -->
-                        <div class="mem-tile__live-badge" aria-label="Live service indicator">
+                    <!-- TILE 3: LIVESTREAM -->
+                    <div class="mem-tile mem-tile--stream">
+                        <div class="mem-tile__live-badge" aria-label="Live stream available">
                             <span class="mem-tile__live-dot" aria-hidden="true"></span>
-                            Live &amp; On Demand
+                            Live Stream
                         </div>
-
-                        <!-- Decorative waveform visual -->
+                        <div>
+                            <p class="mem-tile__eyebrow">Watch Online</p>
+                            <h2 class="mem-tile__title" style="color:#fff">Watch &amp; Worship</h2>
+                        </div>
+                        <p class="mem-tile__copy" style="color:rgba(255,255,255,.74)">Can't make it in person? Join us online every Sunday and Wednesday. Our services are streamed live on YouTube so you can worship from anywhere.</p>
                         <div class="mem-tile__wave" aria-hidden="true">
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                            <span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </div>
-
-                        <h2 class="mem-tile__title">Livestream &amp; Archives</h2>
-                        <p class="mem-tile__copy">
-                            Can't make it in person? Join our services live every Sunday or catch up on past messages whenever it works for you.
-                        </p>
-
-                        <div class="mem-tile__stream-times">
+                        <div class="mem-tile__stream-times" aria-label="Service times">
                             <div class="mem-tile__stream-time">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                                Sundays · 11:00 AM
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                Sundays &bull; 11:00 AM &amp; 6:00 PM
                             </div>
                             <div class="mem-tile__stream-time">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                                Sundays · 6:00 PM
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                Wednesdays &bull; 6:30 PM Bible Study
                             </div>
                         </div>
-
-                        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw"
-                           target="_blank" rel="noopener noreferrer"
-                           class="mem-tile__btn mem-tile__btn--yt">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12 S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"/>
-                            </svg>
-                            Watch Live on YouTube
+                        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="mem-tile__btn mem-tile__btn--yt">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.3 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.7 2.2.8C6.4 18.8 12 19 12 19s4.2 0 7-.2c.4 0 1.3 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.3V9.7l5.4 2.3-5.4 2.3z"/></svg>
+                            Watch on YouTube
                         </a>
-                    </article>
+                    </div>
 
-                </div><!-- /.mem-bento -->
-
+                </div>
             </div>
         </section>
 
-        <!-- =============================================
-             SECONDARY TILES — CTX + Quick Links
-             ============================================= -->
-        <section class="mem-secondary" aria-label="Additional member resources">
+        <!-- SECONDARY RESOURCE GRID -->
+        <section class="mem-secondary" aria-label="Additional Member Resources">
             <div class="container">
                 <div class="mem-secondary__grid">
 
-                    <!-- Colorado Teen Extreme Portal -->
-                    <article class="mem-portal mbd-reveal" aria-label="Colorado Teen Extreme youth camp portal">
+                    <!-- CTX Portal -->
+                    <div class="mem-portal">
                         <div class="mem-portal__inner">
                             <div class="mem-portal__icon" aria-hidden="true">
-                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                                </svg>
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                             </div>
-                            <div class="mem-portal__text">
-                                <span class="mem-portal__eyebrow">Youth Event</span>
+                            <div>
+                                <span class="mem-portal__eyebrow">Youth Resource</span>
                                 <h3 class="mem-portal__title">Colorado Teen Extreme</h3>
-                                <p class="mem-portal__copy">
-                                    An annual gathering connecting teens across Colorado for powerful preaching, activities, and lifelong friendships. Register your teen today.
-                                </p>
+                                <p class="mem-portal__copy">Annual youth event connecting teens from across Colorado for Bible preaching, activities, and lifelong friendships. Sign up through Bro. Jones.</p>
                             </div>
                         </div>
-                        <a href="https://ctxyouth.com/"
-                           target="_blank" rel="noopener noreferrer"
-                           class="mem-portal__btn">
-                            Visit CTX Website
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                <line x1="7" y1="17" x2="17" y2="7"/>
-                                <polyline points="7 7 17 7 17 17"/>
-                            </svg>
+                        <a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer" class="mem-portal__btn">
+                            Visit CTX
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
                         </a>
-                    </article>
+                    </div>
 
-                    <!-- Quick Reference Card -->
-                    <div class="mem-quick mbd-reveal" aria-label="Quick reference — service times and contacts">
+                    <!-- Quick Reference -->
+                    <div class="mem-quick">
                         <h3 class="mem-quick__title">Quick Reference</h3>
-
                         <div class="mem-quick__group">
-                            <span class="mem-quick__group-label">Service Times</span>
-                            <ul class="mem-quick__list" role="list">
-                                <li>
-                                    <span class="mem-quick__day">Sun</span>
-                                    <span>10:00 AM — Sunday School</span>
-                                </li>
-                                <li>
-                                    <span class="mem-quick__day">Sun</span>
-                                    <span>11:00 AM — Main Service</span>
-                                </li>
-                                <li>
-                                    <span class="mem-quick__day">Sun</span>
-                                    <span>6:00 PM — Evening Service</span>
-                                </li>
-                                <li>
-                                    <span class="mem-quick__day">Wed</span>
-                                    <span>4:00 PM — Teen Vision</span>
-                                </li>
-                                <li>
-                                    <span class="mem-quick__day">Wed</span>
-                                    <span>6:30 PM — Bible Study</span>
-                                </li>
-                                <li>
-                                    <span class="mem-quick__day">Fri</span>
-                                    <span>6:30 PM — RU Recovery</span>
-                                </li>
+                            <span class="mem-quick__group-label">Services</span>
+                            <ul class="mem-quick__list">
+                                <li><span class="mem-quick__day">Sun</span><span>11:00 AM · Morning Service</span></li>
+                                <li><span class="mem-quick__day">Sun</span><span>10:00 AM · Sunday School</span></li>
+                                <li><span class="mem-quick__day">Sun</span><span>6:00 PM · Evening Service</span></li>
+                                <li><span class="mem-quick__day">Wed</span><span>6:30 PM · Bible Study</span></li>
+                                <li><span class="mem-quick__day">Fri</span><span>6:30 PM · RU Recovery</span></li>
                             </ul>
                         </div>
-
                         <div class="mem-quick__group">
                             <span class="mem-quick__group-label">Key Contacts</span>
-                            <ul class="mem-quick__list" role="list">
-                                <li>
-                                    <span class="mem-quick__day">Office</span>
-                                    <a href="tel:9702437617">(970) 243-7617</a>
-                                </li>
-                                <li>
-                                    <span class="mem-quick__day">Teens</span>
-                                    <a href="tel:9709781686">(970) 978-1686</a>
-                                </li>
-                                <li>
-                                    <span class="mem-quick__day">Español</span>
-                                    <a href="tel:9702004350">(970) 200-4350</a>
-                                </li>
+                            <ul class="mem-quick__list">
+                                <li><span class="mem-quick__day">Off</span><a href="tel:9702437617">(970) 243-7617</a></li>
+                                <li><span class="mem-quick__day">Youth</span><a href="tel:9709781686">(970) 978-1686</a></li>
+                                <li><span class="mem-quick__day">Esp</span><a href="tel:9702004350">(970) 200-4350</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- LBS School card -->
-                    <article class="mem-school-card mbd-reveal" aria-label="Landmark Baptist School">
-                        <div class="mem-school-card__icon" aria-hidden="true">
-                            <img src="school.PNG"
-                                 alt="Landmark Baptist School Eagle Logo"
-                                 class="mem-school-card__logo">
+                    <!-- LBS School -->
+                    <div class="mem-school-card">
+                        <div class="mem-school-card__icon">
+                            <img src="school.PNG" alt="Landmark Baptist School Logo" class="mem-school-card__logo">
                         </div>
-                        <div class="mem-school-card__body">
+                        <div>
                             <span class="mem-portal__eyebrow">Christian Education</span>
-                            <h3 class="mem-portal__title">LBS Eagles</h3>
-                            <p class="mem-portal__copy">
-                                Landmark Baptist School — academic excellence built on a biblical foundation.
-                            </p>
-                            <a href="https://www.lbseagles.org"
-                               target="_blank" rel="noopener noreferrer"
-                               class="mem-school-card__link">
-                                Visit lbseagles.org
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                    <line x1="7" y1="17" x2="17" y2="7"/>
-                                    <polyline points="7 7 17 7 17 17"/>
-                                </svg>
-                            </a>
+                            <h3 class="mem-portal__title">LBS School</h3>
+                            <p class="mem-portal__copy">Christ-centered academics on the Ute Avenue campus. Enroll or learn more at lbseagles.org.</p>
                         </div>
-                    </article>
+                        <a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer" class="mem-school-card__link">
+                            lbseagles.org
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
 
-                </div><!-- /.mem-secondary__grid -->
+                </div>
             </div>
         </section>
 
-        <!-- =============================================
-             CLOSING STRIP — encouragement + contact
-             ============================================= -->
+        <!-- CLOSING STRIP -->
         <section class="mem-closing" aria-label="Closing encouragement">
             <div class="container">
-                <div class="mem-closing__inner mbd-reveal">
+                <div class="mem-closing__inner">
                     <blockquote class="mem-closing__verse">
                         "Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching."
                         <cite>— Hebrews 10:25 KJV</cite>
                     </blockquote>
                     <div class="mem-closing__actions">
-                        <a href="contact.html" class="btn btn--primary">
-                            Get in Touch
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
-                        </a>
-                        <a href="connect.html" class="btn btn--secondary">Find Your Class</a>
+                        <a href="contact.html" class="btn btn--primary">Contact Us</a>
+                        <a href="connect.html" class="btn btn--secondary" style="background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.22)">Find Your Class</a>
                     </div>
                 </div>
             </div>
         </section>
 
-    </main><!-- /.main -->
+    </main>
 
-    <!-- =============================================
-         FOOTER
-         ============================================= -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -440,7 +264,6 @@
                     <img src="logo.png" alt="Landmark Baptist Church Logo" class="footer__logo">
                     <p class="footer__tagline">Looking Forward to Great Things</p>
                 </div>
-
                 <div class="footer__links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -448,18 +271,17 @@
                         <li><a href="connect.html">Connect</a></li>
                         <li><a href="ministries.html">Ministries</a></li>
                         <li><a href="members.html">Members</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="footer__links">
                     <h4>Ministries</h4>
                     <ul>
-                        <li><a href="https://www.lbseagles.org"  target="_blank" rel="noopener noreferrer">LBS School</a></li>
-                        <li><a href="https://ctxyouth.com/"       target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li>
+                        <li><a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer">LBS School</a></li>
+                        <li><a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li>
                         <li><a href="ministries.html#ru-recovery">RU Recovery</a></li>
                     </ul>
                 </div>
-
                 <div class="footer__contact">
                     <h4>Contact</h4>
                     <p>1600 Ute Avenue<br>Grand Junction, CO 81501</p>
@@ -467,20 +289,16 @@
                     <p class="footer__hours">Office Hours: Tue–Fri 8am–5pm</p>
                 </div>
             </div>
-
             <div class="footer__bottom">
                 <p>&copy; 2026 Landmark Baptist Church. All rights reserved.</p>
                 <div class="footer__legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-    <script src="members.js"></script>
-
+    <script src="script.js" defer></script>
 </body>
 </html>
