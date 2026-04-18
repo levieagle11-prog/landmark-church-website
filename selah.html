@@ -3,71 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selah Coffee Co. — Find Pause. Artisan coffee house in Grand Junction, CO. Est. 2024. Chalkboard menu: espresso, specialty lattes, teas, and locally-baked pastries.">
+    <meta name="description" content="Selah Coffee Co. — Find Pause. Artisan coffee in Grand Junction, CO. Espresso, specialty lattes, teas, and locally-baked pastries. Est. 2024.">
     <meta name="author" content="Selah Coffee Co.">
-
     <title>Selah Coffee Co. | Find Pause | Grand Junction, CO</title>
 
     <link rel="icon" type="image/png" href="coffee.png">
-
-    <!--
-    ════════════════════════════════════════════
-    FONTS — Three-tier system matching the logo:
-      · Cinzel        → Matches the badge slab-serif
-                        letterforms in "SELAH COFFEE CO."
-      · Caveat        → Hand-drawn chalk script for
-                        menu category headings
-      · Josefin Sans  → Thin geometric for menu items,
-                        prices, and body text
-    ════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--
+      Cinzel    → Badge slab-serif matching "SELAH COFFEE CO." logo lettering
+      Caveat    → Hand-drawn chalk script for menu category headings
+      Josefin Sans → Thin geometric for menu items, prices, body text
+    -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Caveat:wght@400;600;700&family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300&display=swap" rel="stylesheet">
-
-    <!-- GSAP animation libraries — consistent with rest of site -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
     <!--
-    ⚠️  THIS FILE LINKS TO styles-coffee.css — NOT styles.css.
-        Linking styles.css would overwrite the entire Landmark
-        Baptist Church design system. Keep these separate.
+      ⚠️ THIS FILE LINKS TO styles-coffee.css — NOT styles.css
+         Linking styles.css would overwrite the entire church design system.
     -->
     <link rel="stylesheet" href="styles-coffee.css">
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════════════════
-         CHALK-DUST GRAIN TEXTURE
-         Fixed overlay that animates randomly — simulates
-         the texture of a real chalkboard surface.
-    ════════════════════════════════════════════════════ -->
+    <!-- Animated chalk-dust grain overlay -->
     <div class="cc-grain" aria-hidden="true"></div>
 
-
-    <!-- ═══════════════════════════════════════════════════
-         NAVIGATION
-         Sticky dark bar. coffee.png is the primary brand
-         element, displayed prominently per requirement.
-    ════════════════════════════════════════════════════ -->
+    <!-- ── NAVIGATION ── -->
     <nav class="cc-nav" id="ccNav" aria-label="Selah Coffee Co. navigation">
         <div class="cc-nav__inner">
-
-            <!-- Brand: logo + wordmark -->
             <div class="cc-nav__brand">
-                <!-- Logo prominently displayed in nav per requirement -->
-                <img
-                    src="coffee.png"
-                    alt="Selah Coffee Co Logo"
-                    class="cc-nav__logo">
+                <img src="coffee.png" alt="Selah Coffee Co Logo" class="cc-nav__logo">
                 <div class="cc-nav__words">
                     <span class="cc-nav__name">Selah Coffee Co.</span>
                     <span class="cc-nav__sub">Find Pause.</span>
                 </div>
             </div>
-
-            <!-- Back link to main church site -->
             <a href="index.html" class="cc-nav__back" aria-label="Back to Landmark Baptist Church">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                     <line x1="19" y1="12" x2="5" y2="12"/>
@@ -75,31 +48,20 @@
                 </svg>
                 <span class="cc-nav__back-label">Landmark Baptist</span>
             </a>
-
         </div>
     </nav>
 
-
-    <!-- ═══════════════════════════════════════════════════
-         HERO SECTION
-         Full-height, near-black. The logo is the visual
-         anchor. Title in large Caveat chalk script.
-         A sunrise glow references the logo's sun motif.
-    ════════════════════════════════════════════════════ -->
+    <!-- ── HERO ── -->
     <header class="cc-hero" id="top" aria-label="Selah Coffee Co. hero">
 
-        <!-- Sunrise radial glow (echoes the rising sun in logo illustration) -->
         <div class="cc-hero__glow" aria-hidden="true"></div>
 
         <div class="cc-hero__inner">
 
-            <!-- PRIMARY LOGO — large, floating, prominent in header -->
-            <img
-                src="coffee.png"
-                alt="Selah Coffee Co Logo"
-                class="cc-hero__logo">
+            <!-- Primary logo — large, prominent per requirement -->
+            <img src="coffee.png" alt="Selah Coffee Co Logo" class="cc-hero__logo">
 
-            <!-- Page headline — Caveat chalk-script -->
+            <!-- Headline in large Caveat chalk-script -->
             <h1 class="cc-hero__title">Selah Coffee Co.</h1>
 
             <!-- Ornament: ─── ✦ ✦ ✦ ─── -->
@@ -109,7 +71,7 @@
                 <span class="cc-hero__orn-line"></span>
             </div>
 
-            <!-- Subheadline — Cinzel slab, three parts separated -->
+            <!-- Subheadline in Cinzel slab -->
             <p class="cc-hero__sub">
                 Find Pause.
                 <span class="cc-hero__sep">|</span>
@@ -118,7 +80,6 @@
                 Established 2024
             </p>
 
-            <!-- Hero CTA → scrolls to menu board -->
             <a href="#menu" class="cc-hero__cta" aria-label="View the menu">
                 View the Menu
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -126,105 +87,61 @@
                 </svg>
             </a>
 
-        </div><!-- /.cc-hero__inner -->
-
-        <!-- Scroll invitation -->
-        <div class="cc-hero__scroll" aria-hidden="true">
-            <span>Menu Below</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
         </div>
 
-    </header><!-- /.cc-hero -->
+        <div class="cc-hero__scroll" aria-hidden="true">
+            <span>Menu Below</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </div>
 
+    </header>
 
-    <!-- ═══════════════════════════════════════════════════
-         TRANSITION BAND
-         Gradient bridge from near-black hero to the
-         chalkboard grey menu section. "Today's Menu"
-         headline with sunburst rays from the logo.
-    ════════════════════════════════════════════════════ -->
+    <!-- ── TRANSITION BAND ── -->
     <section class="cc-transition" id="menu" aria-label="Menu introduction">
         <div class="cc-wrap">
-
             <span class="cc-board-eyebrow">Grand Junction's Mountain Coffee House</span>
-
             <h2 class="cc-board-title">Today's Menu</h2>
-
-            <!-- Sunburst ornament — echoes radiating lines in logo badge -->
+            <!-- Sunburst rays referencing the radiating lines in the logo badge -->
             <div class="cc-rays" aria-hidden="true">
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
-                <span class="cc-ray"></span>
+                <span class="cc-ray"></span><span class="cc-ray"></span><span class="cc-ray"></span>
+                <span class="cc-ray"></span><span class="cc-ray"></span><span class="cc-ray"></span>
+                <span class="cc-ray"></span><span class="cc-ray"></span><span class="cc-ray"></span>
             </div>
-
         </div>
     </section>
 
-
-    <!-- ═══════════════════════════════════════════════════
-         CHALKBOARD MENU SECTION
-         Four chalk-bordered boxes on a dark slate board.
-         Each box is slightly rotated (hand-drawn look),
-         snaps straight on hover.
-         Leader dots are CSS repeating dashes, not circles.
-    ════════════════════════════════════════════════════ -->
+    <!-- ── CHALKBOARD MENU SECTION ── -->
     <main class="cc-board" aria-label="Chalkboard menu board">
         <div class="cc-wrap">
 
             <div class="cc-menu-grid" role="list">
 
-
-                <!-- ═══════════════════════════════════════
-                     BOX 1 — COFFEE & ESPRESSO
-                ════════════════════════════════════════ -->
+                <!-- BOX 1 — COFFEE & ESPRESSO -->
                 <section class="cc-box" role="listitem" aria-labelledby="cat-espresso">
-
                     <h3 class="cc-cat" id="cat-espresso">Coffee &amp; Espresso</h3>
                     <span class="cc-cat-sub">Classic · House Roast · Always Fresh</span>
-
                     <ul class="cc-items" aria-label="Coffee and espresso drinks">
-
                         <li>
                             <div class="cc-item">
-                                <span class="cc-item__name">
-                                    House Drip
-                                    <span class="cc-item__mod">&thinsp;(Hot or Iced)</span>
-                                </span>
+                                <span class="cc-item__name">House Drip <span class="cc-item__mod">(Hot or Iced)</span></span>
                                 <span class="cc-item__leader" aria-hidden="true"></span>
                                 <span class="cc-item__price">$3.50</span>
                             </div>
                         </li>
-
                         <li>
                             <div class="cc-item">
-                                <span class="cc-item__name">
-                                    Latte
-                                    <span class="cc-item__mod">&thinsp;(Hot or Iced)</span>
-                                </span>
+                                <span class="cc-item__name">Latte <span class="cc-item__mod">(Hot or Iced)</span></span>
                                 <span class="cc-item__leader" aria-hidden="true"></span>
                                 <span class="cc-item__price">$5.00</span>
                             </div>
                         </li>
-
                         <li>
                             <div class="cc-item">
-                                <span class="cc-item__name">
-                                    Cappuccino
-                                    <span class="cc-item__mod">&thinsp;(Hot only)</span>
-                                </span>
+                                <span class="cc-item__name">Cappuccino <span class="cc-item__mod">(Hot only)</span></span>
                                 <span class="cc-item__leader" aria-hidden="true"></span>
                                 <span class="cc-item__price">$4.75</span>
                             </div>
                         </li>
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">Cold Brew</span>
@@ -232,21 +149,14 @@
                                 <span class="cc-item__price">$5.25</span>
                             </div>
                         </li>
-
                     </ul>
-                </section><!-- /Coffee & Espresso -->
+                </section>
 
-
-                <!-- ═══════════════════════════════════════
-                     BOX 2 — SPECIALTY LATTES
-                ════════════════════════════════════════ -->
+                <!-- BOX 2 — SPECIALTY LATTES -->
                 <section class="cc-box" role="listitem" aria-labelledby="cat-specialty">
-
                     <h3 class="cc-cat" id="cat-specialty">Specialty Lattes</h3>
                     <span class="cc-cat-sub">House Crafted · Grand Valley Inspired</span>
-
                     <ul class="cc-items" aria-label="Specialty latte drinks">
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">The "Grand Valley" Maple</span>
@@ -254,7 +164,6 @@
                                 <span class="cc-item__price">$6.25</span>
                             </div>
                         </li>
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">Alpine Vanilla Oat</span>
@@ -262,32 +171,28 @@
                                 <span class="cc-item__price">$6.00</span>
                             </div>
                         </li>
-
-                    </ul>
-                </section><!-- /Specialty Lattes -->
-
-
-                <!-- ═══════════════════════════════════════
-                     BOX 3 — TEA & MORE
-                ════════════════════════════════════════ -->
-                <section class="cc-box" role="listitem" aria-labelledby="cat-tea">
-
-                    <h3 class="cc-cat" id="cat-tea">Tea &amp; More</h3>
-                    <span class="cc-cat-sub">Ceremonial · Artisan · Classic Favorites</span>
-
-                    <ul class="cc-items" aria-label="Tea and other hot drinks">
-
                         <li>
                             <div class="cc-item">
-                                <span class="cc-item__name">
-                                    Chai Latte
-                                    <span class="cc-item__mod">&thinsp;(Hot or Iced)</span>
-                                </span>
+                                <span class="cc-item__name">Selah Mocha <span class="cc-item__mod">(Dark or White)</span></span>
+                                <span class="cc-item__leader" aria-hidden="true"></span>
+                                <span class="cc-item__price">$6.25</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- BOX 3 — TEA & MORE -->
+                <section class="cc-box" role="listitem" aria-labelledby="cat-tea">
+                    <h3 class="cc-cat" id="cat-tea">Tea &amp; More</h3>
+                    <span class="cc-cat-sub">Ceremonial · Artisan · Classic Favorites</span>
+                    <ul class="cc-items" aria-label="Tea and other hot drinks">
+                        <li>
+                            <div class="cc-item">
+                                <span class="cc-item__name">Chai Latte <span class="cc-item__mod">(Hot or Iced)</span></span>
                                 <span class="cc-item__leader" aria-hidden="true"></span>
                                 <span class="cc-item__price">$5.50</span>
                             </div>
                         </li>
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">Matcha Latte</span>
@@ -296,7 +201,6 @@
                             </div>
                             <span class="cc-item-note">Ceremonial Grade</span>
                         </li>
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">Hot Chocolate</span>
@@ -305,21 +209,14 @@
                             </div>
                             <span class="cc-item-note">with house-made marshmallow</span>
                         </li>
-
                     </ul>
-                </section><!-- /Tea & More -->
+                </section>
 
-
-                <!-- ═══════════════════════════════════════
-                     BOX 4 — PASTRIES
-                ════════════════════════════════════════ -->
+                <!-- BOX 4 — PASTRIES -->
                 <section class="cc-box" role="listitem" aria-labelledby="cat-pastries">
-
                     <h3 class="cc-cat" id="cat-pastries">Pastries</h3>
                     <span class="cc-cat-sub">Baked Fresh Locally · Daily</span>
-
                     <ul class="cc-items" aria-label="Pastry items">
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">Cinnamon Roll</span>
@@ -328,7 +225,6 @@
                             </div>
                             <span class="cc-item-note">Grand Valley famous</span>
                         </li>
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">Blueberry Mountain Scone</span>
@@ -336,94 +232,58 @@
                                 <span class="cc-item__price">$4.50</span>
                             </div>
                         </li>
-
                         <li>
                             <div class="cc-item">
                                 <span class="cc-item__name">GF Almond Muffin</span>
                                 <span class="cc-item__leader" aria-hidden="true"></span>
                                 <span class="cc-item__price">$4.75</span>
                             </div>
-                            <span class="cc-item-note">Gluten-free &bull; baked in-house</span>
+                            <span class="cc-item-note">Gluten-free · baked in-house</span>
                         </li>
-
                     </ul>
-                </section><!-- /Pastries -->
-
+                </section>
 
             </div><!-- /.cc-menu-grid -->
 
-
-            <!-- ─────────────────────────────────────
-                 BOTTOM CTA STRIP
-            ──────────────────────────────────────── -->
+            <!-- CTA STRIP -->
             <div class="cc-cta-strip" aria-label="Location and visit information">
-
                 <div class="cc-cta-strip__text">
                     <strong>Come find your pause.</strong>
-                    <p>
-                        Located on the Landmark Baptist Church campus at 1600 Ute Avenue,
-                        Grand Junction. A quiet corner crafted for rest, connection, and
-                        exceptionally good coffee.
-                    </p>
+                    <p>Located on the Landmark Baptist Church campus at 1600 Ute Avenue, Grand Junction. A quiet corner crafted for rest, connection, and exceptionally good coffee.</p>
                 </div>
-
                 <div class="cc-cta-strip__btns">
-                    <a
-                        href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cc-btn cc-btn--gold">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
+                    <a href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501" target="_blank" rel="noopener noreferrer" class="cc-btn cc-btn--gold">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         Get Directions
                     </a>
                     <a href="index.html" class="cc-btn cc-btn--outline">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         Landmark Baptist Church
                     </a>
                 </div>
-
-            </div><!-- /.cc-cta-strip -->
+            </div>
 
         </div><!-- /.cc-wrap -->
-    </main><!-- /.cc-board -->
+    </main>
 
-
-    <!-- ═══════════════════════════════════════════════════
-         FOOTER
-         Minimal dark footer matching the hero palette.
-    ════════════════════════════════════════════════════ -->
+    <!-- ── FOOTER ── -->
     <footer class="cc-footer" aria-label="Selah Coffee Co. footer">
         <div class="cc-wrap">
 
-            <img
-                src="coffee.png"
-                alt="Selah Coffee Co. logo"
-                class="cc-footer__logo">
-
+            <img src="coffee.png" alt="Selah Coffee Co. logo" class="cc-footer__logo">
             <p class="cc-footer__name">Selah Coffee Co.</p>
             <p class="cc-footer__tagline">Find Pause.</p>
-
             <div class="cc-footer__rule" aria-hidden="true"></div>
 
-            <!-- Info columns -->
             <div class="cc-footer__info">
-
                 <div class="cc-footer__col">
                     <span class="cc-footer__col-label">Location</span>
                     <address class="cc-footer__col-text">
                         <a href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501" target="_blank" rel="noopener noreferrer">
-                            1600 Ute Avenue<br>
-                            Grand Junction, CO 81501
+                            1600 Ute Avenue<br>Grand Junction, CO 81501
                         </a>
                     </address>
                 </div>
-
                 <div class="cc-footer__col">
                     <span class="cc-footer__col-label">Hours</span>
                     <p class="cc-footer__col-text">
@@ -434,7 +294,6 @@
                         Check in for current hours
                     </p>
                 </div>
-
                 <div class="cc-footer__col">
                     <span class="cc-footer__col-label">Contact</span>
                     <p class="cc-footer__col-text">
@@ -444,10 +303,8 @@
                         <a href="index.html">Landmark Baptist Church</a>
                     </p>
                 </div>
+            </div>
 
-            </div><!-- /.cc-footer__info -->
-
-            <!-- Copyright bar -->
             <div class="cc-footer__bottom">
                 <p>
                     &copy; 2024 Selah Coffee Co.
@@ -458,40 +315,31 @@
                 </p>
             </div>
 
-        </div><!-- /.cc-wrap -->
+        </div>
     </footer>
 
-
-    <!-- ═══════════════════════════════════════════════════
-         JAVASCRIPT
-         Lenis smooth scroll + GSAP entrance animations.
-         Completely isolated — no reference to script.js.
-    ════════════════════════════════════════════════════ -->
+    <!--
+      ISOLATED JAVASCRIPT — completely self-contained.
+      Does NOT load script.js. Does NOT share state with the church site.
+    -->
     <script>
     (function () {
         'use strict';
 
-        /* ─────────────────────────────────────────────────
-           LENIS — buttery smooth scrolling
-        ──────────────────────────────────────────────── */
+        /* Lenis smooth scroll */
         var lenis;
         if (typeof Lenis !== 'undefined') {
             lenis = new Lenis({
                 duration: 1.25,
                 easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-                smooth: true,
-                smoothTouch: false,
+                smooth: true, smoothTouch: false,
             });
             function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
             requestAnimationFrame(raf);
-            if (typeof ScrollTrigger !== 'undefined') {
-                lenis.on('scroll', ScrollTrigger.update);
-            }
+            if (typeof ScrollTrigger !== 'undefined') lenis.on('scroll', ScrollTrigger.update);
         }
 
-        /* ─────────────────────────────────────────────────
-           NAV SCROLL STATE
-        ──────────────────────────────────────────────── */
+        /* Nav scroll state */
         var nav = document.getElementById('ccNav');
         if (nav) {
             window.addEventListener('scroll', function() {
@@ -499,124 +347,86 @@
             }, { passive: true });
         }
 
-        /* ─────────────────────────────────────────────────
-           ANCHOR SCROLL (hero CTA → #menu)
-        ──────────────────────────────────────────────── */
+        /* Anchor scroll (hero CTA → #menu) */
         document.querySelectorAll('a[href^="#"]').forEach(function(a) {
             a.addEventListener('click', function(e) {
                 var id = a.getAttribute('href');
-                if (id === '#') return;
+                if (!id || id === '#') return;
                 var target = document.querySelector(id);
                 if (!target) return;
                 e.preventDefault();
-                if (lenis) { lenis.scrollTo(target, { offset: -72, duration: 1.5 }); }
-                else { target.scrollIntoView({ behavior: 'smooth' }); }
+                if (lenis) lenis.scrollTo(target, { offset: -72, duration: 1.5 });
+                else target.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        /* ─────────────────────────────────────────────────
-           GSAP ANIMATIONS
-        ──────────────────────────────────────────────── */
         if (typeof gsap === 'undefined') return;
         if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
 
-            /* ── HERO ENTRANCE ─── */
-            /* Orchestrated stagger: logo → title → ornament → sub → cta */
-            var heroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-            heroTL
-                /* Logo: fades in from dark blur — "developing" like a Polaroid */
+            /* Hero entrance — logo develops from dark blur, then title, ornament, sub, CTA */
+            gsap.timeline({ defaults: { ease: 'power3.out' } })
                 .fromTo('.cc-hero__logo',
                     { opacity: 0, scale: 0.84, filter: 'brightness(0.3) blur(6px)' },
-                    { opacity: 1, scale: 1,    filter: 'brightness(1) blur(0px)',
-                      duration: 1.5, delay: 0.1 })
-                /* Title: rises and sharpens */
+                    { opacity: 1, scale: 1,    filter: 'brightness(1) blur(0px)', duration: 1.5, delay: 0.1 })
                 .fromTo('.cc-hero__title',
                     { opacity: 0, y: 35, filter: 'blur(3px)' },
-                    { opacity: 1, y: 0,  filter: 'blur(0px)', duration: 1.1 },
-                    '-=0.7')
-                /* Ornament line expands from center */
+                    { opacity: 1, y: 0,  filter: 'blur(0px)', duration: 1.1 }, '-=0.7')
                 .fromTo('.cc-hero__ornament',
                     { opacity: 0, scaleX: 0 },
-                    { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out',
-                      transformOrigin: 'center center' },
-                    '-=0.55')
-                /* Subheadline rises */
+                    { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out', transformOrigin: 'center' }, '-=0.55')
                 .fromTo('.cc-hero__sub',
                     { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 0.85 },
-                    '-=0.5')
-                /* CTA button */
+                    { opacity: 1, y: 0, duration: 0.85 }, '-=0.5')
                 .fromTo('.cc-hero__cta',
                     { opacity: 0, y: 14 },
-                    { opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.4)' },
-                    '-=0.4')
-                /* Scroll hint */
+                    { opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.4)' }, '-=0.4')
                 .fromTo('.cc-hero__scroll',
                     { opacity: 0 },
-                    { opacity: 1, duration: 0.6 },
-                    '-=0.3');
+                    { opacity: 1, duration: 0.6 }, '-=0.3');
 
-            /* ── SCROLL-TRIGGERED ANIMATIONS ─── */
-            if (typeof ScrollTrigger === 'undefined') {
-                ScrollTrigger.refresh();
-                return;
-            }
+            if (typeof ScrollTrigger === 'undefined') return;
 
-            /* Transition band: eyebrow + title + rays */
+            /* Transition band */
             gsap.fromTo('.cc-board-eyebrow',
                 { opacity: 0, y: 22 },
                 { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out',
                   scrollTrigger: { trigger: '.cc-transition', start: 'top 78%' } });
-
             gsap.fromTo('.cc-board-title',
                 { opacity: 0, y: 40 },
                 { opacity: 1, y: 0, duration: 1.05, ease: 'power3.out', delay: 0.15,
                   scrollTrigger: { trigger: '.cc-transition', start: 'top 78%' } });
-
             gsap.fromTo('.cc-rays',
                 { opacity: 0, scaleX: 0 },
                 { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out', delay: 0.45,
-                  transformOrigin: 'center center',
-                  scrollTrigger: { trigger: '.cc-transition', start: 'top 78%' } });
+                  transformOrigin: 'center', scrollTrigger: { trigger: '.cc-transition', start: 'top 78%' } });
 
-            /* Chalk boxes — stagger from bottom-left across 2×2 grid */
+            /* Chalk boxes — stagger with per-box rotation restore */
             gsap.fromTo('.cc-box',
                 { opacity: 0, y: 55, scale: 0.96 },
                 {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.9,
-                    ease: 'power3.out',
-                    /* Re-apply individual rotations after GSAP clears transform */
+                    opacity: 1, y: 0, scale: 1,
+                    duration: 0.9, ease: 'power3.out',
+                    stagger: { amount: 0.55, grid: [2, 2], from: 'start' },
                     onComplete: function() {
-                        var boxes = document.querySelectorAll('.cc-box');
-                        var rots = ['-0.45deg','0.5deg','0.3deg','-0.35deg'];
-                        boxes.forEach(function(b, i) {
+                        var rots = ['-0.45deg', '0.5deg', '0.3deg', '-0.35deg'];
+                        document.querySelectorAll('.cc-box').forEach(function(b, i) {
                             b.style.transform = 'rotate(' + (rots[i] || '0') + ')';
                         });
                     },
-                    stagger: { amount: 0.55, grid: [2,2], from: 'start' },
                     scrollTrigger: { trigger: '.cc-menu-grid', start: 'top 78%' }
                 });
 
-            /* Menu items within each box — stagger per box */
+            /* Menu items stagger per box */
             document.querySelectorAll('.cc-box').forEach(function(box) {
                 var items = box.querySelectorAll('.cc-item');
                 if (!items.length) return;
                 gsap.fromTo(items,
                     { opacity: 0, x: -14 },
-                    {
-                        opacity: 1, x: 0,
-                        duration: 0.55,
-                        stagger: 0.1,
-                        ease: 'power2.out',
-                        clearProps: 'transform,opacity',
-                        scrollTrigger: { trigger: box, start: 'top 72%' }
-                    });
+                    { opacity: 1, x: 0, duration: 0.55, stagger: 0.08, ease: 'power2.out',
+                      clearProps: 'transform,opacity',
+                      scrollTrigger: { trigger: box, start: 'top 74%' } });
             });
 
             /* CTA strip */
@@ -625,20 +435,18 @@
                 { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
                   scrollTrigger: { trigger: '.cc-cta-strip', start: 'top 82%' } });
 
-            /* Footer logo */
+            /* Footer */
             gsap.fromTo('.cc-footer__logo',
                 { opacity: 0, scale: 0.86 },
                 { opacity: 0.48, scale: 1, duration: 1, ease: 'back.out(1.4)',
                   scrollTrigger: { trigger: '.cc-footer', start: 'top 84%' } });
-
             gsap.fromTo('.cc-footer__info',
                 { opacity: 0, y: 26 },
                 { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out', delay: 0.2,
                   scrollTrigger: { trigger: '.cc-footer', start: 'top 84%' } });
 
             ScrollTrigger.refresh();
-
-        }); /* /window.load */
+        });
 
         console.log('%c☕ Selah Coffee Co. — Find Pause.', 'font-size:14px;font-weight:bold;color:#D4B16F;background:#131211;padding:4px 10px;border-radius:2px;');
 
