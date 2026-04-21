@@ -1,143 +1,644 @@
-/*
-  LANDMARK BAPTIST CHURCH — MASTER SCRIPT
-  Features: Lenis smooth scroll · GSAP hero animations · scroll reveals
-            hamburger nav · accordion · contact form
-*/
+/**
+ * script.js — Landmark Baptist Church · Master Animation File
+ * Lenis smooth scroll · GSAP timelines · ScrollTrigger stagger reveals
+ * Accordion · Mobile nav · Parallax · Members ticker
+ */
 
-document.addEventListener('DOMContentLoaded', () => {
+'use strict';
 
-  // ── 1. LENIS SMOOTH SCROLLING ─────────────────────────────────
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      smoothTouch: false,
+/* ═══════════════════════════════════════════════════════════════════════════
+   INIT — wait for all CDN scripts to load
+   ═══════════════════════════════════════════════════════════════════════════ */
+window.addEventListener('load', () => {
+  initLenis();
+  initNav();
+  initHeroTimeline();
+  initScrollReveals();
+  initAccordion();
+  initParallax();
+  initTicker();
+  initDashboardHovers();
+  setFooterYear();
+});
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. LENIS SMOOTH SCROLL
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initLenis() {
+  if (typeof Lenis === 'undefined') return;
+
+  const lenis = new Lenis({
+    lerp: 0.08,
+    smooth: true,
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smoothTouch: false,
+  });
+
+  // Sync with GSAP ticker if available
+  if (typeof gsap !== 'undefined') {
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
     });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    gsap.ticker.lagSmoothing(0);
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+  } else {
+    // Fallback RAF
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
   }
 
-  // ── 2. HEADER SCROLL STATE ────────────────────────────────────
-  const header = document.getElementById('site-header');
-  if (header) {
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+  // Smooth anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const id = anchor.getAttribute('href');
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: -80, duration: 1.4, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+      }
+    });
+  });
+}
 
-  // ── 3. HAMBURGER NAV ──────────────────────────────────────────
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu   = document.getElementById('nav-menu');
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. NAVIGATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initNav() {
+  const header      = document.getElementById('siteHeader');
+  const hamburger   = document.getElementById('hamburger');
+  const overlay     = document.getElementById('mobileOverlay');
+  const closeBtn    = document.getElementById('mobileClose');
 
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      const open = navMenu.classList.toggle('open');
-      navToggle.classList.toggle('open', open);
-      navToggle.setAttribute('aria-expanded', String(open));
+  if (!header) return;
+
+  // Scroll-based header glass effect
+  const handleScroll = () => {
+    if (window.scrollY > 60) {
+      header.classList.add('site-header--scrolled');
+    } else {
+      header.classList.remove('site-header--scrolled');
+    }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // Hamburger toggle
+  if (hamburger && overlay) {
+    const openMenu = () => {
+      overlay.classList.add('nav__mobile-overlay--open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+
+      if (typeof gsap !== 'undefined') {
+        gsap.from(overlay.querySelectorAll('.nav__mobile-links li'), {
+          opacity: 0,
+          y: 40,
+          stagger: 0.08,
+          duration: 0.5,
+          ease: 'power2.out',
+          delay: 0.15,
+        });
+      }
+    };
+
+    const closeMenu = () => {
+      overlay.classList.remove('nav__mobile-overlay--open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    hamburger.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Close on overlay link click
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
 
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    document.addEventListener('click', e => {
-      if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && overlay.classList.contains('nav__mobile-overlay--open')) {
+        closeMenu();
       }
     });
   }
+}
 
-  // ── 4. SCROLL REVEALS (.sr) ───────────────────────────────────
-  const srEls = document.querySelectorAll('.sr');
-  if (srEls.length) {
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      srEls.forEach(el => {
-        gsap.to(el, {
-          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-          opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
-        });
-      });
-    } else {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-      }, { threshold: 0.12 });
-      srEls.forEach(el => io.observe(el));
-    }
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. HERO ENTRANCE TIMELINE (index.html)
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initHeroTimeline() {
+  if (typeof gsap === 'undefined') return;
+
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({ delay: 0.3 });
+
+  // Eyebrow
+  if (hero.querySelector('.eyebrow')) {
+    tl.from(hero.querySelector('.eyebrow'), {
+      opacity: 0,
+      y: 30,
+      duration: 0.7,
+      ease: 'power2.out',
+    });
   }
 
-  // ── 5. HERO ENTRANCE ANIMATION ────────────────────────────────
-  if (typeof gsap !== 'undefined') {
-    if (document.querySelector('.hero__title')) {
-      gsap.from('.hero__title',    { opacity: 0, y: 55, duration: 1.4, ease: 'power4.out', delay: 0.3 });
-      gsap.from('.hero__subtitle', { opacity: 0, y: 35, duration: 1.2, ease: 'power3.out', delay: 0.55 });
-      gsap.from('.hero__card',     { opacity: 0, y: 40, duration: 1.1, ease: 'back.out(1.5)', delay: 0.8 });
-      gsap.from('.hero__scroll',   { opacity: 0, duration: 1, delay: 1.6 });
-    }
-    if (document.querySelector('.page-hero__title')) {
-      gsap.from('.page-hero__eyebrow', { opacity: 0, y: 20, duration: 0.9, ease: 'power3.out', delay: 0.2 });
-      gsap.from('.page-hero__title',   { opacity: 0, y: 40, duration: 1.1, ease: 'power4.out', delay: 0.4 });
-      gsap.from('.page-hero__sub',     { opacity: 0, y: 25, duration: 1.0, ease: 'power3.out', delay: 0.6 });
-      gsap.from('.page-hero__pills .pill', {
-        opacity: 0, y: 15, stagger: 0.1, duration: 0.7, ease: 'back.out(1.7)', delay: 0.8,
-      });
-    }
-    if (document.querySelector('.mem-hero__title')) {
-      gsap.from('.mem-hero__eyebrow', { opacity: 0, y: 20, duration: 0.9, ease: 'power3.out', delay: 0.2 });
-      gsap.from('.mem-hero__title',   { opacity: 0, y: 40, duration: 1.1, ease: 'power4.out', delay: 0.4 });
-      gsap.from('.mem-hero__sub',     { opacity: 0, y: 25, duration: 1.0, ease: 'power3.out', delay: 0.6 });
-    }
+  // H1 — split by line if possible
+  if (hero.querySelector('h1')) {
+    tl.from(hero.querySelector('h1'), {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: 'power3.out',
+    }, '-=0.3');
   }
 
-  // ── 6. ACCORDION ──────────────────────────────────────────────
-  document.querySelectorAll('.accordion__header').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item   = btn.closest('.accordion__item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.accordion__item.open').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+  // Subheading
+  if (hero.querySelector('.hero__sub')) {
+    tl.from(hero.querySelector('.hero__sub'), {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: 'power2.out',
+    }, '-=0.5');
+  }
+
+  // CTA buttons
+  const ctaBtns = hero.querySelectorAll('.btn');
+  if (ctaBtns.length) {
+    tl.from(ctaBtns, {
+      opacity: 0,
+      y: 24,
+      stagger: 0.12,
+      duration: 0.6,
+      ease: 'power2.out',
+    }, '-=0.4');
+  }
+
+  // Scroll hint
+  if (hero.querySelector('.hero__scroll-hint')) {
+    tl.from(hero.querySelector('.hero__scroll-hint'), {
+      opacity: 0,
+      duration: 0.6,
+    }, '-=0.2');
+  }
+
+  // Mountain parallax: move up as user scrolls
+  const mountain = hero.querySelector('.hero__mountain');
+  if (mountain) {
+    gsap.to(mountain, {
+      yPercent: -25,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: hero,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.5,
+      },
+    });
+  }
+
+  // Hero background subtle upward drift
+  const heroBg = hero.querySelector('.hero__bg');
+  if (heroBg) {
+    gsap.to(heroBg, {
+      yPercent: -15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: hero,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    });
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. SCROLL REVEAL — all .sr elements
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initScrollReveals() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    // Fallback: just show elements
+    document.querySelectorAll('.sr').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Group elements by their parent container for stagger effect
+  const srElements = document.querySelectorAll('.sr');
+
+  // Track which elements have been animated (skip hero children — handled above)
+  const heroEl = document.querySelector('.hero');
+
+  srElements.forEach(el => {
+    // Skip elements inside the hero — they're handled by the hero timeline
+    if (heroEl && heroEl.contains(el)) return;
+
+    // Check if element is part of a stagger group (siblings with .sr in same parent)
+    const parent = el.parentElement;
+    const siblings = parent ? [...parent.querySelectorAll(':scope > .sr')] : [];
+
+    if (siblings.length > 1 && siblings.indexOf(el) === 0) {
+      // Animate entire sibling group as a stagger
+      gsap.fromTo(siblings,
+        { opacity: 0, y: 48 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.12,
+          duration: 0.85,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    } else if (siblings.length <= 1) {
+      // Animate individually
+      gsap.fromTo(el,
+        { opacity: 0, y: 48 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    }
+  });
+
+  // Special: pastor cards — cascade from left
+  const pastorCards = document.querySelectorAll('.pastor-card');
+  if (pastorCards.length) {
+    gsap.fromTo(pastorCards,
+      { opacity: 0, y: 60, scale: 0.96 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        stagger: 0.15,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: pastorCards[0],
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }
+
+  // Bento grid tiles stagger
+  const bentoTiles = document.querySelectorAll('.bento-tile');
+  if (bentoTiles.length) {
+    gsap.fromTo(bentoTiles,
+      { opacity: 0, y: 40, scale: 0.97 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        stagger: { amount: 0.6, from: 'start' },
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: bentoTiles[0],
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }
+
+  // Ministries grid cards
+  const minCards = document.querySelectorAll('.min-card');
+  if (minCards.length) {
+    gsap.fromTo(minCards,
+      { opacity: 0, y: 32 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: { amount: 0.5, from: 'start' },
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: minCards[0],
+          start: 'top 86%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }
+
+  // Dashboard tiles
+  const dashTiles = document.querySelectorAll('.dash-tile');
+  if (dashTiles.length) {
+    gsap.fromTo(dashTiles,
+      { opacity: 0, scale: 0.94, y: 32 },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        stagger: { amount: 0.55, from: 'start' },
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: dashTiles[0],
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }
+
+  // Service time cards
+  const stCards = document.querySelectorAll('.service-time-card');
+  if (stCards.length) {
+    gsap.fromTo(stCards,
+      { opacity: 0, y: 28 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.65,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: stCards[0],
+          start: 'top 87%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }
+
+  // Section headings — slide up with slight rotation
+  document.querySelectorAll('.section-title').forEach(heading => {
+    if (heroEl && heroEl.contains(heading)) return;
+    gsap.fromTo(heading,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: heading,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  });
+
+  // Blockquotes
+  document.querySelectorAll('blockquote').forEach(bq => {
+    gsap.fromTo(bq,
+      { opacity: 0, x: -30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: bq,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  });
+
+  // Salvation strip CTA
+  const salvationStrip = document.querySelector('.salvation-strip');
+  if (salvationStrip) {
+    gsap.fromTo(salvationStrip,
+      { opacity: 0, scale: 0.97 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: salvationStrip,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. ACCORDION — What We Believe (index.html)
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initAccordion() {
+  const items = document.querySelectorAll('.accordion__item');
+  if (!items.length) return;
+
+  items.forEach(item => {
+    const trigger = item.querySelector('.accordion__trigger');
+    const body    = item.querySelector('.accordion__body');
+    if (!trigger || !body) return;
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('accordion__item--open');
+
+      // Close all
+      items.forEach(other => {
+        other.classList.remove('accordion__item--open');
+        const otherTrigger = other.querySelector('.accordion__trigger');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked (if was closed)
+      if (!isOpen) {
+        item.classList.add('accordion__item--open');
+        trigger.setAttribute('aria-expanded', 'true');
+
+        // GSAP animate body if available
+        if (typeof gsap !== 'undefined' && body) {
+          const inner = body.querySelector('.accordion__inner');
+          if (inner) {
+            gsap.from(inner, {
+              opacity: 0,
+              y: 12,
+              duration: 0.4,
+              ease: 'power2.out',
+            });
+          }
+        }
+      }
+    });
+
+    // Keyboard support
+    trigger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger.click();
+      }
+    });
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. PARALLAX EFFECTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initParallax() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  // RU Recovery logo float
+  const ruLogo = document.querySelector('.ru-logo-img');
+  if (ruLogo) {
+    gsap.to(ruLogo, {
+      yPercent: -12,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: ruLogo.closest('section') || ruLogo,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    });
+  }
+
+  // School image gentle drift
+  const schoolImg = document.querySelector('.school-img');
+  if (schoolImg) {
+    gsap.to(schoolImg, {
+      yPercent: -8,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: schoolImg.closest('section') || schoolImg,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    });
+  }
+
+  // History section image
+  const historyImg = document.querySelector('.history__img');
+  if (historyImg) {
+    gsap.to(historyImg, {
+      yPercent: -10,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: historyImg.closest('.history') || historyImg,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    });
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7. MEMBERS TICKER
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initTicker() {
+  const ticker = document.querySelector('.ticker__track');
+  if (!ticker) return;
+
+  // Pause on hover
+  ticker.addEventListener('mouseenter', () => {
+    ticker.style.animationPlayState = 'paused';
+  });
+  ticker.addEventListener('mouseleave', () => {
+    ticker.style.animationPlayState = 'running';
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   8. DASHBOARD TILE HOVER DEPTH (members.html)
+   ═══════════════════════════════════════════════════════════════════════════ */
+function initDashboardHovers() {
+  if (typeof gsap === 'undefined') return;
+
+  const tiles = document.querySelectorAll('.dash-tile');
+  tiles.forEach(tile => {
+    tile.addEventListener('mouseenter', () => {
+      gsap.to(tile, { scale: 1.025, duration: 0.3, ease: 'power2.out' });
+    });
+    tile.addEventListener('mouseleave', () => {
+      gsap.to(tile, { scale: 1, duration: 0.4, ease: 'power2.out' });
     });
   });
 
-  // ── 7. CONTACT FORM ───────────────────────────────────────────
-  const form       = document.getElementById('contact-form');
-  const formWrap   = document.getElementById('form-wrap');
-  const successMsg = document.getElementById('form-success');
+  // Bento tile hover too
+  const bentoTiles = document.querySelectorAll('.bento-tile');
+  bentoTiles.forEach(tile => {
+    tile.addEventListener('mouseenter', () => {
+      gsap.to(tile, { scale: 1.02, duration: 0.3, ease: 'power2.out' });
+    });
+    tile.addEventListener('mouseleave', () => {
+      gsap.to(tile, { scale: 1, duration: 0.4, ease: 'power2.out' });
+    });
+  });
+}
 
-  if (form) {
-    const textarea = form.querySelector('textarea');
-    const counter  = form.querySelector('.fld__counter');
-    if (textarea && counter) {
-      textarea.addEventListener('input', () => {
-        counter.textContent = `${textarea.value.length} / 1000`;
+/* ═══════════════════════════════════════════════════════════════════════════
+   9. FOOTER YEAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+function setFooterYear() {
+  const yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   10. CONTACT FORM FLOATING LABEL POLISH
+   ═══════════════════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Ensure floating labels work correctly for selects and pre-filled fields
+  document.querySelectorAll('.form-input').forEach(input => {
+    const checkFilled = () => {
+      if (input.value && input.value.trim()) {
+        input.classList.add('form-input--filled');
+      } else {
+        input.classList.remove('form-input--filled');
+      }
+    };
+    input.addEventListener('input', checkFilled);
+    input.addEventListener('change', checkFilled);
+    checkFilled();
+  });
+
+  // Smooth reveal for .sr elements without GSAP (CSS fallback)
+  if (typeof gsap === 'undefined') {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transition = 'opacity 0.85s ease, transform 0.85s ease';
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
       });
-    }
+    }, { threshold: 0.12 });
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = form.querySelector('.con-form__submit');
-      btn.classList.add('loading');
-      btn.disabled = true;
-      setTimeout(() => {
-        if (formWrap)   formWrap.style.display = 'none';
-        if (successMsg) successMsg.removeAttribute('hidden');
-      }, 1500);
+    document.querySelectorAll('.sr').forEach(el => {
+      observer.observe(el);
     });
   }
-
-  // ── 8. COFFEE NAV SCROLL STATE ────────────────────────────────
-  const ccNav = document.querySelector('.cc-nav');
-  if (ccNav) {
-    window.addEventListener('scroll', () => {
-      ccNav.classList.toggle('is-scrolled', window.scrollY > 30);
-    }, { passive: true });
-  }
-
 });
