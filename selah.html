@@ -13,186 +13,311 @@
 </head>
 <body>
 
+<!-- ══ TOP NAV BAR ══ -->
+<nav class="coffee-topbar" aria-label="Site navigation">
+  <div class="coffee-container coffee-topbar__inner">
+
+    <a href="index.html" class="coffee-topbar__back" aria-label="Back to Landmark Baptist Church">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Back to Church
+    </a>
+
+    <span class="coffee-topbar__name" aria-hidden="true">Selah Coffee Co.</span>
+
+    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate"
+       target="_blank" rel="noopener noreferrer" class="coffee-topbar__give"
+       aria-label="Give to Landmark Baptist Church">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      Give
+    </a>
+
+  </div>
+</nav>
+
 <!-- ══ HERO ══ -->
-<section class="coffee-hero">
+<section class="coffee-hero" aria-label="Selah Coffee Co. welcome">
   <div class="coffee-hero__bg" aria-hidden="true"></div>
+
   <div class="coffee-hero__content">
     <div class="coffee-logo-wrap">
-      <img src="coffee.png" alt="Selah Coffee Co." class="coffee-hero__logo">
+      <img src="coffee.png" alt="Selah Coffee Co. — Colorado mesa sunrise badge logo" class="coffee-hero__logo">
     </div>
-    <h1 class="coffee-hero__tagline">A Moment. A Cup. A Pause.</h1>
-    <div class="coffee-hero__divider" aria-hidden="true">— ✦ —</div>
+
+    <h1 class="coffee-hero__tagline">A Moment.<br>A Cup. A Pause.</h1>
+
+    <div class="coffee-hero__rule" aria-hidden="true">✦</div>
+
     <p class="coffee-hero__sub">
-      <em>Selah</em> — a Hebrew word meaning pause; to reflect, to breathe, to be still.<br>
+      <em>Selah</em> — a Hebrew word meaning pause; to reflect, to breathe, to be still.
       We believe the best cups slow you down.
     </p>
-    <a href="#menu" class="coffee-btn">See Our Menu ↓</a>
+
+    <a href="#menu" class="coffee-btn" style="margin-top:var(--sp-4);">
+      View the Menu
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <polyline points="19 12 12 19 5 12"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="coffee-hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+    </svg>
   </div>
 </section>
 
+<!-- ══ CHALK BAND ══ -->
+<div class="chalk-band" aria-hidden="true">
+  <p class="chalk-band__text">
+    Grand Junction, Colorado &nbsp;·&nbsp; Ethically Sourced &nbsp;·&nbsp; Locally Roasted &nbsp;·&nbsp; A Ministry of Landmark Baptist Church
+  </p>
+</div>
+
 <!-- ══ ABOUT ══ -->
-<section class="coffee-about">
+<section class="coffee-about" aria-labelledby="aboutTitle">
   <div class="coffee-container coffee-about__grid">
+
     <div class="coffee-about__text">
       <span class="coffee-eyebrow">Our Story</span>
-      <h2 class="coffee-heading">Born From the<br><em>Colorado High Country</em></h2>
+      <h2 class="coffee-heading" id="aboutTitle">Born From the<br><em>Colorado High Country</em></h2>
       <p>Selah Coffee Co. grew out of a simple belief — a great cup of coffee is more than caffeine. It's a ritual, a respite, a reason to sit still. Rooted in Grand Junction's red rock landscape, every blend we pour carries the warmth of the Western Slope.</p>
-      <p>We source ethically, roast locally, and serve with intention. Come find your selah.</p>
+      <p>We source ethically, roast locally, and serve with intention. Whether you're a regular or walking in for the first time — come find your selah.</p>
+      <hr class="chalk-rule">
+      <p style="font-family:var(--font-chalk);font-size:var(--text-lg);color:var(--stone-dim);font-style:italic;">"Be still, and know that I am God." — Psalm 46:10</p>
     </div>
-    <div class="coffee-about__visual" aria-hidden="true">
-      <div class="coffee-about__ring">
-        <span class="coffee-about__cup">☕</span>
+
+    <div class="coffee-about__visual">
+      <div class="coffee-about__frame">
+        <img src="coffee.png" alt="Selah Coffee Co. badge" class="coffee-about__logo">
       </div>
       <div class="coffee-about__badge">
         <span>Est.</span>
         <strong>GJ, CO</strong>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ══ CHALKBOARD MENU ══ -->
-<section class="chalkboard" id="menu" aria-label="Coffee menu">
+<section class="chalkboard" id="menu" aria-labelledby="menuTitle">
   <div class="coffee-container">
 
     <div class="chalkboard__header">
-      <h2 class="chalkboard__title">Today's Menu</h2>
-      <p class="chalkboard__subtitle">All drinks available hot · iced · blended &nbsp;|&nbsp; Ask about seasonal specials</p>
-      <div class="chalkboard__rule" aria-hidden="true"></div>
+      <h2 class="chalkboard__title" id="menuTitle">Today's Menu</h2>
+      <p class="chalkboard__subtitle">All drinks available hot &nbsp;·&nbsp; iced &nbsp;·&nbsp; blended &nbsp;·&nbsp; Ask about seasonal specials</p>
+      <div class="chalkboard__underline" aria-hidden="true"></div>
     </div>
 
     <!-- ESPRESSO -->
     <div class="menu-section">
-      <h3 class="menu-section__heading">✦ Espresso Drinks ✦</h3>
+      <h3 class="menu-section__heading">Espresso Drinks</h3>
       <ul class="menu-list" role="list">
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Cortado</span><span class="menu-item__desc">Equal parts espresso &amp; steamed milk, no foam</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Cortado</span>
+            <span class="menu-item__desc">Equal parts espresso &amp; steamed milk, no foam</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$4.50</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Flat White</span><span class="menu-item__desc">Ristretto shots, velvety microfoam, small &amp; strong</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Flat White</span>
+            <span class="menu-item__desc">Ristretto shots, velvety microfoam, small &amp; strong</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$5.00</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Oat Honey Latte</span><span class="menu-item__desc">Double shot, oat milk, raw Colorado wildflower honey</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Oat Honey Latte</span>
+            <span class="menu-item__desc">Double shot, oat milk, raw Colorado wildflower honey</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$5.75</span>
         </li>
         <li class="menu-item menu-item--featured">
-          <div class="menu-item__left"><span class="menu-item__name">Selah Signature ★</span><span class="menu-item__desc">Brown butter, cardamom, espresso, steamed milk &amp; sea salt</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Selah Signature &#9733;</span>
+            <span class="menu-item__desc">Brown butter, cardamom, espresso, steamed milk &amp; sea salt</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$6.50</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Americano</span><span class="menu-item__desc">Double shot over hot water</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Americano</span>
+            <span class="menu-item__desc">Double shot over hot water</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$3.75</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Cappuccino</span><span class="menu-item__desc">Classic balance of espresso, steamed milk &amp; thick foam</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Cappuccino</span>
+            <span class="menu-item__desc">Classic balance of espresso, steamed milk &amp; thick foam</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$4.75</span>
         </li>
       </ul>
     </div>
 
-    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · ·</div>
+    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · · · ·</div>
 
-    <!-- COLD BREW -->
+    <!-- COLD BREW & POUR OVER -->
     <div class="menu-section">
-      <h3 class="menu-section__heading">✦ Pour Over &amp; Cold Brew ✦</h3>
+      <h3 class="menu-section__heading">Pour Over &amp; Cold Brew</h3>
       <ul class="menu-list" role="list">
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Single Origin Pour Over</span><span class="menu-item__desc">Today's featured origin — brewed to order</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Single Origin Pour Over</span>
+            <span class="menu-item__desc">Today's featured origin — brewed to order, ask your barista</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$6.00</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Nitro Cold Brew</span><span class="menu-item__desc">24hr steep, nitrogen-charged, creamy cascade</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Nitro Cold Brew</span>
+            <span class="menu-item__desc">24hr steep, nitrogen-charged, silky cascade</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$5.50</span>
         </li>
         <li class="menu-item menu-item--featured">
-          <div class="menu-item__left"><span class="menu-item__name">Mesa Red Rock Cold Brew ★</span><span class="menu-item__desc">House cold brew, raspberry &amp; jalapeño syrup, splash of cream</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Mesa Red Rock Cold Brew &#9733;</span>
+            <span class="menu-item__desc">House cold brew, raspberry &amp; jalapeño syrup, splash of cream</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$6.00</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Iced Latte</span><span class="menu-item__desc">Espresso, choice of milk, over ice — add a syrup $0.50</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Iced Latte</span>
+            <span class="menu-item__desc">Espresso, choice of milk, over ice — add a syrup $0.50</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$5.00</span>
         </li>
       </ul>
     </div>
 
-    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · ·</div>
+    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · · · ·</div>
 
-    <!-- TEA & MATCHA -->
+    <!-- TEA & NON-COFFEE -->
     <div class="menu-section">
-      <h3 class="menu-section__heading">✦ Tea, Matcha &amp; More ✦</h3>
+      <h3 class="menu-section__heading">Tea, Matcha &amp; More</h3>
       <ul class="menu-list" role="list">
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Ceremonial Matcha Latte</span><span class="menu-item__desc">Grade-A matcha, oat or whole milk, honey</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Ceremonial Matcha Latte</span>
+            <span class="menu-item__desc">Grade-A matcha, oat or whole milk, honey</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$5.50</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Lavender Oat Steamer</span><span class="menu-item__desc">Housemade lavender syrup, steamed oat milk, vanilla — no coffee</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Lavender Oat Steamer</span>
+            <span class="menu-item__desc">Housemade lavender syrup, steamed oat milk, vanilla — caffeine free</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$4.75</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Loose Leaf Tea</span><span class="menu-item__desc">Earl Grey, Chamomile, Peppermint, English Breakfast</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Loose Leaf Tea</span>
+            <span class="menu-item__desc">Earl Grey, Chamomile, Peppermint, English Breakfast</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$3.50</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Golden Milk</span><span class="menu-item__desc">Turmeric, ginger, cinnamon, oat milk, honey</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Golden Milk</span>
+            <span class="menu-item__desc">Turmeric, ginger, cinnamon, oat milk, honey — warming &amp; caffeine free</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$5.00</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left">
+            <span class="menu-item__name">Dark Chocolate Steamer</span>
+            <span class="menu-item__desc">Real dark chocolate, steamed milk — optional chili flake</span>
+          </div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$4.50</span>
         </li>
       </ul>
     </div>
 
-    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · ·</div>
+    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · · · ·</div>
 
     <!-- PASTRIES -->
     <div class="menu-section">
-      <h3 class="menu-section__heading">✦ Pastries &amp; Bites ✦</h3>
+      <h3 class="menu-section__heading">Pastries &amp; Bites</h3>
       <ul class="menu-list" role="list">
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Almond Croissant</span><span class="menu-item__desc">Buttery, frangipane-filled, toasted almond — local bakery daily</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Almond Croissant</span>
+            <span class="menu-item__desc">Frangipane-filled, toasted almond — from local bakery daily</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$4.25</span>
         </li>
         <li class="menu-item menu-item--featured">
-          <div class="menu-item__left"><span class="menu-item__name">Cardamom Tahini Blondie ★</span><span class="menu-item__desc">House recipe · walnut · dark chocolate chip · golden &amp; chewy</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Cardamom Tahini Blondie &#9733;</span>
+            <span class="menu-item__desc">House recipe · walnut · dark chocolate chip · golden &amp; chewy</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$3.75</span>
         </li>
         <li class="menu-item">
-          <div class="menu-item__left"><span class="menu-item__name">Avocado Toast</span><span class="menu-item__desc">Sourdough, smashed avo, everything bagel seasoning, lemon</span></div>
+          <div class="menu-item__left">
+            <span class="menu-item__name">Avocado Toast</span>
+            <span class="menu-item__desc">Sourdough, smashed avo, everything bagel seasoning, lemon</span>
+          </div>
           <span class="menu-item__dots" aria-hidden="true"></span>
           <span class="menu-item__price">$8.00</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left">
+            <span class="menu-item__name">Rotating Quiche Slice</span>
+            <span class="menu-item__desc">Ask about today's filling — housemade crust, served warm</span>
+          </div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$6.50</span>
         </li>
       </ul>
     </div>
 
-    <p class="chalkboard__note">Milk options: Whole · Oat · Almond · Coconut · Soy &nbsp;|&nbsp; +$0.75 alt milk</p>
+    <p class="chalkboard__note">
+      Milk options: Whole &nbsp;·&nbsp; Oat &nbsp;·&nbsp; Almond &nbsp;·&nbsp; Coconut &nbsp;·&nbsp; Soy &nbsp;·&nbsp; +$0.75 for alternative milk
+    </p>
 
   </div>
 </section>
 
 <!-- ══ HOURS & VALUES ══ -->
-<section class="coffee-location">
+<section class="coffee-location" aria-labelledby="hoursTitle">
   <div class="coffee-container coffee-location__grid">
 
     <div class="coffee-location__hours">
       <span class="coffee-eyebrow">Hours</span>
-      <h2 class="coffee-heading">Come Find Us</h2>
-      <ul class="hours-list">
+      <h2 class="coffee-heading" id="hoursTitle">Come Find Us</h2>
+      <ul class="hours-list" aria-label="Hours of operation">
         <li class="hours-list__item">
           <span class="hours-list__day">Monday – Friday</span>
           <span class="hours-list__dots" aria-hidden="true"></span>
@@ -217,42 +342,66 @@
     </div>
 
     <div class="coffee-location__values">
+
+      <!-- Ethically Sourced — leaf SVG -->
       <div class="coffee-value-card">
-        <span class="coffee-value-card__icon" aria-hidden="true">🌿</span>
+        <div class="coffee-value-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2 22c3-3 6-8 6-14a10 10 0 0 1 14 0c0 6-3 11-6 14"/>
+            <path d="M12 22V8"/>
+            <path d="M7 13c1.5 0 3-1 5-1s3.5 1 5 1"/>
+          </svg>
+        </div>
         <div>
           <h3>Ethically Sourced</h3>
           <p>Every bean traceable to a farm that pays fair wages and farms sustainably.</p>
         </div>
       </div>
+
+      <!-- Locally Roasted — flame SVG -->
       <div class="coffee-value-card">
-        <span class="coffee-value-card__icon" aria-hidden="true">🔥</span>
+        <div class="coffee-value-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </svg>
+        </div>
         <div>
           <h3>Locally Roasted</h3>
           <p>Small-batch roasting in Grand Junction. Fresh is never a marketing word — it's a promise.</p>
         </div>
       </div>
+
+      <!-- Community First — cross/church SVG -->
       <div class="coffee-value-card">
-        <span class="coffee-value-card__icon" aria-hidden="true">✝️</span>
+        <div class="coffee-value-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="12" y1="2" x2="12" y2="22"/>
+            <line x1="5" y1="8" x2="19" y2="8"/>
+          </svg>
+        </div>
         <div>
           <h3>Community First</h3>
           <p>A ministry of Landmark Baptist Church — your cup supports community, service, and connection.</p>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
 <!-- ══ CHURCH CTA ══ -->
-<section class="coffee-church-cta">
+<section class="coffee-church-cta" aria-labelledby="ctaTitle">
   <div class="coffee-container coffee-church-cta__inner">
     <div>
       <span class="coffee-eyebrow">Part of Something Bigger</span>
-      <h2 class="coffee-heading">Selah is a Ministry of<br><em>Landmark Baptist Church</em></h2>
-      <p>The coffee is great, but the community is greater. Join us for worship, connection, and life together every week in Grand Junction.</p>
+      <h2 class="coffee-heading" id="ctaTitle">Selah is a Ministry of<br><em>Landmark Baptist Church</em></h2>
+      <p>The coffee is great, but the community is greater. We invite you to join us for worship, connection, and life together every Sunday in Grand Junction.</p>
     </div>
     <div class="coffee-church-cta__actions">
-      <a href="index.html"   class="coffee-btn coffee-btn--light">Visit LBC →</a>
+      <a href="index.html"   class="coffee-btn coffee-btn--light">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Church
+      </a>
       <a href="contact.html" class="coffee-btn coffee-btn--ghost">Get In Touch</a>
     </div>
   </div>
@@ -262,8 +411,11 @@
 <footer class="coffee-footer">
   <div class="coffee-container coffee-footer__inner">
     <img src="coffee.png" alt="Selah Coffee Co." class="coffee-footer__logo">
-    <p class="coffee-footer__tagline">A Moment. A Cup. A Pause. · Grand Junction, CO</p>
-    <p class="coffee-footer__copy">© <span id="coffeeYr">2026</span> Selah Coffee Co. — A Ministry of <a href="index.html">Landmark Baptist Church</a></p>
+    <p class="coffee-footer__tagline">A Moment. A Cup. A Pause. &nbsp;·&nbsp; Grand Junction, CO</p>
+    <p class="coffee-footer__copy">
+      &copy; <span id="coffeeYr">2026</span> Selah Coffee Co. &mdash; A Ministry of
+      <a href="index.html">Landmark Baptist Church</a>
+    </p>
   </div>
 </footer>
 
