@@ -1,296 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Landmark Baptist Church in Grand Junction, CO. 1600 Ute Avenue. Reach out with questions, prayer requests, or to plan your first visit.">
-    <meta name="author" content="Landmark Baptist Church">
-    <title>Contact | Landmark Baptist Church | Grand Junction, CO</title>
-
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Landmark Baptist Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-    <header class="header" id="header">
-        <nav class="nav">
-            <div class="nav__container">
-                <a href="index.html" class="nav__logo">
-                    <img src="logo.png" alt="Landmark Baptist Church Logo" class="nav__logo-img">
-                </a>
-                <ul class="nav__menu" id="navMenu">
-                    <li class="nav__item"><a href="index.html"      class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="connect.html"    class="nav__link">Connect</a></li>
-                    <li class="nav__item"><a href="ministries.html" class="nav__link">Ministries</a></li>
-                    <li class="nav__item"><a href="members.html"    class="nav__link">Members</a></li>
-                    <li class="nav__item"><a href="contact.html"    class="nav__link nav__link--active">Contact</a></li>
-                    <li class="nav__item"><a href="index.html#spanish" class="nav__link">Español</a></li>
-                </ul>
-                <div class="nav__actions">
-                    <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        Livestream
-                    </a>
-                    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Give
-                    </a>
-                </div>
-                <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span></span><span></span><span></span>
-                </button>
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Landmark Baptist Church" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="connect.html" class="nav__link">Connect</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="members.html" class="nav__link">Members</a></li>
+        <li><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+      </ul>
+      <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--give" style="margin-right:.5rem;" aria-label="Give online">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Give
+      </a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="nav__mobile-overlay" id="mobileOverlay">
+    <button class="nav__mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <ul class="nav__mobile-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="connect.html">Connect</a></li>
+      <li><a href="ministries.html">Ministries</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════ CONTACT HERO ═══════════════════════════ -->
+    <section class="contact-hero">
+      <div class="contact-hero__bg" aria-hidden="true"></div>
+      <div class="contact-hero__content container">
+        <span class="eyebrow sr">Get In Touch</span>
+        <h1 class="sr">We'd Love to<br /><em>Hear From You</em></h1>
+        <p class="contact-hero__sub sr">Whether you have a question, a prayer request, or simply want to know more about our church family — we're here for you.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ MAIN CONTACT GRID ═══════════════════════════ -->
+    <section class="contact-main section">
+      <div class="container contact-main__grid">
+
+        <!-- LEFT: FORM -->
+        <div class="contact-form-wrap sr">
+          <h2 class="contact-form-wrap__heading">Send a Message</h2>
+          <p class="contact-form-wrap__sub">We typically respond within one business day (Tuesday–Friday, 8am–5pm).</p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="firstName" name="firstName" class="form-input" required autocomplete="given-name" placeholder=" " />
+                <label for="firstName" class="form-label">First Name</label>
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="lastName" name="lastName" class="form-input" required autocomplete="family-name" placeholder=" " />
+                <label for="lastName" class="form-label">Last Name</label>
+                <span class="form-error" aria-live="polite"></span>
+              </div>
             </div>
-        </nav>
-    </header>
 
-    <main>
-
-        <!-- PAGE HERO -->
-        <section class="page-hero" aria-label="Contact page hero">
-            <div class="page-hero__bg"></div>
-            <div class="page-hero__overlay"></div>
-            <div class="page-hero__content">
-                <span class="page-hero__eyebrow">We're Here for You</span>
-                <h1 class="page-hero__title">Get In Touch</h1>
-                <p class="page-hero__sub">Questions, prayer requests, or just want to visit — reach out any time.</p>
+            <div class="form-group">
+              <input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder=" " />
+              <label for="email" class="form-label">Email Address</label>
+              <span class="form-error" aria-live="polite"></span>
             </div>
-            <div class="page-hero__scroll-hint" aria-hidden="true">
-                <span>Scroll</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+
+            <div class="form-group">
+              <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel" placeholder=" " />
+              <label for="phone" class="form-label">Phone (optional)</label>
             </div>
-        </section>
 
-        <!-- MAIN BODY -->
-        <section class="con-body">
-            <div class="container">
-                <div class="con-grid">
-
-                    <!-- LEFT: Info panel -->
-                    <aside class="con-info" aria-label="Contact information">
-                        <div>
-                            <h2 class="con-info__title">Come Visit Us</h2>
-                            <p class="con-info__lead">We'd love to meet you. Whether you're new to the area, curious about faith, or looking for a church family — you're welcome here.</p>
-                        </div>
-
-                        <div class="con-detail-list">
-                            <div class="con-detail neu-card">
-                                <div class="con-detail__icon con-detail__icon--orange" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                </div>
-                                <div>
-                                    <span class="con-detail__label">Address</span>
-                                    <a href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501" target="_blank" rel="noopener noreferrer" class="con-detail__value con-detail__value--link">
-                                        1600 Ute Avenue<br>Grand Junction, CO 81501
-                                    </a>
-                                    <span class="con-detail__sub">On the corner of Ute &amp; 16th</span>
-                                </div>
-                            </div>
-                            <div class="con-detail neu-card">
-                                <div class="con-detail__icon con-detail__icon--blue" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 3 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                </div>
-                                <div>
-                                    <span class="con-detail__label">Phone</span>
-                                    <a href="tel:9702437617" class="con-detail__value con-detail__value--link">(970) 243-7617</a>
-                                    <span class="con-detail__sub">Office: Tue–Fri, 8am–5pm</span>
-                                </div>
-                            </div>
-                            <div class="con-detail neu-card">
-                                <div class="con-detail__icon con-detail__icon--orange" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                </div>
-                                <div>
-                                    <span class="con-detail__label">Email</span>
-                                    <a href="mailto:info@lbcgj.com" class="con-detail__value con-detail__value--link">info@lbcgj.com</a>
-                                    <span class="con-detail__sub">We aim to respond within 24 hours</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service times card -->
-                        <div class="con-times neu-card">
-                            <div class="con-times__header">
-                                <div class="con-times__icon" aria-hidden="true">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                </div>
-                                <h3 class="con-times__title">Service Times</h3>
-                            </div>
-                            <div>
-                                <span class="con-times__day-name">Sunday</span>
-                                <div class="con-times__service"><span class="con-times__time">10:00 AM</span><span class="con-times__name">Sunday School (All Ages)</span></div>
-                                <div class="con-times__service"><span class="con-times__time">11:00 AM</span><span class="con-times__name">Morning Worship Service</span></div>
-                                <div class="con-times__service"><span class="con-times__time">6:00 PM</span><span class="con-times__name">Evening Service</span></div>
-                            </div>
-                            <div class="con-times__divider" aria-hidden="true"></div>
-                            <div>
-                                <span class="con-times__day-name">Wednesday</span>
-                                <div class="con-times__service"><span class="con-times__time">6:30 PM</span><span class="con-times__name">Bible Study &amp; Prayer</span></div>
-                            </div>
-                            <div class="con-times__divider" aria-hidden="true"></div>
-                            <div>
-                                <span class="con-times__day-name">Friday</span>
-                                <div class="con-times__service"><span class="con-times__time">6:30 PM</span><span class="con-times__name">RU Recovery Program</span></div>
-                            </div>
-                        </div>
-
-                        <!-- Livestream nudge -->
-                        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="con-livestream" aria-label="Watch our livestream on YouTube">
-                            <div class="con-livestream__icon" aria-hidden="true">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.3 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.7 2.2.8C6.4 18.8 12 19 12 19s4.2 0 7-.2c.4 0 1.3 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.3V9.7l5.4 2.3-5.4 2.3z"/></svg>
-                            </div>
-                            <div class="con-livestream__text">
-                                <strong>Can't make it in person?</strong>
-                                <span>Watch our services live on YouTube</span>
-                            </div>
-                            <svg class="con-livestream__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </a>
-                    </aside>
-
-                    <!-- RIGHT: Contact form -->
-                    <div class="con-form-wrap sr">
-
-                        <form class="con-form" id="contactForm" novalidate aria-label="Contact form">
-                            <div>
-                                <h2 class="con-form__title">Send Us a Message</h2>
-                                <p class="con-form__subtitle">Fill out the form below and a member of our team will get back to you within one business day.</p>
-                            </div>
-
-                            <div class="con-form__row">
-                                <div class="fld">
-                                    <input class="fld__input" type="text" id="firstName" name="firstName" placeholder=" " autocomplete="given-name" required minlength="2" aria-describedby="firstName-err">
-                                    <label class="fld__label" for="firstName">First Name</label>
-                                    <div class="fld__line" aria-hidden="true"></div>
-                                    <svg class="fld__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span class="fld__error" id="firstName-err" role="alert" aria-live="polite"></span>
-                                </div>
-                                <div class="fld">
-                                    <input class="fld__input" type="text" id="lastName" name="lastName" placeholder=" " autocomplete="family-name" required minlength="2" aria-describedby="lastName-err">
-                                    <label class="fld__label" for="lastName">Last Name</label>
-                                    <div class="fld__line" aria-hidden="true"></div>
-                                    <svg class="fld__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span class="fld__error" id="lastName-err" role="alert" aria-live="polite"></span>
-                                </div>
-                            </div>
-
-                            <div class="fld">
-                                <input class="fld__input" type="email" id="email" name="email" placeholder=" " autocomplete="email" required aria-describedby="email-err">
-                                <label class="fld__label" for="email">Email Address</label>
-                                <div class="fld__line" aria-hidden="true"></div>
-                                <svg class="fld__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span class="fld__error" id="email-err" role="alert" aria-live="polite"></span>
-                            </div>
-
-                            <div class="fld">
-                                <input class="fld__input" type="tel" id="phone" name="phone" placeholder=" " autocomplete="tel">
-                                <label class="fld__label" for="phone">Phone <span class="fld__optional">(optional)</span></label>
-                                <div class="fld__line" aria-hidden="true"></div>
-                                <span class="fld__hint">We will only call if you ask us to.</span>
-                            </div>
-
-                            <div class="fld">
-                                <select class="fld__input" id="subject" name="subject" style="padding-top:.85rem;padding-bottom:.85rem;cursor:pointer">
-                                    <option value="">General Inquiry</option>
-                                    <option value="first-time">Planning My First Visit</option>
-                                    <option value="prayer">Prayer Request</option>
-                                    <option value="ministries">Ministry Information</option>
-                                    <option value="school">LBS School</option>
-                                    <option value="ru">RU Recovery</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <label class="fld__label" for="subject" style="top:.35rem;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#AF5C33">Subject</label>
-                            </div>
-
-                            <div class="fld fld--textarea">
-                                <textarea class="fld__input fld__input--textarea" id="message" name="message" placeholder=" " required minlength="10" maxlength="1200" aria-describedby="message-err message-counter"></textarea>
-                                <label class="fld__label" for="message">Your Message</label>
-                                <div class="fld__line" aria-hidden="true"></div>
-                                <svg class="fld__check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span class="fld__error" id="message-err" role="alert" aria-live="polite"></span>
-                                <span class="fld__counter" id="message-counter" aria-live="polite"><span id="charCount">0</span> / 1200</span>
-                            </div>
-
-                            <!-- Honeypot spam trap -->
-                            <div class="fld fld--honeypot" aria-hidden="true">
-                                <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
-                            </div>
-
-                            <button type="submit" class="con-form__submit" id="submitBtn" aria-label="Send message">
-                                <svg class="con-form__submit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                                <span class="con-form__submit-text">Send Message</span>
-                                <svg class="con-form__submit-spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2a10 10 0 0 1 10 10"/></svg>
-                            </button>
-
-                            <p class="con-form__privacy">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                Your information is never shared or sold.
-                            </p>
-                        </form>
-
-                        <!-- Success state -->
-                        <div class="con-success" id="formSuccess" hidden role="status" aria-live="polite">
-                            <div class="con-success__icon" aria-hidden="true">
-                                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <h2 class="con-success__title">Message Received!</h2>
-                            <p class="con-success__body">Thank you for reaching out to Landmark Baptist Church. A member of our team will be in touch within one business day.</p>
-                            <blockquote class="con-success__verse">"For God is not unrighteous to forget your work and labour of love…" — Hebrews 6:10 KJV</blockquote>
-                            <button type="button" id="resetBtn" class="btn btn--secondary">Send Another Message</button>
-                        </div>
-
-                    </div><!-- /.con-form-wrap -->
-
-                </div><!-- /.con-grid -->
-            </div><!-- /.container -->
-        </section>
-
-        <!-- MAP STRIP -->
-        <section class="con-map-strip" aria-label="Location map">
-            <div class="container">
-                <div class="con-map-strip__inner">
-                    <div>
-                        <h2 class="con-map-strip__title">Find Us on<br>Ute Avenue</h2>
-                        <p class="con-map-strip__sub">Located at 1600 Ute Avenue, Grand Junction, CO 81501 — our 30,000 sq ft campus is easy to find with ample parking.</p>
-                        <a href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Open in Google Maps
-                        </a>
-                    </div>
-                    <div class="con-map-strip__map" aria-label="Map showing 1600 Ute Avenue location">
-                        <a href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps">
-                            <div class="con-map-strip__map-bg">
-                                <svg class="con-map-strip__pin" width="44" height="54" viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M22 0C10.4 0 1 9.4 1 21c0 15.8 21 33 21 33S43 36.8 43 21C43 9.4 33.6 0 22 0z" fill="#AF5C33"/>
-                                    <circle cx="22" cy="21" r="9" fill="white"/>
-                                    <path d="M22 16a4 4 0 0 1 4 4c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4z" fill="#AF5C33"/>
-                                </svg>
-                                <span class="con-map-strip__map-label">1600 Ute Avenue, Grand Junction</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <div class="form-group">
+              <select id="subject" name="subject" class="form-input form-select" required>
+                <option value="" disabled selected></option>
+                <option value="visit">Planning a Visit</option>
+                <option value="prayer">Prayer Request</option>
+                <option value="membership">Membership Info</option>
+                <option value="ministries">Ministries / Programs</option>
+                <option value="school">Landmark Baptist School</option>
+                <option value="recovery">RU Recovery Program</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="subject" class="form-label">How can we help?</label>
+              <span class="form-error" aria-live="polite"></span>
             </div>
-        </section>
 
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand"><img src="logo.png" alt="Landmark Baptist Church Logo" class="footer__logo"><p class="footer__tagline">Looking Forward to Great Things</p></div>
-                <div class="footer__links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="connect.html">Connect</a></li><li><a href="ministries.html">Ministries</a></li><li><a href="members.html">Members</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-                <div class="footer__links"><h4>Ministries</h4><ul><li><a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer">LBS School</a></li><li><a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li><li><a href="ministries.html#ru-recovery">RU Recovery</a></li></ul></div>
-                <div class="footer__contact"><h4>Contact</h4><p>1600 Ute Avenue<br>Grand Junction, CO 81501</p><p><a href="tel:9702437617">(970) 243-7617</a></p><p class="footer__hours">Office Hours: Tue–Fri 8am–5pm</p></div>
+            <div class="form-group">
+              <textarea id="message" name="message" class="form-input form-textarea" required placeholder=" " rows="5"></textarea>
+              <label for="message" class="form-label">Your Message</label>
+              <span class="form-error" aria-live="polite"></span>
             </div>
-            <div class="footer__bottom"><p>&copy; 2026 Landmark Baptist Church. All rights reserved.</p><div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+
+            <div class="form-group form-group--checkbox">
+              <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox" />
+              <label for="newsletter" class="form-checkbox-label">I'd like to receive the church newsletter and updates.</label>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">
+              <span class="btn__text">Send Message</span>
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </button>
+
+            <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+              <span class="form-success__icon">✓</span>
+              <strong>Message Sent!</strong> Thank you for reaching out. We'll be in touch soon.
+            </div>
+
+          </form>
         </div>
-    </footer>
 
-    <script src="script.js" defer></script>
+        <!-- RIGHT: INFO CARDS -->
+        <aside class="contact-info sr">
+
+          <div class="contact-card glass-card">
+            <div class="contact-card__icon" aria-hidden="true">📍</div>
+            <h3 class="contact-card__title">Find Us</h3>
+            <address class="contact-card__body">
+              1600 Ute Avenue<br />
+              Grand Junction, CO 81501
+            </address>
+            <a href="https://maps.google.com/?q=1600+Ute+Avenue,+Grand+Junction,+CO+81501" target="_blank" rel="noopener noreferrer" class="contact-card__link">Get Directions →</a>
+          </div>
+
+          <div class="contact-card glass-card">
+            <div class="contact-card__icon" aria-hidden="true">📞</div>
+            <h3 class="contact-card__title">Call Us</h3>
+            <p class="contact-card__body">
+              <a href="tel:+19702437617" class="contact-card__tel">(970) 243-7617</a>
+            </p>
+            <p class="contact-card__hours">Office hours: Tue–Fri, 8am–5pm</p>
+          </div>
+
+          <div class="contact-card glass-card">
+            <div class="contact-card__icon" aria-hidden="true">👨‍💼</div>
+            <h3 class="contact-card__title">Staff Directory</h3>
+            <ul class="contact-staff-list">
+              <li class="contact-staff-list__item">
+                <span class="contact-staff-list__name">Spencer Jones</span>
+                <span class="contact-staff-list__role">Youth Director</span>
+                <a href="mailto:sjones@lbcgj.com" class="contact-staff-list__email">sjones@lbcgj.com</a>
+                <a href="tel:+19709781686" class="contact-staff-list__phone">(970) 978-1686</a>
+              </li>
+              <li class="contact-staff-list__item">
+                <span class="contact-staff-list__name">Jose Alvarez</span>
+                <span class="contact-staff-list__role">Spanish Pastor</span>
+                <a href="mailto:jalvarez@lbcgj.com" class="contact-staff-list__email">jalvarez@lbcgj.com</a>
+                <a href="tel:+19702004350" class="contact-staff-list__phone">(970) 200-4350</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-card contact-card--dark">
+            <div class="contact-card__icon" aria-hidden="true">🎥</div>
+            <h3 class="contact-card__title">Watch Online</h3>
+            <p class="contact-card__body">Can't make it in person? Join us live every Sunday at 11AM or browse our sermon archive.</p>
+            <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--outline-light btn--sm">Watch on YouTube →</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ SERVICE TIMES STRIP ═══════════════════════════ -->
+    <section class="service-strip section--sm">
+      <div class="container">
+        <h2 class="section-title text-center sr">Join Us This Week</h2>
+        <div class="service-times-grid sr">
+          <div class="service-time-card">
+            <span class="service-time-card__day">Sunday</span>
+            <span class="service-time-card__name">Sunday School</span>
+            <span class="service-time-card__time">10:00 AM</span>
+          </div>
+          <div class="service-time-card service-time-card--accent">
+            <span class="service-time-card__day">Sunday</span>
+            <span class="service-time-card__name">Morning Worship</span>
+            <span class="service-time-card__time">11:00 AM</span>
+          </div>
+          <div class="service-time-card">
+            <span class="service-time-card__day">Sunday</span>
+            <span class="service-time-card__name">Evening Service</span>
+            <span class="service-time-card__time">5:00 PM</span>
+          </div>
+          <div class="service-time-card">
+            <span class="service-time-card__day">Wednesday</span>
+            <span class="service-time-card__name">Bible Study</span>
+            <span class="service-time-card__time">6:30 PM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ MAP ═══════════════════════════ -->
+    <section class="map-section sr">
+      <div class="map-section__embed-wrap">
+        <iframe
+          title="Landmark Baptist Church location map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.123456789!2d-108.5500!3d39.0650!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1600+Ute+Ave%2C+Grand+Junction%2C+CO+81501!5e0!3m2!1sen!2sus!4v1234567890"
+          width="100%"
+          height="480"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ CLOSING CTA ═══════════════════════════ -->
+    <section class="closing-cta section">
+      <div class="container closing-cta__inner sr">
+        <span class="eyebrow">No Pressure. Just Welcome.</span>
+        <h2>You Belong Here</h2>
+        <p>We're a family of imperfect people who have found grace, purpose, and community in Jesus Christ. Come as you are — we're looking forward to great things together.</p>
+        <div class="closing-cta__actions">
+          <a href="connect.html" class="btn btn--primary">Find Your Place →</a>
+          <a href="index.html" class="btn btn--ghost">Learn More About Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="logo.png" alt="Landmark Baptist Church" class="footer__logo" />
+        <p class="footer__tagline">Love · Share · Reach</p>
+        <p class="footer__verse">"All Things Through Christ" — Phil. 4:13</p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="connect.html">Connect</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Service Times</h4>
+        <ul>
+          <li>Sun School · 10:00 AM</li>
+          <li>Worship · 11:00 AM</li>
+          <li>Evening · 5:00 PM</li>
+          <li>Wed Bible Study · 6:30 PM</li>
+          <li>RU Recovery · Fri 6:30 PM</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li>1600 Ute Avenue</li>
+          <li>Grand Junction, CO 81501</li>
+          <li><a href="tel:+19702437617">(970) 243-7617</a></li>
+          <li><a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener">YouTube ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="footerYear">2026</span> Landmark Baptist Church · Grand Junction, CO · Founded 2001</p>
+    </div>
+  </footer>
+
+  <!-- Selah Coffee persistent pill -->
+  <a href="selah.html" class="selah-pill" aria-label="Visit Selah Coffee Co.">
+    ☕ Selah Coffee Co.
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+
+  <script>
+    // Footer year
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    // Contact form validation + fake submit
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('formSuccess');
+
+    function validateField(field) {
+      const group = field.closest('.form-group');
+      const error = group && group.querySelector('.form-error');
+      let msg = '';
+      if (field.required && !field.value.trim()) {
+        msg = 'This field is required.';
+      } else if (field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+        msg = 'Please enter a valid email address.';
+      } else if (field.tagName === 'SELECT' && !field.value) {
+        msg = 'Please select an option.';
+      }
+      if (error) {
+        error.textContent = msg;
+        field.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      }
+      return !msg;
+    }
+
+    if (form) {
+      form.querySelectorAll('.form-input').forEach(field => {
+        field.addEventListener('blur', () => validateField(field));
+        field.addEventListener('input', () => {
+          if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+        });
+      });
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        let valid = true;
+        form.querySelectorAll('.form-input').forEach(field => {
+          if (!validateField(field)) valid = false;
+        });
+        if (valid) {
+          form.style.opacity = '0.5';
+          form.style.pointerEvents = 'none';
+          setTimeout(() => {
+            form.hidden = true;
+            successMsg.hidden = false;
+          }, 800);
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>

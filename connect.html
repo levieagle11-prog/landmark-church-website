@@ -1,335 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Connect with Landmark Baptist Church in Grand Junction, CO. Ministries for every stage of life — children, teens, and adults.">
-    <meta name="author" content="Landmark Baptist Church">
-    <title>Connect | Landmark Baptist Church | Grand Junction, CO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect with Landmark Baptist Church — Sunday School classes for children, teens, and adults. Find your place in our church family in Grand Junction, CO.">
+  <meta name="theme-color" content="#3A2A1E">
+  <title>Connect | Landmark Baptist Church | Grand Junction, CO</title>
+  <link rel="icon" type="image/png" href="logo.png">
 
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="header" id="header">
-        <nav class="nav">
-            <div class="nav__container">
-                <a href="index.html" class="nav__logo">
-                    <img src="logo.png" alt="Landmark Baptist Church Logo" class="nav__logo-img">
-                </a>
-                <ul class="nav__menu" id="navMenu">
-                    <li class="nav__item"><a href="index.html"      class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="connect.html"    class="nav__link nav__link--active">Connect</a></li>
-                    <li class="nav__item"><a href="ministries.html" class="nav__link">Ministries</a></li>
-                    <li class="nav__item"><a href="members.html"    class="nav__link">Members</a></li>
-                    <li class="nav__item"><a href="contact.html"    class="nav__link">Contact</a></li>
-                    <li class="nav__item"><a href="index.html#spanish" class="nav__link">Español</a></li>
-                </ul>
-                <div class="nav__actions">
-                    <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        Livestream
-                    </a>
-                    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Give
-                    </a>
-                </div>
-                <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+  <!-- ── NAVIGATION ── -->
+  <header class="header" id="header">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__container">
+        <a href="index.html" class="nav__logo" aria-label="Landmark Baptist Church home">
+          <img src="logo.png" alt="Landmark Baptist Church" class="nav__logo-img">
+        </a>
+        <ul class="nav__menu" id="navMenu" role="list">
+          <li class="nav__item"><a href="index.html"      class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="connect.html"    class="nav__link nav__link--active">Connect</a></li>
+          <li class="nav__item"><a href="ministries.html" class="nav__link">Ministries</a></li>
+          <li class="nav__item"><a href="members.html"    class="nav__link">Members</a></li>
+          <li class="nav__item"><a href="contact.html"    class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="index.html#spanish" class="nav__link">Español</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--give" aria-label="Give online">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Give
+          </a>
+          <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:.72rem;padding:.6rem 1.2rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.3 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.7 2.2.8C6.4 18.8 12 19 12 19s4.2 0 7-.2c.4 0 1.3 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.3V9.7l5.4 2.3-5.4 2.3z"/></svg>
+            Watch Live
+          </a>
+          <a href="contact.html" class="btn btn--secondary" style="font-size:.72rem;padding:.6rem 1.2rem;">Plan A Visit</a>
+        </div>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav__panel" id="navPanel" role="dialog" aria-label="Mobile navigation">
+      <ul role="list" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;list-style:none;">
+        <li><a href="index.html"      class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Home</a></li>
+        <li><a href="connect.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Connect</a></li>
+        <li><a href="ministries.html" class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Ministries</a></li>
+        <li><a href="members.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Members</a></li>
+        <li><a href="contact.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Contact</a></li>
+      </ul>
+      <div style="margin-top:2rem;display:flex;gap:1rem;">
+        <a href="contact.html" class="btn btn--primary">Plan A Visit</a>
+        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener" class="btn btn--secondary">Watch Live</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero" aria-label="Connect page header">
+      <div class="container page-hero__inner">
+        <span class="section__label" style="color:rgba(212,177,111,0.9);">Sunday School — 10:00 AM</span>
+        <h1 class="page-hero__title">Find Your Place</h1>
+        <p class="page-hero__sub">From our youngest KidZone explorers to our seasoned saints, there's a class, a group, and a family waiting for you at Landmark.</p>
+        <nav class="page-hero__pills" aria-label="Section shortcuts">
+          <a href="#children" class="pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Children
+          </a>
+          <a href="#teens" class="pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Teens
+          </a>
+          <a href="#adults" class="pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Adults
+          </a>
         </nav>
-    </header>
+      </div>
+    </section>
 
-    <main>
+    <!-- ══════════════════════════════════════
+         BENTO GRID
+    ══════════════════════════════════════ -->
+    <section class="bento section" id="children" aria-labelledby="bentoTitle">
+      <div class="container">
+        <header class="bento__header sr">
+          <span class="section__label">Sunday School Classes</span>
+          <h2 class="section__title" id="bentoTitle">Ministries for <em>Every Season</em></h2>
+          <p class="section__subtitle">Every class meets Sunday at 10:00 AM. Walk in, sit down, and belong.</p>
+        </header>
 
-        <!-- PAGE HERO -->
-        <section class="page-hero" id="connect-hero" aria-label="Connect page hero">
-            <div class="page-hero__bg"></div>
-            <div class="page-hero__overlay"></div>
-            <div class="page-hero__content">
-                <span class="page-hero__eyebrow">At Landmark Baptist</span>
-                <h1 class="page-hero__title">Find Your Place</h1>
-                <p class="page-hero__sub">Ministries for every stage of life.</p>
-                <nav class="page-hero__pills" aria-label="Section navigation">
-                    <a href="#children" class="pill">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
-                        Children
-                    </a>
-                    <a href="#teens" class="pill">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        Teens
-                    </a>
-                    <a href="#adults" class="pill">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                        Adults
-                    </a>
-                </nav>
+        <div class="bento-grid" role="list">
+
+          <!-- ── CHILDREN ── -->
+          <article class="bento-card bento-card--terracotta bento-card--wide bento-card--tall sr" id="children" role="listitem" aria-label="KidZone children's ministry">
+            <svg class="bento-card__bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <p class="bento-card__label">Children's Ministry</p>
+            <h3 class="bento-card__title" style="font-size:var(--text-3xl);">KidZone</h3>
+            <p class="bento-card__desc">A vibrant, safe, and engaging environment where children discover God's Word through teaching, activities, and friendships built to last a lifetime. Ages nursery through 6th grade.</p>
+            <a href="contact.html" class="bento-card__arrow" aria-label="Learn more about KidZone">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <!-- ── TEENS ── -->
+          <article class="bento-card bento-card--slate bento-card--half bento-card--tall sr" id="teens" role="listitem" aria-label="Teen Vision youth ministry">
+            <svg class="bento-card__bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <p class="bento-card__label">Youth Ministry</p>
+            <h3 class="bento-card__title">Teen Vision</h3>
+            <p class="bento-card__desc">Every Wednesday at 4:00 PM, teens board a church bus to share the Gospel in our community. Monthly activities, annual trips, and a Bible challenge every time.</p>
+            <div class="bento-card__leader">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Spencer &amp; Tasha Jones · sjones@lbcgj.com
             </div>
-            <div class="page-hero__scroll-hint" aria-hidden="true">
-                <span>Explore</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-            </div>
-        </section>
+            <a href="mailto:sjones@lbcgj.com" class="bento-card__arrow" aria-label="Contact Spencer Jones about Teen Vision">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
 
-        <!-- ── CHILDREN ── -->
-        <section class="connect-section connect-section--children" id="children" aria-labelledby="children-title">
-            <div class="container">
-                <div class="section__header">
-                    <span class="section__label">Birth Through 6th Grade</span>
-                    <h2 class="section__title" id="children-title">Children's Ministry</h2>
-                    <p class="section__lead">Starting with excellent nurseries, there is something special for every age child.</p>
-                </div>
-                <div class="children__band">
-                    Our nurseries <strong>(Birth up to 3 years)</strong> are safe, clean, and highly staffed by carefully selected and trained mothers. For elementary students <strong>(Grades 1–6)</strong>, our primary and junior classes are filled with games, excitement, crafts, and Bible-centered learning.
-                </div>
-                <div class="children__tiers">
-                    <article class="age-card age-card--nursery" aria-label="Nursery ministry">
-                        <div class="age-card__stripe"></div>
-                        <div class="age-card__body">
-                            <div class="age-card__icon" aria-hidden="true">🍼</div>
-                            <h3 class="age-card__title">Nursery</h3>
-                            <span class="age-card__range">Birth – 2 Years</span>
-                            <p class="age-card__copy">Our baby nursery is properly staffed with loving workers in a clean, safe, and secure location. Each nursery is led by a carefully selected and trained mother. Mothers receive a pager so attendants can easily contact you if there is ever a need.</p>
-                            <ul class="age-card__list">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Secure check-in number system</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Available at every service</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>All volunteers are church members</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="age-card age-card--toddler" aria-label="Toddler ministry">
-                        <div class="age-card__stripe"></div>
-                        <div class="age-card__body">
-                            <div class="age-card__icon" aria-hidden="true">🎨</div>
-                            <h3 class="age-card__title">Toddlers &amp; Preschool</h3>
-                            <span class="age-card__range">2 – 3 Years</span>
-                            <p class="age-card__copy">Your child will come home singing new songs, quoting memorized verses, and displaying crafts. Teachers are trained, dedicated, and excited to be a part of the life of your child as they learn who Jesus is.</p>
-                            <ul class="age-card__list">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Songs, crafts &amp; Bible stories</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Age-tailored curriculum</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Compassionate, qualified teachers</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="age-card age-card--elementary" aria-label="Elementary ministry">
-                        <div class="age-card__stripe"></div>
-                        <div class="age-card__body">
-                            <div class="age-card__icon" aria-hidden="true">📚</div>
-                            <h3 class="age-card__title">Elementary</h3>
-                            <span class="age-card__range">Grades 1 – 6</span>
-                            <p class="age-card__copy">Games, excitement, learning, crafts, and songs describe our Primary and Junior Sunday School classes. Boys and girls are split into separate classes — a prime environment for making good, lasting friendships.</p>
-                            <ul class="age-card__list">
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sunday School at 10:00 AM</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Junior Church at 11:00 AM</li>
-                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Gender-separated classes</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-                <div class="children__reassurance neu-card">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    <p><strong>Not sure where to go?</strong> Our greeters and ushers are stationed across campus and will gladly escort your family to the right rooms. You'll never have to navigate alone.</p>
-                </div>
-            </div>
-        </section>
+          <!-- ── ABUNDANT LIFE ── -->
+          <article class="bento-card bento-card--third bento-card--short sr" id="adults" role="listitem" aria-label="Abundant Life adult Sunday School class">
+            <p class="bento-card__label">Young Adults · Room 106</p>
+            <h3 class="bento-card__title">Abundant Life</h3>
+            <p class="bento-card__desc">A class designed for young adults navigating life's big decisions with God's Word as their guide. Relevant, real, and rooted.</p>
+          </article>
 
-        <div class="section-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#4A6D7C" opacity="0.08"/>
-                <path d="M0,55 C360,15 720,70 1080,30 C1260,10 1380,55 1440,55 L1440,80 L0,80 Z" fill="#AF5C33" opacity="0.06"/>
-            </svg>
+          <!-- ── CROSSROADS ── -->
+          <article class="bento-card bento-card--third bento-card--short sr" role="listitem" aria-label="Crossroads College and Career Sunday School class">
+            <p class="bento-card__label">College &amp; Career · Room 108</p>
+            <h3 class="bento-card__title">Crossroads</h3>
+            <p class="bento-card__desc">Church is more than Sunday morning. Each week, lessons address issues most important to our season of life — strengthening homes and relationships.</p>
+            <div class="bento-card__leader">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Michael &amp; Kristille Ledoux
+            </div>
+          </article>
+
+          <!-- ── HIGHER GROUND ── -->
+          <article class="bento-card bento-card--third bento-card--short sr" role="listitem" aria-label="Higher Ground adult Bible class">
+            <p class="bento-card__label">Adults · Room 212</p>
+            <h3 class="bento-card__title">Higher Ground</h3>
+            <p class="bento-card__desc">Encouraging every believer to walk deeper in their Christian life. Practical applications anchored in God's Word. "Trust in the LORD with all thine heart." — Prov. 3:5</p>
+            <div class="bento-card__leader">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Pat &amp; Cindy Hawkins
+            </div>
+          </article>
+
+          <!-- ── YOUNG AT HEART ── -->
+          <article class="bento-card bento-card--third bento-card--short sr" role="listitem" aria-label="Young at Heart senior saints Bible class">
+            <p class="bento-card__label">Senior Saints · Family Center</p>
+            <h3 class="bento-card__title">Young at Heart</h3>
+            <p class="bento-card__desc">Designed for the senior saints of our church family — a warm place for fellowship, deep Bible study, and the wisdom that comes from a lifetime of walking with God.</p>
+          </article>
+
+          <!-- ── VICTORY BIBLE ── -->
+          <article class="bento-card bento-card--quarter bento-card--short bento-card--dark sr" role="listitem" aria-label="Victory Bible Class">
+            <svg class="bento-card__bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <p class="bento-card__label">Adults</p>
+            <h3 class="bento-card__title">Victory Bible</h3>
+          </article>
+
+          <!-- ── TRANSFORMADO ── -->
+          <article class="bento-card bento-card--quarter bento-card--short sr" role="listitem" aria-label="Transformado Spanish adult class" style="background:linear-gradient(135deg,#2d5a27,#1a3a16);color:var(--white);box-shadow:0 8px 32px rgba(45,90,39,0.30);">
+            <p class="bento-card__label" style="color:rgba(255,255,255,0.65);">Español · Adults</p>
+            <h3 class="bento-card__title">Transformado</h3>
+            <p class="bento-card__desc" style="color:rgba(255,255,255,0.75);">Nuestra clase en español para adultos. Bienvenidos a todos.</p>
+            <a href="index.html#spanish" class="bento-card__arrow" aria-label="Learn more about Transformado">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <!-- ── PARENTS OF TEENS ── -->
+          <article class="bento-card bento-card--half bento-card--short sr" role="listitem" aria-label="Parents of Teenagers resource ministry">
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;" aria-hidden="true">
+              <span style="font-size:2rem;">👨‍👩‍👧‍👦</span>
+              <p class="bento-card__label" style="margin:0;">Resource Group</p>
+            </div>
+            <h3 class="bento-card__title">Parents of Teenagers</h3>
+            <p class="bento-card__desc">Parenting teens can be exhausting. Through regular meetings throughout the year, parents receive practical instruction and insight for raising teens in this challenging culture. Reach out to Spencer Jones for details.</p>
+            <div class="bento-card__leader" style="margin-top:.75rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.61 1.23h3"/></svg>
+              (970) 978-1686
+            </div>
+          </article>
+
+          <!-- ── DISCIPLESHIP CTA ── -->
+          <article class="bento-card bento-card--full bento-card--short sr" style="background:linear-gradient(135deg,var(--accent-1) 0%,var(--accent-1-dark) 100%);color:var(--white);box-shadow:0 8px 32px rgba(175,92,51,0.30);flex-direction:row;align-items:center;justify-content:space-between;gap:2rem;" role="listitem" aria-label="Discipleship Program">
+            <div>
+              <p class="bento-card__label" style="color:rgba(255,255,255,0.70);">20-Lesson Series</p>
+              <h3 class="bento-card__title" style="font-size:var(--text-2xl);">Discipleship Program</h3>
+              <p class="bento-card__desc" style="color:rgba(255,255,255,0.82);">A rock-solid foundation for the Christian life. Four weeks of Sunday morning sessions followed by one-on-one mentoring through Wednesday night Bible study.</p>
+            </div>
+            <a href="contact.html" class="btn" style="background:rgba(255,255,255,0.18);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);backdrop-filter:blur(12px);white-space:nowrap;flex-shrink:0;">
+              Get Started
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+        </div><!-- /bento-grid -->
+      </div>
+    </section>
+
+    <!-- ── SERVICE TIMES REMINDER ── -->
+    <section style="padding-block:var(--space-20);background:var(--bg-dark);" aria-label="Service times reminder">
+      <div class="container" style="text-align:center;">
+        <span class="section__label sr">Join Us</span>
+        <h2 class="section__title sr" style="text-align:center;">We Gather Every Week</h2>
+        <div class="service-times__card sr" style="margin-top:3rem;">
+          <div class="service-times__item">
+            <span class="service-times__day">Sunday</span>
+            <span class="service-times__name">Sunday School</span>
+            <span class="service-times__time">10:00 AM</span>
+          </div>
+          <div class="service-times__divider" aria-hidden="true"></div>
+          <div class="service-times__item">
+            <span class="service-times__day">Sunday</span>
+            <span class="service-times__name">Morning Worship</span>
+            <span class="service-times__time">11:00 AM</span>
+          </div>
+          <div class="service-times__divider" aria-hidden="true"></div>
+          <div class="service-times__item">
+            <span class="service-times__day">Sunday</span>
+            <span class="service-times__name">Evening Service</span>
+            <span class="service-times__time">5:00 PM</span>
+          </div>
+          <div class="service-times__divider" aria-hidden="true"></div>
+          <div class="service-times__item">
+            <span class="service-times__day">Wednesday</span>
+            <span class="service-times__name">Bible Study</span>
+            <span class="service-times__time">6:30 PM</span>
+          </div>
         </div>
-
-        <!-- ── TEENS ── -->
-        <section class="connect-section connect-section--teens" id="teens" aria-labelledby="teens-title">
-            <div class="container">
-                <div class="section__header">
-                    <span class="section__label">7th – 12th Grade</span>
-                    <h2 class="section__title" id="teens-title">Teen Ministry</h2>
-                    <p class="section__lead">A strong foundation and a community they'll love coming back to.</p>
-                </div>
-                <div class="teens__layout">
-                    <div class="teens__copy">
-                        <p>Led by Youth Directors <strong>Spencer and Tashina Jones</strong>, our goal is to give your teen a strong, Christ-centered foundation combined with the friendly atmosphere they enjoy. The teenage years are when we develop a lot of who we are — and we take that seriously.</p>
-                        <p>During all of our activities, your teen will always receive a Bible challenge to help them grow in their young Christian life. We also offer regular parent meetings throughout the year.</p>
-                        <div class="teens__contact neu-card">
-                            <div class="teens__contact-avatar" aria-hidden="true">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            </div>
-                            <div class="teens__contact-info">
-                                <strong>Spencer &amp; Tashina Jones</strong>
-                                <span>Youth Directors</span>
-                                <a href="mailto:sjones@lbcgj.com">sjones@lbcgj.com</a>
-                                <a href="tel:9709781686">970-978-1686</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="teens__highlights">
-                        <article class="teen-highlight-card neu-card" aria-label="Teen Vision">
-                            <div class="teen-highlight-card__header">
-                                <span class="teen-highlight-card__badge teen-highlight-card__badge--orange">Weekly</span>
-                                <h3 class="teen-highlight-card__title">Teen Vision</h3>
-                            </div>
-                            <p class="teen-highlight-card__copy">Meets every <strong>Wednesday at 4:00 PM</strong> in Room 212. Teens load up on a church bus to spread the gospel to the community, followed by a fast food stop.</p>
-                            <div class="teen-highlight-card__meta">
-                                <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Wednesdays &bull; 4:00 PM</span>
-                                <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Room 212</span>
-                            </div>
-                        </article>
-                        <article class="teen-highlight-card neu-card" aria-label="Teen Sunday School">
-                            <div class="teen-highlight-card__header">
-                                <span class="teen-highlight-card__badge teen-highlight-card__badge--blue">Weekly</span>
-                                <h3 class="teen-highlight-card__title">Sunday School</h3>
-                            </div>
-                            <p class="teen-highlight-card__copy">Every <strong>Sunday at 10:00 AM</strong> in Room 200. Spencer Jones teaches the boys and Tashina Jones teaches the girls.</p>
-                            <div class="teen-highlight-card__meta">
-                                <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Sundays &bull; 10:00 AM</span>
-                                <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Room 200</span>
-                            </div>
-                        </article>
-                        <article class="teen-highlight-card neu-card" aria-label="Monthly teen activities">
-                            <div class="teen-highlight-card__header">
-                                <span class="teen-highlight-card__badge teen-highlight-card__badge--green">Monthly</span>
-                                <h3 class="teen-highlight-card__title">Teen Activities</h3>
-                            </div>
-                            <p class="teen-highlight-card__copy">Monthly activities open to all 7th–12th graders. Weekly meetings, monthly outings, and annual trips create friendships that last a lifetime.</p>
-                            <div class="teen-highlight-card__meta">
-                                <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Monthly &bull; Dates Vary</span>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="teens__ctx-callout">
-                    <div class="teens__ctx-callout-text">
-                        <h4>Colorado Teen Extreme</h4>
-                        <p>Our teens participate in CTX — an annual youth event connecting teens from across Colorado for Bible preaching, activities, and lifelong friendships.</p>
-                    </div>
-                    <a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                        Visit CTX
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider section-divider--flip" aria-hidden="true">
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#4A6D7C" opacity="0.07"/>
-            </svg>
+        <div style="margin-top:3rem;" class="sr">
+          <a href="contact.html" class="btn btn--primary">Plan Your First Visit</a>
         </div>
+      </div>
+    </section>
 
-        <!-- ── ADULT BENTO ── -->
-        <section class="connect-section connect-section--adults" id="adults" aria-labelledby="adults-title">
-            <div class="container">
-                <div class="section__header">
-                    <span class="section__label">Every Sunday &bull; 10:00 AM</span>
-                    <h2 class="section__title" id="adults-title">Adult Sunday School</h2>
-                    <p class="section__lead">Hear practical teaching from someone who genuinely cares about you, and fellowship with adults in the same stage of life.</p>
-                </div>
-                <div class="bento" role="list" aria-label="Adult Sunday School classes">
-                    <article class="bento__card bento__card--wide bento__card--orange neu-card" role="listitem">
-                        <div class="bento__card-accent"></div>
-                        <div class="bento__card-body">
-                            <div class="bento__card-top"><div class="bento__card-icon" aria-hidden="true">☀️</div><span class="bento__card-location">The Chapel</span></div>
-                            <h3 class="bento__card-title">Abundant Life</h3>
-                            <span class="bento__card-teachers">Dan &amp; Cathy Tuttle</span>
-                            <p class="bento__card-desc">As we live our lives today, there are dangers and decisions that not only affect us but those we love. But God has promised an <em>"Abundant Life."</em> This class shows you how to understand and apply God's Word.</p>
-                            <blockquote class="bento__card-verse">"I am come that they might have life, and that they might have it more abundantly."<cite>— John 10:10 KJV</cite></blockquote>
-                        </div>
-                    </article>
-                    <article class="bento__card bento__card--blue neu-card" role="listitem">
-                        <div class="bento__card-accent"></div>
-                        <div class="bento__card-body">
-                            <div class="bento__card-top"><div class="bento__card-icon" aria-hidden="true">🧭</div><span class="bento__card-location">Room 108</span></div>
-                            <h3 class="bento__card-title">Crossroads</h3>
-                            <span class="bento__card-teachers">Herman &amp; Estrella Afoa</span>
-                            <p class="bento__card-desc">College &amp; Career class. Each week sheds light on the issues most important to this season of life. Fellowships and activities throughout the year build an environment where friendships blossom.</p>
-                            <blockquote class="bento__card-verse">"Fear God, and keep his commandments: for this is the whole duty of man."<cite>— Ecclesiastes 12:13 KJV</cite></blockquote>
-                        </div>
-                    </article>
-                    <article class="bento__card bento__card--tall neu-card" role="listitem">
-                        <div class="bento__card-accent"></div>
-                        <div class="bento__card-body">
-                            <div class="bento__card-top"><div class="bento__card-icon" aria-hidden="true">🏔️</div><span class="bento__card-location">Room 212</span></div>
-                            <h3 class="bento__card-title">Higher Ground</h3>
-                            <span class="bento__card-teachers">Michael &amp; Kristille Ledoux</span>
-                            <p class="bento__card-desc">A place where you'll be encouraged in your Christian walk and your understanding of God's Word. All who attend will be challenged to live the Christian life with practical applications.</p>
-                            <blockquote class="bento__card-verse">"Trust in the LORD with all thine heart; and lean not unto thine own understanding."<cite>— Proverbs 3:5–6 KJV</cite></blockquote>
-                        </div>
-                    </article>
-                    <article class="bento__card neu-card" role="listitem">
-                        <div class="bento__card-accent"></div>
-                        <div class="bento__card-body">
-                            <div class="bento__card-top"><div class="bento__card-icon" aria-hidden="true">🌿</div><span class="bento__card-location">Family Center</span></div>
-                            <h3 class="bento__card-title">Young at Heart</h3>
-                            <span class="bento__card-teachers">Pat &amp; Cindy Hawkins</span>
-                            <p class="bento__card-desc">Designed for our senior saints (Ages 65+). You'll meet many adults at the same stage of life and hear Bible truth that challenges you to keep on keeping on.</p>
-                            <blockquote class="bento__card-verse">"Let the words of my mouth… be acceptable in thy sight, O LORD."<cite>— Psalm 19:14 KJV</cite></blockquote>
-                        </div>
-                    </article>
-                    <article class="bento__card neu-card" role="listitem">
-                        <div class="bento__card-accent"></div>
-                        <div class="bento__card-body">
-                            <div class="bento__card-top"><div class="bento__card-icon" aria-hidden="true">✝️</div><span class="bento__card-location">Room 211</span></div>
-                            <h3 class="bento__card-title">Victory Bible Class</h3>
-                            <span class="bento__card-teachers">Cody &amp; Sydney Truesdell</span>
-                            <p class="bento__card-desc">For anyone seeking victory over an issue in their life. Through Bible teaching and a family atmosphere you'll be encouraged to live your life for Christ and meet many new friends.</p>
-                            <blockquote class="bento__card-verse">"The eyes of the LORD are in every place, beholding the evil and the good."<cite>— Proverbs 15:3 KJV</cite></blockquote>
-                        </div>
-                    </article>
-                    <article class="bento__card bento__card--wide bento__card--spanish neu-card" role="listitem" lang="es">
-                        <div class="bento__card-accent"></div>
-                        <div class="bento__card-body">
-                            <div class="bento__card-top"><div class="bento__card-icon" aria-hidden="true">🌎</div><span class="bento__card-location">Room 204</span></div>
-                            <h3 class="bento__card-title">Transformado</h3>
-                            <span class="bento__card-teachers">Jose &amp; Sonya Alvarez</span>
-                            <p class="bento__card-desc">Visitar cualquier iglesia por primera vez puede tornarse en una experiencia difícil. Con nosotros usted podrá disfrutar de música inspiradora, útiles enseñanzas y predicaciones. <span lang="en">(A welcoming Spanish-language class.)</span></p>
-                            <a href="index.html#spanish" class="bento__card-link" lang="en">Learn more about Iglesia Bautista Los Linderos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+  </main>
 
-        <!-- CLOSING CTA -->
-        <section style="background:linear-gradient(135deg,#3A2A1E,#4A6D7C);padding:clamp(3.5rem,6vw,5.5rem) 0">
-            <div class="container">
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:2.5rem;flex-wrap:wrap">
-                    <div>
-                        <h2 style="font-family:'Crimson Pro',serif;font-size:clamp(1.9rem,4vw,2.8rem);color:#fff;margin-bottom:.5rem">Ready to take your next step?</h2>
-                        <p style="font-size:clamp(.96rem,1.4vw,1.08rem);color:rgba(255,255,255,.72);max-width:500px">We would love to meet you. Come as you are — no pressure, no dress code, just a warm welcome.</p>
-                    </div>
-                    <div style="display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0">
-                        <a href="contact.html" class="btn btn--primary">Contact Us <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.2)">Watch Livestream</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand"><img src="logo.png" alt="Landmark Baptist Church Logo" class="footer__logo"><p class="footer__tagline">Looking Forward to Great Things</p></div>
-                <div class="footer__links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="connect.html">Connect</a></li><li><a href="ministries.html">Ministries</a></li><li><a href="members.html">Members</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-                <div class="footer__links"><h4>Ministries</h4><ul><li><a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer">LBS School</a></li><li><a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li><li><a href="ministries.html#ru-recovery">RU Recovery</a></li></ul></div>
-                <div class="footer__contact"><h4>Contact</h4><p>1600 Ute Avenue<br>Grand Junction, CO 81501</p><p><a href="tel:9702437617">(970) 243-7617</a></p><p class="footer__hours">Office Hours: Tue–Fri 8am–5pm</p></div>
-            </div>
-            <div class="footer__bottom"><p>&copy; 2026 Landmark Baptist Church. All rights reserved.</p><div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  <!-- ── FOOTER ── -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="logo.png" alt="Landmark Baptist Church" class="footer__logo">
+          <p class="footer__tagline">Looking Forward to Great Things</p>
         </div>
-    </footer>
+        <div class="footer__links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="connect.html">Connect</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Ministries</h4>
+          <ul>
+            <li><a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer">LBS School</a></li>
+            <li><a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li>
+            <li><a href="ministries.html#ru-recovery">RU Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4>Find Us</h4>
+          <p>1600 Ute Avenue<br>Grand Junction, CO 81501</p>
+          <p><a href="tel:9702437617">(970) 243-7617</a></p>
+          <p class="footer__hours">Office: Tue–Fri · 8am–5pm</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Landmark Baptist Church. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js" defer></script>
+  <a href="selah.html" class="selah-preview" aria-label="Visit Selah Coffee Co.">
+    <div class="selah-preview__dot" aria-hidden="true"></div>
+    Selah Coffee Co.
+  </a>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
