@@ -360,12 +360,38 @@ strong { color: var(--espresso); font-weight: 600; }
 .history__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: center; }
 
 .history__logo-ring {
-  width: clamp(220px, 32vw, 340px); aspect-ratio: 1; border-radius: 50%;
-  background: var(--cream-dark); border: 2px solid rgba(175,92,51,0.18);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-lg); margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-inline: auto;
 }
-.history__logo-ring img { width: 72%; height: auto; object-fit: contain; }
+.history__logo-ring::before {
+  content: '';
+  position: absolute;
+  width: clamp(280px, 42vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(175,92,51,0.08) 0%, rgba(175,92,51,0.03) 45%, transparent 72%);
+  pointer-events: none;
+}
+.history__logo-ring::after {
+  content: '';
+  position: absolute;
+  width: clamp(300px, 46vw, 490px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed rgba(175,92,51,0.14);
+  pointer-events: none;
+}
+.history__logo-ring img {
+  position: relative;
+  z-index: 1;
+  width: clamp(220px, 34vw, 380px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 32px rgba(58,42,30,0.22)) drop-shadow(0 2px 8px rgba(58,42,30,0.14));
+}
 
 .history__stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin-top: var(--sp-8); }
 .history__stat {
@@ -673,7 +699,7 @@ strong { color: var(--espresso); font-weight: 600; }
   .nav__hamburger { display: flex; }
   .hero__times { grid-template-columns: repeat(2, 1fr); }
   .history__grid { grid-template-columns: 1fr; }
-  .history__logo-ring { display: none; }
+  .history__logo-ring { margin-bottom: var(--sp-4); }
   .pastors__grid { grid-template-columns: 1fr; gap: var(--sp-5); }
   .believe__grid { grid-template-columns: 1fr; }
   .believe__intro { position: static; }
