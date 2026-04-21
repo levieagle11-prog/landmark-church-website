@@ -591,8 +591,31 @@ strong { color: var(--espresso); font-weight: 600; }
 .school { background: linear-gradient(135deg, var(--burgundy-dk) 0%, var(--burgundy) 100%); position: relative; overflow: hidden; }
 .school::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-60deg, transparent 0, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 41px); }
 .school__grid { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: center; }
-.school__logo-wrap { width: clamp(130px, 18vw, 200px); aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; padding: var(--sp-5); box-shadow: var(--shadow-xl); flex-shrink: 0; }
-.school__logo-img { width: 100%; height: auto; object-fit: contain; }
+.school__logo-wrap {
+  width: clamp(150px, 20vw, 220px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  /* overflow hidden is CRITICAL — clips image to circle shape */
+  overflow: hidden;
+  background: rgba(255,255,255,0.96);
+  box-shadow:
+    0 0 0 4px rgba(255,255,255,0.18),
+    0 0 0 8px rgba(255,255,255,0.08),
+    var(--shadow-xl);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school__logo-img {
+  /* Fill the full circle — eagle head fills space */
+  width: 115%;
+  height: 115%;
+  object-fit: cover;
+  /* Center on the eagle's eye/head area */
+  object-position: 55% 40%;
+}
 .school__tag { display: inline-block; background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.85); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: var(--sp-2) var(--sp-4); border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.22); margin-bottom: var(--sp-4); }
 .school__title { color: var(--white); margin-bottom: var(--sp-4); }
 .school__body  { color: rgba(255,255,255,0.78); margin-bottom: var(--sp-6); }
