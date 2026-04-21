@@ -610,8 +610,7 @@ strong { color: var(--espresso); font-weight: 600; }
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
-  background: rgba(245,240,235,0.90);
-  border: 2px solid rgba(107,26,42,0.12);
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -622,6 +621,7 @@ strong { color: var(--espresso); font-weight: 600; }
   height: 88%;
   object-fit: contain;
   object-position: center center;
+  mix-blend-mode: multiply;
 }
 .school__tag { display: inline-block; background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.85); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: var(--sp-2) var(--sp-4); border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.22); margin-bottom: var(--sp-4); }
 .school__title { color: var(--white); margin-bottom: var(--sp-4); }
