@@ -546,8 +546,40 @@ strong { color: var(--espresso); font-weight: 600; }
    MINISTRIES
    ══════════════════════════════════════════════════════════════ */
 .ru__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
-.ru__logo-card { background: var(--espresso); border-radius: var(--radius-xl); padding: var(--sp-10); display: flex; align-items: center; justify-content: center; aspect-ratio: 1; box-shadow: var(--shadow-xl); }
-.ru__logo-img { width: 80%; height: auto; object-fit: contain; }
+.ru__logo-card {
+  background: var(--cream-light);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--cream-dark);
+  padding: var(--sp-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Subtle radial glow using RU's own blue-green palette */
+.ru__logo-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(74,109,124,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 70% 50%, rgba(100,160,60,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.ru__logo-img {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  /* multiply blends the white bg into the cream card — logo floats cleanly */
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 4px 16px rgba(58,42,30,0.10));
+}
 
 .ru__meta { display: flex; flex-direction: column; gap: var(--sp-3); margin-block: var(--sp-6); }
 .ru__meta-item { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-4) var(--sp-5); background: var(--cream-light); border-radius: var(--radius-md); border: 1px solid var(--cream-dark); }
@@ -705,7 +737,7 @@ strong { color: var(--espresso); font-weight: 600; }
   .believe__intro { position: static; }
   .cta-strip__inner { flex-direction: column; text-align: center; }
   .spanish__grid, .ru__grid { grid-template-columns: 1fr; }
-  .ru__logo-card { aspect-ratio: auto; padding: var(--sp-8); }
+  .ru__logo-card { padding: var(--sp-8); }
   .school__grid { grid-template-columns: 1fr; text-align: center; }
   .school__logo-wrap { margin-inline: auto; }
   .school__actions { justify-content: center; }
