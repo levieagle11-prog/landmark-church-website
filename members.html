@@ -3,448 +3,328 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Landmark Baptist Church Members Area — online giving, 2026 church calendar, livestream archives, and member resources. Grand Junction, CO.">
-  <meta name="theme-color" content="#3A2A1E">
-  <title>Members | Landmark Baptist Church | Grand Junction, CO</title>
+  <meta name="description" content="Member Resources — Landmark Baptist Church. Online giving, 2026 church calendar, and livestream access.">
+  <title>Members | Landmark Baptist Church</title>
   <link rel="icon" type="image/png" href="logo.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
-
   <link rel="stylesheet" href="styles.css">
-
-  <style>
-    /* Members-specific extras */
-    .verse-ticker {
-      background: var(--accent-1);
-      color: var(--white);
-      padding: var(--space-3) 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .verse-ticker::before,
-    .verse-ticker::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .verse-ticker::before { left: 0; background: linear-gradient(to right, var(--accent-1), transparent); }
-    .verse-ticker::after  { right: 0; background: linear-gradient(to left, var(--accent-1), transparent); }
-    .verse-ticker__track {
-      display: flex;
-      gap: var(--space-12);
-      animation: tickerScroll 30s linear infinite;
-      white-space: nowrap;
-    }
-    .verse-ticker__item {
-      flex-shrink: 0;
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: var(--text-sm);
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-    .verse-ticker__item::before {
-      content: '✦';
-      font-style: normal;
-      font-size: 0.65rem;
-      opacity: 0.60;
-    }
-    @keyframes tickerScroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .verse-ticker:hover .verse-ticker__track { animation-play-state: paused; }
-  </style>
 </head>
 <body>
 
-  <!-- ── NAVIGATION ── -->
-  <header class="header" id="header">
-    <nav class="nav" aria-label="Main navigation">
-      <div class="nav__container">
-        <a href="index.html" class="nav__logo" aria-label="Landmark Baptist Church home">
-          <img src="logo.png" alt="Landmark Baptist Church" class="nav__logo-img">
-        </a>
-        <ul class="nav__menu" id="navMenu" role="list">
-          <li class="nav__item"><a href="index.html"      class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="connect.html"    class="nav__link">Connect</a></li>
-          <li class="nav__item"><a href="ministries.html" class="nav__link">Ministries</a></li>
-          <li class="nav__item"><a href="members.html"    class="nav__link nav__link--active">Members</a></li>
-          <li class="nav__item"><a href="contact.html"    class="nav__link">Contact</a></li>
-          <li class="nav__item"><a href="index.html#spanish" class="nav__link">Español</a></li>
-        </ul>
-        <div class="nav__actions">
-          <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--give" aria-label="Give online">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            Give
-          </a>
-          <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:.72rem;padding:.6rem 1.2rem;">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.3 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.7 2.2.8C6.4 18.8 12 19 12 19s4.2 0 7-.2c.4 0 1.3 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.3V9.7l5.4 2.3-5.4 2.3z"/></svg>
-            Watch Live
-          </a>
-          <a href="contact.html" class="btn btn--secondary" style="font-size:.72rem;padding:.6rem 1.2rem;">Plan A Visit</a>
-        </div>
-        <button class="nav__hamburger" id="navHamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-    <div class="nav__panel" id="navPanel" role="dialog" aria-label="Mobile navigation">
-      <ul role="list" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;list-style:none;">
-        <li><a href="index.html"      class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Home</a></li>
-        <li><a href="connect.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Connect</a></li>
-        <li><a href="ministries.html" class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Ministries</a></li>
-        <li><a href="members.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Members</a></li>
-        <li><a href="contact.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Contact</a></li>
+<!-- ══ HEADER ══ -->
+<header class="header" id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo" aria-label="Landmark Baptist Church home">
+        <img src="logo.png" alt="Landmark Baptist Church" class="nav__logo-img">
+      </a>
+      <ul class="nav__menu" role="list">
+        <li><a href="index.html"      class="nav__link">Home</a></li>
+        <li><a href="connect.html"    class="nav__link">Connect</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="members.html"    class="nav__link nav__link--active">Members</a></li>
+        <li><a href="contact.html"    class="nav__link">Contact</a></li>
+        <li><a href="selah.html"      class="nav__link">Selah Coffee</a></li>
       </ul>
-      <div style="margin-top:2rem;display:flex;gap:1rem;">
-        <a href="contact.html" class="btn btn--primary">Plan A Visit</a>
-        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener" class="btn btn--secondary">Watch Live</a>
+      <div class="nav__actions">
+        <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--give">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Give
+        </a>
+        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm">Watch Live</a>
       </div>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
+  </nav>
+</header>
 
-  <main>
+<div class="nav__overlay" id="navOverlay" aria-hidden="true"></div>
+<aside class="nav__panel" id="navPanel" role="dialog" aria-label="Navigation menu" aria-modal="true" hidden>
+  <div class="nav__panel-top">
+    <img src="logo.png" alt="Landmark Baptist Church" class="nav__panel-logo">
+    <button class="nav__panel-close" id="navPanelClose" aria-label="Close menu">&#10005;</button>
+  </div>
+  <nav class="nav__panel-links">
+    <a href="index.html"      class="nav__panel-link">Home</a>
+    <a href="connect.html"    class="nav__panel-link">Connect</a>
+    <a href="ministries.html" class="nav__panel-link">Ministries</a>
+    <a href="members.html"    class="nav__panel-link">Members</a>
+    <a href="contact.html"    class="nav__panel-link">Contact</a>
+    <a href="selah.html"      class="nav__panel-link">Selah Coffee</a>
+  </nav>
+  <div class="nav__panel-footer">
+    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Give Online</a>
+    <a href="contact.html" class="btn btn--ghost">Plan A Visit</a>
+    <p class="nav__panel-info">1600 Ute Avenue · Grand Junction, CO 81501<br>(970) 243-7617 · Office: Tue–Fri 8am–5pm</p>
+  </div>
+</aside>
 
-    <!-- ── HERO ── -->
-    <section class="members-hero page-hero" aria-label="Members area header">
-      <div class="container page-hero__inner">
-        <span class="section__label" style="color:rgba(212,177,111,.9);">Members Corner</span>
-        <h1 class="page-hero__title">Your Church,<br><em style="font-style:italic;color:var(--accent-1-light);">Your Resources</em></h1>
-        <p class="page-hero__sub">Giving, calendar, livestream archives, and everything you need to stay connected to the Landmark family.</p>
-        <nav class="page-hero__pills" aria-label="Dashboard shortcuts">
-          <a href="#giving" class="pill">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            Give Online
-          </a>
-          <a href="#calendar" class="pill">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            2026 Calendar
-          </a>
-          <a href="#livestream" class="pill">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            Watch Services
-          </a>
-        </nav>
-      </div>
-    </section>
+<main>
 
-    <!-- ── BIBLE VERSE TICKER ── -->
-    <div class="verse-ticker" role="marquee" aria-label="Daily Bible verses">
-      <div class="verse-ticker__track">
-        <!-- Items duplicated for seamless loop -->
-        <span class="verse-ticker__item">"For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord." — Romans 6:23</span>
-        <span class="verse-ticker__item">"Trust in the LORD with all thine heart; and lean not unto thine own understanding." — Proverbs 3:5</span>
-        <span class="verse-ticker__item">"I can do all things through Christ which strengtheneth me." — Philippians 4:13</span>
-        <span class="verse-ticker__item">"Not forsaking the assembling of ourselves together." — Hebrews 10:25</span>
-        <span class="verse-ticker__item">"All things through Christ." — Philippians 4:13 · LBC Theme Verse 2026</span>
-        <span class="verse-ticker__item">"For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord." — Romans 6:23</span>
-        <span class="verse-ticker__item">"Trust in the LORD with all thine heart; and lean not unto thine own understanding." — Proverbs 3:5</span>
-        <span class="verse-ticker__item">"I can do all things through Christ which strengtheneth me." — Philippians 4:13</span>
-        <span class="verse-ticker__item">"Not forsaking the assembling of ourselves together." — Hebrews 10:25</span>
-        <span class="verse-ticker__item">"All things through Christ." — Philippians 4:13 · LBC Theme Verse 2026</span>
-      </div>
+  <!-- ══ PAGE HERO ══ -->
+  <section class="page-hero page-hero--terra" aria-labelledby="membersHeroTitle">
+    <div class="container page-hero__inner">
+      <span class="eyebrow eyebrow--light">For Our Church Family</span>
+      <h1 class="page-hero__title" id="membersHeroTitle">Member Resources</h1>
+      <p class="page-hero__sub">Give, stay connected, and watch services — everything you need in one place.</p>
     </div>
+  </section>
 
-    <!-- ══════════════════════════════════════
-         DASHBOARD GRID
-    ══════════════════════════════════════ -->
-    <section class="dashboard section" aria-labelledby="dashTitle">
-      <div class="container">
-        <header style="text-align:center;margin-bottom:var(--space-12);" class="sr">
-          <span class="section__label">Member Dashboard</span>
-          <h2 class="section__title" id="dashTitle">Everything in<br><em>One Place</em></h2>
-        </header>
-
-        <div class="dashboard-grid" role="list">
-
-          <!-- ── GIVING TILE ── -->
-          <article class="dash-tile dash-tile--giving dash-tile--terracotta sr" id="giving" role="listitem" aria-label="Online Giving">
-            <div class="dash-tile__badge" aria-label="Secure">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Secure
-            </div>
-            <div class="dash-tile__content">
-              <span class="dash-tile__label">Online Giving</span>
-              <h3 class="dash-tile__title">Give &amp; Support<br>God's Work</h3>
-              <p class="dash-tile__desc">Your faithful generosity fuels every ministry, every outreach, and every life changed at Landmark. Give easily and securely.</p>
-              <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top:1.5rem;background:rgba(255,255,255,0.20);color:var(--white);border:1.5px solid rgba(255,255,255,0.35);" aria-label="Give online">
-                Give Now
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- ── CALENDAR TILE ── -->
-          <article class="dash-tile dash-tile--calendar dash-tile--cream sr" id="calendar" role="listitem" aria-label="2026 Church Calendar">
-            <div class="dash-tile__badge" style="background:rgba(175,92,51,0.10);border-color:rgba(175,92,51,0.20);color:var(--accent-1);">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              2026
-            </div>
-            <img src="2026calendar.png" alt="LBC 2026 Annual Church Calendar — All Things Through Christ, Philippians 4:13" class="dash-tile__img-fill" loading="lazy">
-            <div class="dash-tile__overlay"></div>
-            <div class="dash-tile__content">
-              <span class="dash-tile__label" style="color:rgba(212,177,111,0.9);">Annual Calendar</span>
-              <h3 class="dash-tile__title">2026 Church<br>Calendar</h3>
-              <p class="dash-tile__desc">All Things Through Christ — Philippians 4:13. Download the full 2026 calendar and plan your year with LBC.</p>
-              <a href="2026calendar.png" download="LBC-2026-Calendar.png" class="btn" style="margin-top:1.5rem;background:rgba(255,255,255,0.18);color:var(--white);border:1.5px solid rgba(255,255,255,0.30);backdrop-filter:blur(8px);" aria-label="Download 2026 church calendar">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PDF
-              </a>
-            </div>
-          </article>
-
-          <!-- ── LIVE TILE ── -->
-          <article class="dash-tile dash-tile--live dash-tile--dark sr" id="livestream" role="listitem" aria-label="Watch the Live Stream on YouTube">
-            <div class="dash-tile__badge">
-              <span class="dash-tile__pulse" aria-label="Live indicator"></span>
-              Live Now
-            </div>
-            <div class="dash-tile__content">
-              <span class="dash-tile__label">YouTube Livestream</span>
-              <h3 class="dash-tile__title">Watch Live</h3>
-              <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" style="margin-top:1rem;font-size:.72rem;" aria-label="Watch live on YouTube">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.3 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.7 2.2.8C6.4 18.8 12 19 12 19s4.2 0 7-.2c.4 0 1.3 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.3V9.7l5.4 2.3-5.4 2.3z"/></svg>
-                YouTube Channel
-              </a>
-            </div>
-          </article>
-
-          <!-- ── ARCHIVE TILE ── -->
-          <article class="dash-tile dash-tile--archive dash-tile--slate sr" role="listitem" aria-label="Sermon Archive">
-            <div class="dash-tile__content">
-              <span class="dash-tile__label">Sermon Archive</span>
-              <h3 class="dash-tile__title">Past Services</h3>
-              <p class="dash-tile__desc" style="margin-top:.5rem;">Missed a message? Every service is archived on our YouTube channel — searchable, shareable, and free.</p>
-              <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" style="margin-top:1rem;font-size:.72rem;" aria-label="Browse the sermon archive on YouTube">
-                Browse Archive
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- ── PRAYER TILE ── -->
-          <article class="dash-tile dash-tile--prayer dash-tile--cream sr" role="listitem" aria-label="Submit a Prayer Request">
-            <div class="dash-tile__content">
-              <span class="dash-tile__label" style="color:var(--accent-1);">Prayer Requests</span>
-              <h3 class="dash-tile__title" style="color:var(--primary);">We're Praying<br>For You</h3>
-              <p class="dash-tile__desc" style="color:var(--primary-mid);">Submit a prayer request and our pastoral team will lift your need before the Lord. Nothing is too big or too small for God.</p>
-              <a href="contact.html" class="btn btn--primary" style="margin-top:1rem;font-size:.72rem;" aria-label="Submit a prayer request">
-                Submit a Request
-              </a>
-            </div>
-          </article>
-
-          <!-- ── BULLETIN TILE ── -->
-          <article class="dash-tile dash-tile--bulletin sr" style="background:linear-gradient(135deg,var(--primary) 0%,#4a3528 100%);color:var(--white);box-shadow:0 8px 32px rgba(58,42,30,0.25);" role="listitem" aria-label="Church Bulletin">
-            <div class="dash-tile__content">
-              <span class="dash-tile__label" style="color:rgba(212,177,111,0.8);">Weekly</span>
-              <h3 class="dash-tile__title">Church Bulletin</h3>
-              <p class="dash-tile__desc" style="color:rgba(255,255,255,0.72);">Upcoming events, announcements, and service notes. Grab a copy in the foyer or download the digital version here.</p>
-              <a href="contact.html" class="btn" style="margin-top:1rem;background:rgba(255,255,255,0.12);color:var(--white);border:1.5px solid rgba(255,255,255,0.22);font-size:.72rem;" aria-label="Download the weekly bulletin">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Bulletin
-              </a>
-            </div>
-          </article>
-
-          <!-- ── CONNECT TILE ── -->
-          <article class="dash-tile dash-tile--connect sr" style="background:linear-gradient(135deg,var(--accent-2) 0%,var(--accent-2-dark) 100%);color:var(--white);box-shadow:0 8px 32px rgba(74,109,124,0.30);" role="listitem" aria-label="Find your Sunday School class">
-            <div class="dash-tile__content">
-              <span class="dash-tile__label" style="color:rgba(255,255,255,0.65);">Sunday School</span>
-              <h3 class="dash-tile__title">Find Your Class</h3>
-              <p class="dash-tile__desc" style="color:rgba(255,255,255,0.80);">From KidZone to Higher Ground to Transformado — there's a Sunday School class made for you. Starts 10:00 AM every Sunday.</p>
-              <a href="connect.html" class="btn btn--ghost" style="margin-top:1rem;font-size:.72rem;" aria-label="Browse Sunday School classes">
-                Browse Classes
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </article>
-
-        </div><!-- /dashboard-grid -->
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         INTERACTIVE 2026 CALENDAR
-    ══════════════════════════════════════ -->
-    <section class="section" id="calendar" aria-labelledby="calTitle">
-      <div class="container">
-        <header style="text-align:center;margin-bottom:var(--space-8);" class="sr">
-          <span class="section__label">Church Schedule</span>
-          <h2 class="section__title" id="calTitle">2026 Calendar</h2>
-          <p style="color:var(--primary-mid);font-size:var(--text-sm);margin-top:var(--space-2);">All Things Through Christ — Philippians 4:13</p>
-        </header>
-
-        <div class="lbc-calendar sr">
-          <div class="lbc-calendar__top">
-            <h3 class="lbc-calendar__title" id="calMonthYear">Month 2026</h3>
-            <div class="lbc-calendar__nav" role="group" aria-label="Month navigation">
-              <button class="lbc-calendar__nav-btn" id="calPrev" aria-label="Previous month">&#8592;</button>
-              <div class="lbc-calendar__month-name" id="calMonthName" aria-live="polite"></div>
-              <button class="lbc-calendar__nav-btn" id="calNext" aria-label="Next month">&#8594;</button>
-            </div>
-          </div>
-          <div class="lbc-calendar__grid" id="calGrid" role="grid" aria-label="Calendar grid">
-            <div class="lbc-calendar__dow" role="columnheader">Sun</div>
-            <div class="lbc-calendar__dow" role="columnheader">Mon</div>
-            <div class="lbc-calendar__dow" role="columnheader">Tue</div>
-            <div class="lbc-calendar__dow" role="columnheader">Wed</div>
-            <div class="lbc-calendar__dow" role="columnheader">Thu</div>
-            <div class="lbc-calendar__dow" role="columnheader">Fri</div>
-            <div class="lbc-calendar__dow" role="columnheader">Sat</div>
-          </div>
-          <div class="lbc-calendar__events">
-            <h4 class="lbc-calendar__events-heading">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span id="calEventsHeading">Events This Month</span>
-            </h4>
-            <div class="lbc-calendar__events-list" id="calEventsList"></div>
-          </div>
-        </div>
-
-        <div style="text-align:center;margin-top:var(--space-6);">
-          <a href="2026calendar.png" download="LBC-2026-Calendar.png" class="btn btn--secondary" style="font-size:.72rem;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Printable Calendar
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <script>
-    (function(){
-      var EVENTS={
-        1:[{d:1,label:"New Year's Day",t:"holiday"},{d:4,label:"Vision Sunday"},{d:16,label:"Change Wars"},{d:18,label:"Sanctity of Human Life & Baby Dedication"}],
-        2:[{d:4,label:"Colorado Teen Extreme (4–6)",t:"special"},{d:8,label:"Super Sports Sunday"},{d:14,label:"Valentine's Day",t:"holiday"},{d:21,label:"Teen Soulwinning Marathon"},{d:22,label:"Teen Takeover Service"},{d:28,label:"Ladies' Tea in Rifle"}],
-        3:[{d:1,label:"Carnival Sunday Meeting"},{d:3,label:"Pastor's Birthday"},{d:5,label:"Patch The Pirate Awards"},{d:8,label:"Daylight Saving Time Begins",t:"holiday"},{d:29,label:"Bus Anniversary"}],
-        4:[{d:1,label:"Lord's Supper"},{d:5,label:"Resurrection Sunday",t:"special"},{d:12,label:"Carnival Sunday"},{d:24,label:"Rocky Mountain Ladies Conference (24–25)",t:"special"}],
-        5:[{d:10,label:"Mother's Day",t:"holiday"},{d:10,label:"WCBC Tour Group (AM)"},{d:17,label:"Anniversary Sunday",t:"special"},{d:17,label:"GSBC Tour Group"},{d:25,label:"Memorial Day",t:"holiday"},{d:27,label:"Patch The Pirate Awards"},{d:28,label:"TMBC Men's Conference (28–30)",t:"special"}],
-        6:[{d:7,label:"Promotion Sunday"},{d:11,label:"Patch The Pirate Campout (11–12)"},{d:14,label:"Flag Day",t:"holiday"},{d:14,label:"Friend Day",t:"special"},{d:17,label:"HAC Tour Group"},{d:21,label:"Father's Day",t:"holiday"},{d:23,label:"Kidz Crusade (23–25)",t:"special"}],
-        7:[{d:4,label:"Independence Day",t:"holiday"},{d:5,label:"God & Country Day",t:"special"},{d:9,label:"Family Camp (9–11)",t:"special"},{d:12,label:"RU Anniversary"},{d:18,label:"Hammond Youth Conference (18–24)",t:"special"},{d:19,label:"Teachers & Workers Appreciation"},{d:22,label:"The Lord's Supper"}],
-        8:[{d:1,label:"NW Colorado Ladies Conference",t:"special"},{d:22,label:"Teen Rafting Trip",t:"special"}],
-        9:[{d:11,label:"Patriot Day",t:"holiday"},{d:13,label:"First Responder's Sunday",t:"special"},{d:30,label:"The Lord's Supper"}],
-        10:[{d:4,label:"Nursery Appreciation"},{d:11,label:"Round-Up Sunday",t:"special"},{d:16,label:"Pastor & Mrs. Whiston's Wedding Anniversary"},{d:18,label:"Pumpkin Sunday"},{d:28,label:"Fall Carnival",t:"special"}],
-        11:[{d:1,label:"Daylight Saving Time Ends",t:"holiday"},{d:7,label:"Men's Prayer Breakfast"},{d:11,label:"Veterans Day",t:"holiday"},{d:15,label:"Spanish Ministry Anniversary"},{d:22,label:"Teen Pie Auction"},{d:24,label:"Prayer, Praise & Pie Night"},{d:26,label:"Thanksgiving Day",t:"holiday"}],
-        12:[{d:2,label:"Patch The Pirate Awards"},{d:6,label:"Vote in 2027 Budget"},{d:13,label:"Christmas Cantata (AM)",t:"special"},{d:13,label:"Master's Tree (AM)",t:"special"},{d:23,label:"Lord's Supper — Family"},{d:23,label:"Candlelight Service",t:"special"},{d:25,label:"Christmas Day",t:"holiday"},{d:31,label:"Soup, Chili & Bread Cookoff",t:"special"}]
-      };
-      var MN=["January","February","March","April","May","June","July","August","September","October","November","December"];
-      var MS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-      var now=new Date(), yr=2026, mo=(now.getFullYear()===2026?now.getMonth()+1:1);
-
-      function render(){
-        var grid=document.getElementById('calGrid');
-        var nameEl=document.getElementById('calMonthName');
-        var headEl=document.getElementById('calEventsHeading');
-        var listEl=document.getElementById('calEventsList');
-        var titleEl=document.getElementById('calMonthYear');
-        // Remove old day cells only
-        grid.querySelectorAll('.lbc-calendar__day').forEach(function(el){el.remove();});
-        nameEl.textContent=MN[mo-1];
-        titleEl.textContent=MN[mo-1]+' '+yr;
-        headEl.textContent=MN[mo-1]+' Events';
-        var first=new Date(yr,mo-1,1).getDay();
-        var days=new Date(yr,mo,0).getDate();
-        var today=new Date();
-        var isCur=(today.getFullYear()===yr&&today.getMonth()+1===mo);
-        var evts=EVENTS[mo]||[];
-        for(var i=0;i<first;i++){var e=document.createElement('div');e.className='lbc-calendar__day lbc-calendar__day--empty';e.setAttribute('role','gridcell');grid.appendChild(e);}
-        for(var d=1;d<=days;d++){
-          var de=evts.filter(function(ev){return ev.d===d;});
-          var cell=document.createElement('div');
-          var cls='lbc-calendar__day';
-          if(isCur&&d===today.getDate())cls+=' lbc-calendar__day--today';
-          if(de.length)cls+=' lbc-calendar__day--has-event';
-          cell.className=cls;cell.setAttribute('role','gridcell');
-          if(de.length){cell.setAttribute('tabindex','0');cell.setAttribute('aria-label',d+' '+MN[mo-1]+': '+de.map(function(ev){return ev.label;}).join(', '));}
-          var n=document.createElement('span');n.className='lbc-calendar__day-num';n.textContent=d;cell.appendChild(n);
-          if(de.length){var dot=document.createElement('span');dot.className='lbc-calendar__dot';if(de[0].t==='special')dot.style.background='var(--accent-2)';if(de[0].t==='holiday')dot.style.background='#8A6F3E';cell.appendChild(dot);}
-          grid.appendChild(cell);
-        }
-        if(!evts.length){listEl.innerHTML='<p class="lbc-calendar__empty-msg">No scheduled events this month.</p>';}
-        else{listEl.innerHTML=evts.map(function(ev){var c=ev.t==='special'?' lbc-calendar__event--special':ev.t==='holiday'?' lbc-calendar__event--holiday':'';return'<div class="lbc-calendar__event'+c+'"><span class="lbc-calendar__event-date">'+MS[mo-1]+' '+ev.d+'</span><span class="lbc-calendar__event-name">'+ev.label+'</span></div>';}).join('');}
-      }
-      document.getElementById('calPrev').addEventListener('click',function(){mo--;if(mo<1)mo=12;render();});
-      document.getElementById('calNext').addEventListener('click',function(){mo++;if(mo>12)mo=1;render();});
-      render();
-    })();
-    </script>
-
-    <!-- ── CLOSING BANNER ── -->
-    <section class="mem-closing" aria-label="Closing member encouragement">
-      <div class="container mem-closing__inner">
-        <span class="section__label" style="color:var(--accent-1-light);">2026 Theme</span>
-        <blockquote class="mem-closing__verse sr">"I can do all things through Christ which strengtheneth me."</blockquote>
-        <cite class="sr">— Philippians 4:13 KJV</cite>
-        <h2 class="sr" style="margin-top:2rem;">Not Forsaking the Assembling<br><em style="font-style:italic;">of Ourselves Together</em></h2>
-        <p class="sr">Sunday School 10:00 AM · Worship 11:00 AM · Evening 5:00 PM · Wednesday Bible Study 6:30 PM</p>
-        <div class="mem-closing__actions sr">
-          <a href="contact.html" class="btn btn--primary">Contact Us</a>
-          <a href="connect.html" class="btn btn--ghost">Find Your Class</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ── FOOTER ── -->
-  <footer class="footer" aria-label="Site footer">
+  <!-- ══ DASHBOARD ══ -->
+  <section class="section section--light" aria-label="Member dashboard">
     <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="logo.png" alt="Landmark Baptist Church" class="footer__logo">
-          <p class="footer__tagline">Looking Forward to Great Things</p>
+
+      <div class="dashboard" role="list">
+
+        <!-- GIVING -->
+        <article class="dash-tile dash-tile--terra dash-tile--4" id="giving" role="listitem" aria-label="Online Giving">
+          <div class="dash-tile__badge">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Secure
+          </div>
+          <p class="dash-tile__label">Online Giving</p>
+          <h2 class="dash-tile__title">Give &amp;<br>Support God's Work</h2>
+          <p class="dash-tile__desc">Your faithful generosity fuels every ministry, every outreach, and every life changed at Landmark. Give easily and securely online.</p>
+          <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--school">
+            Give Now
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- LIVE STREAM -->
+        <article class="dash-tile dash-tile--dark dash-tile--4" id="livestream" role="listitem" aria-label="Watch Livestream">
+          <div class="dash-tile__badge">
+            <span class="dash-tile__pulse"></span>
+            Live Sundays
+          </div>
+          <p class="dash-tile__label">YouTube Livestream</p>
+          <h2 class="dash-tile__title">Watch<br>Live Online</h2>
+          <p class="dash-tile__desc">Can't make it in person? Watch our Sunday services live at 11:00 AM and 5:00 PM every week on YouTube — free and always available.</p>
+          <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.3 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.7 2.2.8C6.4 18.8 12 19 12 19s4.2 0 7-.2c.4 0 1.3 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.3V9.7l5.4 2.3-5.4 2.3z"/></svg>
+            Open YouTube
+          </a>
+        </article>
+
+        <!-- PRAYER REQUEST -->
+        <article class="dash-tile dash-tile--slate dash-tile--4" role="listitem" aria-label="Submit a Prayer Request">
+          <div class="dash-tile__badge">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Prayer
+          </div>
+          <p class="dash-tile__label">We're Praying For You</p>
+          <h2 class="dash-tile__title">Submit a<br>Prayer Request</h2>
+          <p class="dash-tile__desc">Our pastoral team lifts every request before the Lord. Nothing is too big or too small for God.</p>
+          <a href="contact.html" class="btn btn--ghost">Submit Request</a>
+        </article>
+
+        <!-- SERMON ARCHIVE -->
+        <article class="dash-tile dash-tile--cream dash-tile--4" role="listitem" aria-label="Sermon Archive">
+          <div class="dash-tile__badge">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Archive
+          </div>
+          <p class="dash-tile__label">Past Messages</p>
+          <h2 class="dash-tile__title">Sermon Archive</h2>
+          <p class="dash-tile__desc">Every service is archived on our YouTube channel — searchable, shareable, and always free.</p>
+          <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm" style="margin-top:auto;">Browse Archive</a>
+        </article>
+
+        <!-- BULLETIN -->
+        <article class="dash-tile dash-tile--cream dash-tile--4" role="listitem" aria-label="Weekly Bulletin">
+          <div class="dash-tile__badge" style="background:rgba(58,42,30,0.08);border-color:rgba(58,42,30,0.15);color:var(--espresso);">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Weekly
+          </div>
+          <p class="dash-tile__label">Church Bulletin</p>
+          <h2 class="dash-tile__title">Weekly Bulletin</h2>
+          <p class="dash-tile__desc">Upcoming events, announcements, and service notes. Pick one up in the foyer every Sunday.</p>
+          <a href="contact.html" class="btn btn--secondary btn--sm" style="margin-top:auto;">Contact Office</a>
+        </article>
+
+        <!-- CONNECT CLASSES -->
+        <article class="dash-tile dash-tile--espresso dash-tile--4" role="listitem" aria-label="Find Your Sunday School Class">
+          <div class="dash-tile__badge">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Classes
+          </div>
+          <p class="dash-tile__label">Sunday School · 10:00 AM</p>
+          <h2 class="dash-tile__title">Find Your Class</h2>
+          <p class="dash-tile__desc">KidZone, Teen Vision, Crossroads, Higher Ground, Transformado — find the class made for you.</p>
+          <a href="connect.html" class="btn btn--ghost">Browse Classes</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INTERACTIVE 2026 CALENDAR ══ -->
+  <section class="section section--cream" id="calendar" aria-labelledby="calTitle">
+    <div class="container">
+
+      <div style="text-align:center;margin-bottom:var(--sp-10);">
+        <span class="eyebrow">Church Schedule</span>
+        <h2 class="section__title" id="calTitle">2026 <em>Calendar</em></h2>
+        <div class="divider divider--center"></div>
+        <p class="section__sub" style="margin-inline:auto;text-align:center;">"I can do all things through Christ which strengtheneth me." — Philippians 4:13</p>
+      </div>
+
+      <div class="lbc-cal" style="max-width:860px;margin-inline:auto;">
+        <div class="lbc-cal__header">
+          <button class="lbc-cal__nav-btn" id="calPrev" aria-label="Previous month">&#8592;</button>
+          <h3 class="lbc-cal__month" id="calMonthYear" aria-live="polite">January 2026</h3>
+          <button class="lbc-cal__nav-btn" id="calNext" aria-label="Next month">&#8594;</button>
         </div>
-        <div class="footer__links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="connect.html">Connect</a></li>
-            <li><a href="ministries.html">Ministries</a></li>
-            <li><a href="members.html">Members</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <div class="lbc-cal__grid" id="calGrid" role="grid" aria-label="Calendar">
+          <div class="lbc-cal__dow" role="columnheader">Sun</div>
+          <div class="lbc-cal__dow" role="columnheader">Mon</div>
+          <div class="lbc-cal__dow" role="columnheader">Tue</div>
+          <div class="lbc-cal__dow" role="columnheader">Wed</div>
+          <div class="lbc-cal__dow" role="columnheader">Thu</div>
+          <div class="lbc-cal__dow" role="columnheader">Fri</div>
+          <div class="lbc-cal__dow" role="columnheader">Sat</div>
         </div>
-        <div class="footer__links">
-          <h4>Ministries</h4>
-          <ul>
-            <li><a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer">LBS School</a></li>
-            <li><a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li>
-            <li><a href="ministries.html#ru-recovery">RU Recovery</a></li>
-          </ul>
-        </div>
-        <div class="footer__contact">
-          <h4>Find Us</h4>
-          <p>1600 Ute Avenue<br>Grand Junction, CO 81501</p>
-          <p><a href="tel:9702437617">(970) 243-7617</a></p>
-          <p class="footer__hours">Office: Tue–Fri · 8am–5pm</p>
+        <div class="lbc-cal__events">
+          <h4 class="lbc-cal__events-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span id="calEventsHeading">Events This Month</span>
+          </h4>
+          <div id="calEventsList"></div>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 Landmark Baptist Church. All rights reserved.</p>
-        <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+
+      <div style="text-align:center;margin-top:var(--sp-8);">
+        <a href="2026calendar.png" download="LBC-2026-Calendar.png" class="btn btn--secondary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Printable Calendar
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ CLOSING VERSE ══ -->
+  <section class="cta-strip" aria-label="Theme verse">
+    <div class="container">
+      <div class="cta-strip__inner">
+        <div class="cta-strip__text">
+          <h2 class="section__title section__title--light" style="font-size:var(--text-2xl);margin-bottom:var(--sp-3);">2026 Theme Verse</h2>
+          <p style="font-family:var(--font-serif);font-style:italic;font-size:var(--text-lg);color:rgba(255,255,255,0.90);">"I can do all things through Christ which strengtheneth me." — Philippians 4:13 (KJV)</p>
+        </div>
+        <div style="display:flex;gap:var(--sp-4);flex-wrap:wrap;flex-shrink:0;">
+          <a href="index.html"   class="btn btn--school">Back to Home</a>
+          <a href="contact.html" class="btn btn--outline-light">Contact Us</a>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <a href="selah.html" class="selah-preview" aria-label="Visit Selah Coffee Co.">
-    <div class="selah-preview__dot" aria-hidden="true"></div>
-    Selah Coffee Co.
-  </a>
+</main>
 
-  <script src="script.js" defer></script>
+<!-- ══ FOOTER ══ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="logo.png" alt="Landmark Baptist Church" class="footer__logo">
+        <p class="footer__tagline">Love · Share · Reach</p>
+        <p class="footer__mission">2026 Theme: All Things Through Christ</p>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Navigate</h4>
+        <ul class="footer__links">
+          <li><a href="index.html"      class="footer__link">Home</a></li>
+          <li><a href="connect.html"    class="footer__link">Connect</a></li>
+          <li><a href="ministries.html" class="footer__link">Ministries</a></li>
+          <li><a href="members.html"    class="footer__link">Members</a></li>
+          <li><a href="contact.html"    class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Service Times</h4>
+        <ul class="footer__links">
+          <li class="footer__link">Sun School · 10:00 AM</li>
+          <li class="footer__link">Worship · 11:00 AM</li>
+          <li class="footer__link">Evening · 5:00 PM</li>
+          <li class="footer__link">Wed Bible Study · 6:30 PM</li>
+          <li class="footer__link">RU Recovery · Fri 6:30 PM</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Find Us</h4>
+        <address class="footer__address">
+          1600 Ute Avenue<br>Grand Junction, CO 81501<br>
+          <a href="tel:+19702437617">(970) 243-7617</a><br>
+          Office: Tue–Fri · 8am–5pm
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="yr">2026</span> Landmark Baptist Church · Grand Junction, CO</p>
+      <a href="selah.html" class="selah-pill">☕ Selah Coffee Co.</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ── INTERACTIVE CALENDAR ──
+(function(){
+  var E={
+    1:[{d:1,label:"New Year's Day",t:"h"},{d:4,label:"Vision Sunday"},{d:16,label:"Change Wars"},{d:18,label:"Sanctity of Human Life & Baby Dedication"}],
+    2:[{d:4,label:"Colorado Teen Extreme (4–6)",t:"s"},{d:8,label:"Super Sports Sunday"},{d:14,label:"Valentine's Day",t:"h"},{d:21,label:"Teen Soulwinning Marathon"},{d:22,label:"Teen Takeover Service"},{d:28,label:"Ladies' Tea in Rifle"}],
+    3:[{d:1,label:"Carnival Sunday Meeting"},{d:3,label:"Pastor's Birthday"},{d:5,label:"Patch The Pirate Awards"},{d:8,label:"Daylight Saving Time Begins",t:"h"},{d:29,label:"Bus Anniversary"}],
+    4:[{d:1,label:"Lord's Supper"},{d:5,label:"Resurrection Sunday",t:"s"},{d:12,label:"Carnival Sunday"},{d:24,label:"Rocky Mountain Ladies Conference (24–25)",t:"s"}],
+    5:[{d:10,label:"Mother's Day",t:"h"},{d:10,label:"WCBC Tour Group (AM)"},{d:17,label:"Anniversary Sunday",t:"s"},{d:25,label:"Memorial Day",t:"h"},{d:27,label:"Patch The Pirate Awards"},{d:28,label:"TMBC Men's Conference (28–30)",t:"s"}],
+    6:[{d:7,label:"Promotion Sunday"},{d:11,label:"Patch The Pirate Campout (11–12)"},{d:14,label:"Flag Day",t:"h"},{d:14,label:"Friend Day",t:"s"},{d:21,label:"Father's Day",t:"h"},{d:23,label:"Kidz Crusade (23–25)",t:"s"}],
+    7:[{d:4,label:"Independence Day",t:"h"},{d:5,label:"God & Country Day",t:"s"},{d:9,label:"Family Camp (9–11)",t:"s"},{d:12,label:"RU Anniversary"},{d:18,label:"Hammond Youth Conference (18–24)",t:"s"},{d:19,label:"Teachers & Workers Appreciation"},{d:22,label:"The Lord's Supper"}],
+    8:[{d:1,label:"NW Colorado Ladies Conference",t:"s"},{d:22,label:"Teen Rafting Trip",t:"s"}],
+    9:[{d:11,label:"Patriot Day",t:"h"},{d:13,label:"First Responder's Sunday",t:"s"},{d:30,label:"The Lord's Supper"}],
+    10:[{d:4,label:"Nursery Appreciation"},{d:11,label:"Round-Up Sunday",t:"s"},{d:16,label:"Pastor & Mrs. Whiston's Wedding Anniversary"},{d:18,label:"Pumpkin Sunday"},{d:28,label:"Fall Carnival",t:"s"}],
+    11:[{d:1,label:"Daylight Saving Time Ends",t:"h"},{d:7,label:"Men's Prayer Breakfast"},{d:11,label:"Veterans Day",t:"h"},{d:15,label:"Spanish Ministry Anniversary"},{d:22,label:"Teen Pie Auction"},{d:24,label:"Prayer, Praise & Pie Night"},{d:26,label:"Thanksgiving Day",t:"h"}],
+    12:[{d:2,label:"Patch The Pirate Awards"},{d:6,label:"Vote in 2027 Budget"},{d:13,label:"Christmas Cantata (AM)",t:"s"},{d:13,label:"Master's Tree (AM)",t:"s"},{d:23,label:"Lord's Supper — Family"},{d:23,label:"Candlelight Service",t:"s"},{d:25,label:"Christmas Day",t:"h"},{d:31,label:"Soup, Chili & Bread Cookoff",t:"s"}]
+  };
+  var MN=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var MS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var now=new Date(), yr=2026;
+  var mo=now.getFullYear()===2026?now.getMonth()+1:1;
+
+  function render(){
+    var grid=document.getElementById('calGrid');
+    var titleEl=document.getElementById('calMonthYear');
+    var headEl=document.getElementById('calEventsHeading');
+    var listEl=document.getElementById('calEventsList');
+    grid.querySelectorAll('.lbc-cal__day').forEach(function(el){el.remove();});
+    titleEl.textContent=MN[mo-1]+' 2026';
+    headEl.textContent=MN[mo-1]+' Events';
+    var first=new Date(yr,mo-1,1).getDay();
+    var days=new Date(yr,mo,0).getDate();
+    var today=new Date();
+    var isCur=today.getFullYear()===yr&&today.getMonth()+1===mo;
+    var evts=E[mo]||[];
+    for(var i=0;i<first;i++){var em=document.createElement('div');em.className='lbc-cal__day lbc-cal__day--empty';em.setAttribute('role','gridcell');grid.appendChild(em);}
+    for(var d=1;d<=days;d++){
+      var de=evts.filter(function(ev){return ev.d===d;});
+      var cell=document.createElement('div');
+      var cls='lbc-cal__day';
+      if(isCur&&d===today.getDate())cls+=' lbc-cal__day--today';
+      if(de.length)cls+=' lbc-cal__day--event';
+      cell.className=cls;cell.setAttribute('role','gridcell');
+      if(de.length){cell.setAttribute('tabindex','0');cell.title=de.map(function(ev){return ev.label;}).join(', ');}
+      var n=document.createElement('span');n.className='lbc-cal__day-num';n.textContent=d;cell.appendChild(n);
+      if(de.length){var dot=document.createElement('span');dot.className='lbc-cal__dot';if(de[0].t==='s')dot.style.background='var(--slate)';if(de[0].t==='h')dot.style.background='#8A6F3E';cell.appendChild(dot);}
+      grid.appendChild(cell);
+    }
+    if(!evts.length){listEl.innerHTML='<p class="lbc-cal__empty">No events scheduled this month.</p>';}
+    else{listEl.innerHTML=evts.map(function(ev){var c=ev.t==='s'?' lbc-cal__event--special':ev.t==='h'?' lbc-cal__event--holiday':'';return'<div class="lbc-cal__event'+c+'"><span class="lbc-cal__event-date">'+MS[mo-1]+' '+ev.d+'</span><span class="lbc-cal__event-name">'+ev.label+'</span></div>';}).join('');}
+  }
+  document.getElementById('calPrev').addEventListener('click',function(){mo--;if(mo<1)mo=12;render();});
+  document.getElementById('calNext').addEventListener('click',function(){mo++;if(mo>12)mo=1;render();});
+  render();
+})();
+</script>
 </body>
 </html>

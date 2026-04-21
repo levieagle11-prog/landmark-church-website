@@ -3,485 +3,443 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Landmark Baptist Church — Grand Junction, CO. A warm, Bible-believing church family. Sunday services at 10:00 AM & 11:00 AM. Looking Forward to Great Things.">
-  <meta name="theme-color" content="#3A2A1E">
+  <meta name="description" content="Landmark Baptist Church — Grand Junction, CO. A warm, Bible-believing church family established in 2001. Join us Sundays at 10AM & 11AM.">
   <title>Landmark Baptist Church | Grand Junction, CO</title>
   <link rel="icon" type="image/png" href="logo.png">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-
-  <!-- GSAP + ScrollTrigger + Lenis -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
-
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ── NAVIGATION ── -->
-  <header class="header" id="header">
-    <nav class="nav" aria-label="Main navigation">
-      <div class="nav__container">
-        <a href="index.html" class="nav__logo" aria-label="Landmark Baptist Church home">
-          <img src="logo.png" alt="Landmark Baptist Church" class="nav__logo-img">
-        </a>
+<!-- ══ HEADER ══ -->
+<header class="header" id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo" aria-label="Landmark Baptist Church home">
+        <img src="logo.png" alt="Landmark Baptist Church" class="nav__logo-img">
+      </a>
 
-        <ul class="nav__menu" id="navMenu" role="list">
-          <li class="nav__item"><a href="index.html"      class="nav__link nav__link--active">Home</a></li>
-          <li class="nav__item"><a href="connect.html"    class="nav__link">Connect</a></li>
-          <li class="nav__item"><a href="ministries.html" class="nav__link">Ministries</a></li>
-          <li class="nav__item"><a href="members.html"    class="nav__link">Members</a></li>
-          <li class="nav__item"><a href="contact.html"    class="nav__link">Contact</a></li>
-          <li class="nav__item"><a href="#spanish"        class="nav__link">Español</a></li>
-        </ul>
-
-        <div class="nav__actions">
-          <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--give" aria-label="Give online">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            Give
-          </a>
-          <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:.72rem; padding:.6rem 1.2rem;">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.4 0-1.3 0-2 .8-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.7 2.2.8C6.4 18.8 12 19 12 19s4.2 0 7-.2c.4 0 1.3 0 2-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.3V9.7l5.4 2.3-5.4 2.3z"/></svg>
-            Watch Live
-          </a>
-          <a href="contact.html" class="btn btn--secondary" style="font-size:.72rem; padding:.6rem 1.2rem;">Plan A Visit</a>
-        </div>
-
-        <button class="nav__hamburger" id="navHamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Panel -->
-    <div class="nav__panel" id="navPanel" role="dialog" aria-label="Mobile navigation">
-      <ul role="list" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;list-style:none;">
-        <li><a href="index.html"      class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Home</a></li>
-        <li><a href="connect.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Connect</a></li>
-        <li><a href="ministries.html" class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Ministries</a></li>
-        <li><a href="members.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Members</a></li>
-        <li><a href="contact.html"    class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Contact</a></li>
-        <li><a href="#spanish"        class="nav__link" style="font-size:2rem;font-family:'Playfair Display',serif;">Español</a></li>
+      <ul class="nav__menu" role="list">
+        <li><a href="index.html"      class="nav__link nav__link--active">Home</a></li>
+        <li><a href="connect.html"    class="nav__link">Connect</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="members.html"    class="nav__link">Members</a></li>
+        <li><a href="contact.html"    class="nav__link">Contact</a></li>
+        <li><a href="selah.html"      class="nav__link">Selah Coffee</a></li>
       </ul>
-      <div style="margin-top:2rem;display:flex;gap:1rem;">
-        <a href="contact.html" class="btn btn--primary">Plan A Visit</a>
-        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener" class="btn btn--secondary">Watch Live</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-
-    <!-- ══════════════════════════════════════
-         HERO
-    ══════════════════════════════════════ -->
-    <section class="hero" id="hero" aria-label="Welcome to Landmark Baptist Church">
-      <div class="hero__bg" id="heroBg"></div>
-      <div class="hero__texture"></div>
-
-      <!-- Decorative mountain SVG silhouette -->
-      <svg class="hero__mountain-svg" id="heroMountain" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="#AF5C33" d="M0,288L60,261.3C120,235,240,181,360,160C480,139,600,149,720,160C840,171,960,181,1080,165.3C1200,149,1320,107,1380,85.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/>
-        <path fill="#4A6D7C" d="M0,320L60,304C120,288,240,256,360,229.3C480,203,600,181,720,186.7C840,192,960,224,1080,224C1200,224,1320,192,1380,176L1440,160L1440,320L0,320Z" opacity="0.5"/>
-      </svg>
-
-      <div class="hero__content container">
-        <span class="hero__eyebrow" id="heroEyebrow">
-          Grand Junction, Colorado · Est. 2001
-        </span>
-
-        <h1 class="hero__title" id="heroTitle">
-          Looking Forward<br>
-          to <em class="accent">Great</em> <em class="italic">Things.</em>
-        </h1>
-
-        <p class="hero__subtitle" id="heroSubtitle">
-          A warm, Bible-believing church family rooted in the heart of the Grand Valley.
-          Everyone is welcome here — come as you are.
-        </p>
-
-        <div class="hero__actions" id="heroActions">
-          <a href="contact.html" class="btn btn--primary">
-            Plan Your First Visit
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="#services" class="btn btn--ghost">
-            Service Times
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         SERVICE TIMES — Frosted Glass Card
-    ══════════════════════════════════════ -->
-    <section class="service-times" id="services" aria-labelledby="stTitle">
-      <div class="container">
-        <div class="service-times__card sr" id="stCard">
-          <div class="service-times__header">
-            <h2 class="service-times__heading" id="stTitle">Join Us This Sunday</h2>
-          </div>
-          <div class="service-times__item">
-            <span class="service-times__day">Sunday</span>
-            <span class="service-times__name">Sunday School</span>
-            <span class="service-times__time">10:00 AM</span>
-          </div>
-          <div class="service-times__divider" aria-hidden="true"></div>
-          <div class="service-times__item">
-            <span class="service-times__day">Sunday</span>
-            <span class="service-times__name">Morning Worship</span>
-            <span class="service-times__time">11:00 AM</span>
-          </div>
-          <div class="service-times__divider" aria-hidden="true"></div>
-          <div class="service-times__item">
-            <span class="service-times__day">Sunday</span>
-            <span class="service-times__name">Evening Service</span>
-            <span class="service-times__time">5:00 PM</span>
-          </div>
-          <div class="service-times__divider" aria-hidden="true"></div>
-          <div class="service-times__item">
-            <span class="service-times__day">Wednesday</span>
-            <span class="service-times__name">Bible Study &amp; Prayer</span>
-            <span class="service-times__time">6:30 PM</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         HISTORY / WELCOME SNIPPET
-    ══════════════════════════════════════ -->
-    <section class="history section" id="about" aria-labelledby="histTitle">
-      <div class="container">
-        <div class="history__grid">
-          <div class="history__visual sr">
-            <div class="history__logo-wrap">
-              <img src="logo.png" alt="Landmark Baptist Church logo" class="history__logo">
-            </div>
-          </div>
-          <div class="history__content sr">
-            <span class="section__label">Our Story</span>
-            <h2 class="section__title" id="histTitle">
-              A Church Built on<br><em>Faith &amp; Community</em>
-            </h2>
-            <p class="history__body">
-              Established in 2001, Landmark Baptist Church has been a beacon of hope and a gathering place for families across the Grand Valley. Nestled in the breathtaking landscape of Grand Junction, Colorado, we are a church that believes the Bible — every word of it — and loves every person who walks through our doors.
-            </p>
-            <p class="history__body">
-              Our mission is simple: <strong>Love. Share. Reach.</strong> We love God, we share His Word, and we reach our community with the life-changing message of the Gospel. Whether you've been in church your whole life or you're walking in for the very first time, you belong here.
-            </p>
-
-            <blockquote class="history__verse">
-              <p>"Looking forward to great things."</p>
-              <cite>— The Heart of LBC</cite>
-            </blockquote>
-
-            <div class="history__stats">
-              <div class="history__stat">
-                <span class="history__stat-num">2001</span>
-                <span class="history__stat-label">Established</span>
-              </div>
-              <div class="history__stat">
-                <span class="history__stat-num">9+</span>
-                <span class="history__stat-label">Ministries</span>
-              </div>
-              <div class="history__stat">
-                <span class="history__stat-num">2</span>
-                <span class="history__stat-label">Languages</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         PASTORS GRID
-    ══════════════════════════════════════ -->
-    <section class="pastors section" id="pastors" aria-labelledby="pastTitle">
-      <div class="container">
-        <header class="pastors__header sr">
-          <span class="section__label">Our Leadership</span>
-          <h2 class="section__title" id="pastTitle">Meet the <em>Pastors</em></h2>
-          <p class="section__subtitle">Faithful shepherds dedicated to guiding our church family with God's Word and a servant's heart.</p>
-        </header>
-
-        <div class="pastors__grid" role="list">
-
-          <!-- Pastor Jasper Whiston -->
-          <article class="pastor-card sr" role="listitem" aria-label="Pastor Jasper Whiston">
-            <div class="pastor-card__img-wrap">
-              <img src="whistons.jpeg" alt="Pastor Jasper Whiston and family" class="pastor-card__img" loading="lazy">
-            </div>
-            <div class="pastor-card__body">
-              <span class="pastor-card__role">Senior Pastor</span>
-              <h3 class="pastor-card__name">Jasper Whiston</h3>
-              <p class="pastor-card__bio">Pastor Whiston leads our congregation with a deep love for God's Word and a passion for reaching the Grand Valley community with the Gospel of Jesus Christ.</p>
-              <a href="contact.html" class="pastor-card__contact" aria-label="Contact Pastor Whiston">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Get in Touch
-              </a>
-            </div>
-          </article>
-
-          <!-- Spencer Jones -->
-          <article class="pastor-card sr" role="listitem" aria-label="Youth Pastor Spencer Jones">
-            <div class="pastor-card__img-wrap">
-              <img src="spencerjones.png" alt="Youth Director Spencer Jones" class="pastor-card__img" loading="lazy">
-            </div>
-            <div class="pastor-card__body">
-              <span class="pastor-card__role">Youth Director</span>
-              <h3 class="pastor-card__name">Spencer Jones</h3>
-              <p class="pastor-card__bio">Spencer and Tasha Jones invest deeply in the teenage years, providing a Christ-centered foundation for youth through weekly meetings, monthly activities, and annual trips.</p>
-              <a href="mailto:sjones@lbcgj.com" class="pastor-card__contact">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                sjones@lbcgj.com
-              </a>
-            </div>
-          </article>
-
-          <!-- Jose Alvarez -->
-          <article class="pastor-card sr" role="listitem" aria-label="Spanish Pastor Jose Alvarez">
-            <div class="pastor-card__img-wrap">
-              <img src="josealvarez.png" alt="Spanish Pastor Jose Alvarez" class="pastor-card__img" loading="lazy">
-            </div>
-            <div class="pastor-card__body">
-              <span class="pastor-card__role">Spanish Pastor — Iglesia Bautista Los Linderos</span>
-              <h3 class="pastor-card__name">Jose Alvarez</h3>
-              <p class="pastor-card__bio">Pastor Alvarez leads our vibrant Spanish-speaking congregation with warmth and dedication, serving our beloved Hispanic community throughout the Grand Valley.</p>
-              <a href="mailto:jalvarez@lbcgj.com" class="pastor-card__contact">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                jalvarez@lbcgj.com
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         WHAT WE BELIEVE — ACCORDION
-    ══════════════════════════════════════ -->
-    <section class="beliefs section" id="beliefs" aria-labelledby="beliefsTitle">
-      <div class="container">
-        <div class="beliefs__layout">
-
-          <div class="beliefs__intro sr">
-            <span class="section__label">Statement of Faith</span>
-            <h2 class="section__title" id="beliefsTitle">What We <em>Believe</em></h2>
-            <p>At Landmark Baptist Church, we believe the Bible — the King James Bible — to be the inspired, infallible, inerrant Word of God. Every sermon, every class, every conversation is anchored in its unchanging truth.</p>
-            <p style="margin-top:1rem;">Our Statement of Faith is not exhaustive, but it declares the essentials of Bible-believing Christianity that guide everything we do.</p>
-            <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;">
-              Ask a Question
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            </a>
-          </div>
-
-          <div class="accordion sr" id="accordion" role="list">
-
-            <div class="accordion__item" role="listitem">
-              <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-1">
-                <span class="accordion__num">I</span>
-                <span>The Holy Bible</span>
-                <span class="accordion__icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </span>
-              </button>
-              <div class="accordion__body" id="acc-1" role="region">
-                <div class="accordion__inner">
-                  <p class="accordion__text">The Scriptures of the Old and New Testament were given by inspiration of God and are the only infallible, inerrant rule of faith and practice. We believe the King James Bible to be God's preserved Word for English-speaking people, authoritative in every matter it addresses.</p>
-                  <div class="accordion__verses"><span class="accordion__verse-tag">Matthew 4:4</span><span class="accordion__verse-tag">Psalm 119:89</span><span class="accordion__verse-tag">II Timothy 3:16–17</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion__item" role="listitem">
-              <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-2">
-                <span class="accordion__num">II</span>
-                <span>The Triune God</span>
-                <span class="accordion__icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </span>
-              </button>
-              <div class="accordion__body" id="acc-2" role="region">
-                <div class="accordion__inner">
-                  <p class="accordion__text">There is one living and true God, revealed as Creator, Preserver, and Righteous Governor of the universe. The Father, the Son, and the Holy Ghost make up the Godhead — three Persons, yet one God, infinitely wise and good, alone worthy of our supreme love and worship.</p>
-                  <div class="accordion__verses"><span class="accordion__verse-tag">Deuteronomy 6:4</span><span class="accordion__verse-tag">I John 5:7</span><span class="accordion__verse-tag">Matthew 28:19</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion__item" role="listitem">
-              <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-3">
-                <span class="accordion__num">III</span>
-                <span>Jesus Christ</span>
-                <span class="accordion__icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </span>
-              </button>
-              <div class="accordion__body" id="acc-3" role="region">
-                <div class="accordion__inner">
-                  <p class="accordion__text">Jesus Christ is God manifest in the flesh — in His divine nature, truly God; in His human nature, truly man; 100% both. The virgin-born, sinless, eternally begotten Son of God. Once crucified, He is now risen and glorified — our ever-present Saviour and Lord.</p>
-                  <div class="accordion__verses"><span class="accordion__verse-tag">John 1:1–4, 14</span><span class="accordion__verse-tag">Philippians 2:5–11</span><span class="accordion__verse-tag">John 3:16</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion__item" role="listitem">
-              <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-4">
-                <span class="accordion__num">IV</span>
-                <span>The Holy Ghost</span>
-                <span class="accordion__icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </span>
-              </button>
-              <div class="accordion__body" id="acc-4" role="region">
-                <div class="accordion__inner">
-                  <p class="accordion__text">The Holy Ghost possesses all the attributes of God. He is personal and indwells every believer — serving as Reprover, Comforter, Guide, Sanctifier, and the Seal of our Redemption. He convicts the sinner and regenerates the believer.</p>
-                  <div class="accordion__verses"><span class="accordion__verse-tag">John 16:7–14</span><span class="accordion__verse-tag">John 14:16–17</span><span class="accordion__verse-tag">Ephesians 1:13–14</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion__item" role="listitem">
-              <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-5">
-                <span class="accordion__num">V–VI</span>
-                <span>Salvation by Grace Through Faith</span>
-                <span class="accordion__icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </span>
-              </button>
-              <div class="accordion__body" id="acc-5" role="region">
-                <div class="accordion__inner">
-                  <p class="accordion__text">Man was created innocent but fell into sin. Salvation is a free gift offered by God to man, wholly based on grace through personal faith in Jesus Christ — a genuine "born-again" experience. Not by works, not by baptism, not by church attendance — but by trusting Christ alone as personal Saviour.</p>
-                  <div class="accordion__verses"><span class="accordion__verse-tag">Romans 6:23</span><span class="accordion__verse-tag">Ephesians 2:8–9</span><span class="accordion__verse-tag">Romans 10:9</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion__item" role="listitem">
-              <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-6">
-                <span class="accordion__num">VII–XII</span>
-                <span>Heaven, Hell &amp; Gospel Ordinances</span>
-                <span class="accordion__icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </span>
-              </button>
-              <div class="accordion__body" id="acc-6" role="region">
-                <div class="accordion__inner">
-                  <p class="accordion__text">All believers in Christ are saved by grace and kept by the power of God. Heaven is a definite, indescribably beautiful place reserved for the saved. Hell is a terrible, eternal reality for all who die in their sin. Baptism is the immersion of believers in water, representing the death, burial, and resurrection of Jesus Christ — an outward symbol of inward transformation, following conversion.</p>
-                  <div class="accordion__verses"><span class="accordion__verse-tag">John 14:1–3</span><span class="accordion__verse-tag">Revelation 20:11–15</span><span class="accordion__verse-tag">Matthew 28:19</span></div>
-                </div>
-              </div>
-            </div>
-
-          </div><!-- /accordion -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         SALVATION CALL-TO-ACTION STRIP
-    ══════════════════════════════════════ -->
-    <section class="salvation-strip" aria-label="Gospel invitation">
-      <div class="container salvation-strip__inner sr">
-        <h2>Will You Go to Heaven<br>When You Die?</h2>
-        <p>God loves you and has a plan for your life. No matter where you've been, the gift of eternal life is available to you today through Jesus Christ.</p>
-        <a href="contact.html" class="btn" style="background:var(--white);color:var(--accent-1);box-shadow:0 6px 24px rgba(0,0,0,0.15);">
-          I Want to Know More
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <div class="nav__actions">
+        <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate"
+           target="_blank" rel="noopener noreferrer" class="btn btn--give">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          Give
+        </a>
+        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw"
+           target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm">
+          Watch Live
         </a>
       </div>
-    </section>
 
-    <!-- ══════════════════════════════════════
-         SPANISH / IGLESIA SECTION
-    ══════════════════════════════════════ -->
-    <section class="spanish-section" id="spanish" aria-labelledby="spanishTitle">
-      <div class="container">
-        <div class="spanish__grid">
-          <div class="spanish__flag" aria-hidden="true">🇲🇽</div>
-          <div class="sr">
-            <span class="section__label">En Español</span>
-            <h2 class="section__title" id="spanishTitle" style="font-size:var(--text-2xl);">Iglesia Bautista Los Linderos</h2>
-            <p class="spanish__body">
-              Bienvenidos a nuestra iglesia hermana. El Pastor José Álvarez lidera nuestra congregación hispana con amor y dedicación. Nuestras puertas están abiertas para toda la familia. We welcome our beloved Spanish-speaking community with open arms.
-            </p>
-            <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
-              <a href="mailto:jalvarez@lbcgj.com" class="btn btn--primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                jalvarez@lbcgj.com
-              </a>
-              <a href="tel:9702004350" class="btn btn--secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.61 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.27 16.27"/></svg>
-                (970) 200-4350
-              </a>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ SIDE PANEL OVERLAY ══ -->
+<div class="nav__overlay" id="navOverlay" aria-hidden="true"></div>
+
+<!-- ══ SIDE PANEL ══ -->
+<aside class="nav__panel" id="navPanel" role="dialog" aria-label="Navigation menu" aria-modal="true" hidden>
+  <div class="nav__panel-top">
+    <img src="logo.png" alt="Landmark Baptist Church" class="nav__panel-logo">
+    <button class="nav__panel-close" id="navPanelClose" aria-label="Close menu">&#10005;</button>
+  </div>
+
+  <nav class="nav__panel-links" aria-label="Mobile navigation">
+    <a href="index.html"      class="nav__panel-link">Home</a>
+    <a href="connect.html"    class="nav__panel-link">Connect</a>
+    <a href="ministries.html" class="nav__panel-link">Ministries</a>
+    <a href="members.html"    class="nav__panel-link">Members</a>
+    <a href="contact.html"    class="nav__panel-link">Contact</a>
+    <a href="selah.html"      class="nav__panel-link">Selah Coffee</a>
+  </nav>
+
+  <div class="nav__panel-footer">
+    <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate"
+       target="_blank" rel="noopener noreferrer" class="btn btn--primary">Give Online</a>
+    <a href="contact.html" class="btn btn--ghost">Plan A Visit</a>
+    <p class="nav__panel-info">
+      1600 Ute Avenue · Grand Junction, CO 81501<br>
+      (970) 243-7617 · Office: Tue–Fri 8am–5pm
+    </p>
+  </div>
+</aside>
+
+<main>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="home" aria-label="Welcome to Landmark Baptist Church">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <!-- Mountain silhouette SVG -->
+    <svg class="hero__mountain" viewBox="0 0 1440 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="rgba(175,92,51,0.18)" d="M0,200 L120,130 L260,170 L380,80 L500,140 L640,40 L760,120 L880,60 L1000,130 L1120,70 L1260,150 L1380,90 L1440,110 L1440,220 L0,220 Z"/>
+      <path fill="rgba(74,109,124,0.22)" d="M0,220 L80,170 L200,200 L340,140 L460,180 L580,110 L700,160 L840,100 L960,155 L1080,115 L1200,165 L1320,130 L1440,145 L1440,220 Z"/>
+    </svg>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow" aria-hidden="true">Grand Junction, Colorado · Est. 2001</p>
+      <h1 class="hero__title">Landmark Baptist Church</h1>
+      <p class="hero__subtitle">
+        A warm, Bible-believing church family rooted in the heart of the Grand Valley.
+        Everyone is welcome here — come as you are.
+      </p>
+
+      <div class="hero__actions">
+        <a href="contact.html" class="btn btn--primary">
+          Plan Your First Visit
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+          Watch Online
+        </a>
+      </div>
+
+      <!-- Service times -->
+      <div class="hero__times" role="list" aria-label="Service times">
+        <div class="hero__time-item" role="listitem">
+          <span class="hero__time-day">Sunday</span>
+          <span class="hero__time-name">Sunday School</span>
+          <span class="hero__time-hour">10:00 AM</span>
+        </div>
+        <div class="hero__time-item" role="listitem">
+          <span class="hero__time-day">Sunday</span>
+          <span class="hero__time-name">Morning Worship</span>
+          <span class="hero__time-hour">11:00 AM</span>
+        </div>
+        <div class="hero__time-item" role="listitem">
+          <span class="hero__time-day">Sunday</span>
+          <span class="hero__time-name">Evening Service</span>
+          <span class="hero__time-hour">5:00 PM</span>
+        </div>
+        <div class="hero__time-item" role="listitem">
+          <span class="hero__time-day">Wednesday</span>
+          <span class="hero__time-name">Bible Study</span>
+          <span class="hero__time-hour">6:30 PM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HISTORY / ABOUT ══ -->
+  <section class="section section--light" id="about" aria-labelledby="aboutTitle">
+    <div class="container">
+      <div class="history__grid">
+
+        <div class="history__logo-ring" aria-hidden="true">
+          <img src="logo.png" alt="">
+        </div>
+
+        <div>
+          <span class="eyebrow">Our Story</span>
+          <h2 class="section__title" id="aboutTitle">A Church Built on<br><em>Faith &amp; Community</em></h2>
+          <div class="divider"></div>
+          <p>Established in May 2001 with just 20 people, God has blessed Landmark Baptist Church with tremendous growth, leading us to our beautiful campus on Ute Avenue in Grand Junction. What began with no chairs, no hymnals, and no offering plates has flourished into a thriving community of faith.</p>
+          <p style="margin-top:var(--sp-4);">Our mission is simple: <strong>Love. Share. Reach.</strong> We love God, share His Word, and reach our community with the life-changing message of the Gospel. We offer worship and ministry in both English and Spanish.</p>
+
+          <blockquote class="history__verse">
+            "O taste and see that the LORD is good: blessed is the man that trusteth in him."
+            <cite>— Psalm 34:8 (KJV)</cite>
+          </blockquote>
+
+          <div class="history__stat-row" role="list">
+            <div class="history__stat" role="listitem">
+              <span class="history__stat-num">2001</span>
+              <span class="history__stat-label">Founded</span>
+            </div>
+            <div class="history__stat" role="listitem">
+              <span class="history__stat-num">9+</span>
+              <span class="history__stat-label">Ministries</span>
+            </div>
+            <div class="history__stat" role="listitem">
+              <span class="history__stat-num">2</span>
+              <span class="history__stat-label">Languages</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
-
-  <!-- ── FOOTER ── -->
-  <footer class="footer" aria-label="Site footer">
+  <!-- ══ PASTORS ══ -->
+  <section class="section section--cream" id="pastors" aria-labelledby="pastorsTitle">
     <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="logo.png" alt="Landmark Baptist Church" class="footer__logo">
-          <p class="footer__tagline">Looking Forward to Great Things</p>
-          <p style="font-size:.75rem;margin-top:1rem;opacity:.45;line-height:1.6;">Love · Share · Reach</p>
-        </div>
-        <div class="footer__links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="connect.html">Connect</a></li>
-            <li><a href="ministries.html">Ministries</a></li>
-            <li><a href="members.html">Members</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__links">
-          <h4>Ministries</h4>
-          <ul>
-            <li><a href="https://www.lbseagles.org" target="_blank" rel="noopener noreferrer">LBS School</a></li>
-            <li><a href="https://ctxyouth.com/" target="_blank" rel="noopener noreferrer">Colorado Teen Extreme</a></li>
-            <li><a href="ministries.html#ru-recovery">RU Recovery</a></li>
-            <li><a href="selah.html">Selah Coffee Co.</a></li>
-          </ul>
-        </div>
-        <div class="footer__contact">
-          <h4>Find Us</h4>
-          <p>1600 Ute Avenue<br>Grand Junction, CO 81501</p>
-          <p><a href="tel:9702437617">(970) 243-7617</a></p>
-          <p class="footer__hours">Office: Tue–Fri · 8am–5pm</p>
-        </div>
+      <div class="text-center" style="margin-bottom:var(--sp-12);">
+        <span class="eyebrow">Our Leadership</span>
+        <h2 class="section__title" id="pastorsTitle">Meet Our <em>Pastors</em></h2>
+        <div class="divider divider--center"></div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 Landmark Baptist Church. All rights reserved.</p>
-        <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+
+      <div class="pastors__grid">
+
+        <!-- Pastor Whiston -->
+        <article class="pastor-card">
+          <div class="pastor-card__img-wrap">
+            <img src="whistons.jpeg" alt="Pastor Jasper Whiston and family" class="pastor-card__img" loading="lazy">
+          </div>
+          <div class="pastor-card__body">
+            <p class="pastor-card__role">Senior Pastor</p>
+            <h3 class="pastor-card__name">Jasper Whiston</h3>
+            <p class="pastor-card__bio">Pastor Whiston leads Landmark Baptist Church with a heart for the Word of God and the people of Grand Junction. He and his family have anchored this congregation since its founding.</p>
+            <div class="pastor-card__contact">
+              <a href="contact.html">Contact the Church Office</a>
+              <a href="tel:+19702437617">(970) 243-7617</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Spencer Jones -->
+        <article class="pastor-card">
+          <div class="pastor-card__img-wrap">
+            <img src="spencerjones.png" alt="Youth Director Spencer Jones" class="pastor-card__img" loading="lazy">
+          </div>
+          <div class="pastor-card__body">
+            <p class="pastor-card__role">Youth Director</p>
+            <h3 class="pastor-card__name">Spencer Jones</h3>
+            <p class="pastor-card__bio">Spencer leads our teen and youth ministries with passion and purpose, including Colorado Teen Extreme and Wednesday outreach programs for young people across the Grand Valley.</p>
+            <div class="pastor-card__contact">
+              <a href="mailto:sjones@lbcgj.com">sjones@lbcgj.com</a>
+              <a href="tel:+19709781686">(970) 978-1686</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Jose Alvarez -->
+        <article class="pastor-card">
+          <div class="pastor-card__img-wrap">
+            <img src="josealvarez.png" alt="Spanish Pastor Jose Alvarez" class="pastor-card__img" loading="lazy">
+          </div>
+          <div class="pastor-card__body">
+            <p class="pastor-card__role">Spanish Pastor</p>
+            <h3 class="pastor-card__name">Jose Alvarez</h3>
+            <p class="pastor-card__bio">Pastor Alvarez leads Iglesia Bautista Los Linderos, our Spanish-language congregation. His ministry reaches families across the Grand Valley with the Gospel in their heart language.</p>
+            <div class="pastor-card__contact">
+              <a href="mailto:jalvarez@lbcgj.com">jalvarez@lbcgj.com</a>
+              <a href="tel:+19702004350">(970) 200-4350</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT WE BELIEVE ══ -->
+  <section class="section section--light" id="believe" aria-labelledby="believeTitle">
+    <div class="container">
+      <div class="believe__grid">
+
+        <div class="believe__intro">
+          <span class="eyebrow">Our Doctrine</span>
+          <h2 class="section__title" id="believeTitle">What We <em>Believe</em></h2>
+          <div class="divider"></div>
+          <p class="section__sub">We stand firmly on the Word of God. These are the foundational truths that guide everything we do at Landmark Baptist Church.</p>
+          <p style="margin-top:var(--sp-5); font-size:var(--text-sm); color:var(--espresso-light);">
+            We believe the King James Bible is the inspired, preserved Word of God — the final authority for faith and practice.
+          </p>
+        </div>
+
+        <div class="accordion" id="accordion" role="list">
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-1">
+              <span class="accordion__label">I.</span>
+              <span class="accordion__title">The Bible</span>
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__body" id="acc-1" role="region" aria-label="The Bible">
+              <div class="accordion__inner">
+                <p class="accordion__text">We believe the Holy Bible — both Old and New Testaments — is the verbally inspired, infallible, inerrant Word of God. The King James Bible is our preserved Word of God in English, and is the sole authority for all matters of faith, life, and practice.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-2">
+              <span class="accordion__label">II.</span>
+              <span class="accordion__title">God the Father</span>
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__body" id="acc-2" role="region" aria-label="God the Father">
+              <div class="accordion__inner">
+                <p class="accordion__text">We believe in one God, eternally existing in three Persons: Father, Son, and Holy Spirit. God is perfect, infinite, and the sovereign Creator and Sustainer of all things. He is holy, just, and full of mercy and love toward His creation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-3">
+              <span class="accordion__label">III.</span>
+              <span class="accordion__title">Jesus Christ</span>
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__body" id="acc-3" role="region" aria-label="Jesus Christ">
+              <div class="accordion__inner">
+                <p class="accordion__text">We believe in the virgin birth, sinless life, substitutionary death, bodily resurrection, and ascension of Jesus Christ. He is both fully God and fully man. He is the only mediator between God and man, and salvation is found in Him alone.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-4">
+              <span class="accordion__label">IV.</span>
+              <span class="accordion__title">The Holy Spirit</span>
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__body" id="acc-4" role="region" aria-label="The Holy Spirit">
+              <div class="accordion__inner">
+                <p class="accordion__text">We believe in the personality and deity of the Holy Spirit, who convicts the world of sin, righteousness, and judgment. He regenerates believers at salvation, indwells and seals every believer, and empowers the church for service and witness.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-5">
+              <span class="accordion__label">V.</span>
+              <span class="accordion__title">Salvation</span>
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__body" id="acc-5" role="region" aria-label="Salvation">
+              <div class="accordion__inner">
+                <p class="accordion__text">We believe that all men are sinners by nature and by choice, and are under the condemnation of God. Salvation is by grace through faith in the shed blood of Jesus Christ alone — not by works. The believer is eternally secure in Christ.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="acc-6">
+              <span class="accordion__label">VI.</span>
+              <span class="accordion__title">The Church &amp; Ordinances</span>
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__body" id="acc-6" role="region" aria-label="The Church and Ordinances">
+              <div class="accordion__inner">
+                <p class="accordion__text">We believe in the local, autonomous Baptist church as the expression of the body of Christ. We observe two ordinances: Baptism by immersion (for believers only) as a public declaration of faith, and the Lord's Supper as a memorial of Christ's sacrifice.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Selah Coffee Persistent Pill -->
-  <a href="selah.html" class="selah-preview" aria-label="Visit Selah Coffee Co.">
-    <div class="selah-preview__dot" aria-hidden="true"></div>
-    <img src="coffee.png" alt="" style="height:20px;width:auto;filter:invert(1) sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.85);" aria-hidden="true">
-    Selah Coffee Co.
-  </a>
+  <!-- ══ CTA STRIP ══ -->
+  <section class="cta-strip" aria-labelledby="ctaTitle">
+    <div class="container">
+      <div class="cta-strip__inner">
+        <div class="cta-strip__text">
+          <h2 class="section__title section__title--light" id="ctaTitle" style="font-size:var(--text-2xl);margin-bottom:var(--sp-3);">Ready to Take the Next Step?</h2>
+          <p>We'd love to meet you. Come visit us any Sunday morning or reach out — we'll answer any questions you have.</p>
+        </div>
+        <div style="display:flex;gap:var(--sp-4);flex-wrap:wrap;flex-shrink:0;">
+          <a href="contact.html" class="btn btn--school">Plan A Visit</a>
+          <a href="https://secure.anedot.com/landmark-baptist-church-of-grand-junction/donate" target="_blank" rel="noopener noreferrer" class="btn btn--outline-light">Give Online</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script src="script.js" defer></script>
+  <!-- ══ SPANISH / IGLESIA ══ -->
+  <section class="section spanish" id="spanish" aria-labelledby="spanishTitle">
+    <div class="container">
+      <div class="spanish__grid">
+        <div>
+          <span class="spanish__tag">En Español</span>
+          <h2 class="section__title spanish__title" id="spanishTitle">Iglesia Bautista<br><em style="color:var(--terracotta-lt);">Los Linderos</em></h2>
+          <p class="spanish__body">Nuestra congregación en español se reúne en el mismo campus de Landmark Baptist Church. Todos son bienvenidos a adorar a Dios en su idioma natal.</p>
+          <p class="spanish__body">Our Spanish-language congregation meets at the same Landmark Baptist campus. All are welcome to worship God in their heart language.</p>
+          <div style="margin-top:var(--sp-6);">
+            <a href="contact.html" class="btn btn--outline-light">Contact Pastor Alvarez</a>
+          </div>
+        </div>
+
+        <div class="spanish__card">
+          <div class="spanish__pastor-img-wrap">
+            <img src="josealvarez.png" alt="Pastor Jose Alvarez" class="spanish__pastor-img" loading="lazy">
+          </div>
+          <h3 class="spanish__pastor-name">Jose Alvarez</h3>
+          <p class="spanish__pastor-role">Pastor — Iglesia Bautista Los Linderos</p>
+          <div class="spanish__pastor-contact">
+            <a href="mailto:jalvarez@lbcgj.com">jalvarez@lbcgj.com</a>
+            <a href="tel:+19702004350">(970) 200-4350</a>
+            <a href="https://maps.google.com/?q=1600+Ute+Avenue,+Grand+Junction,+CO" target="_blank" rel="noopener">1600 Ute Avenue · Grand Junction, CO 81501</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <img src="logo.png" alt="Landmark Baptist Church" class="footer__logo">
+        <p class="footer__tagline">Love · Share · Reach</p>
+        <p class="footer__mission">2026 Theme: All Things Through Christ</p>
+      </div>
+
+      <div>
+        <h4 class="footer__col-title">Navigate</h4>
+        <ul class="footer__links">
+          <li><a href="index.html"      class="footer__link">Home</a></li>
+          <li><a href="connect.html"    class="footer__link">Connect</a></li>
+          <li><a href="ministries.html" class="footer__link">Ministries</a></li>
+          <li><a href="members.html"    class="footer__link">Members</a></li>
+          <li><a href="contact.html"    class="footer__link">Contact</a></li>
+          <li><a href="selah.html"      class="footer__link">Selah Coffee</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__col-title">Service Times</h4>
+        <ul class="footer__links">
+          <li class="footer__link">Sun School · 10:00 AM</li>
+          <li class="footer__link">Worship · 11:00 AM</li>
+          <li class="footer__link">Evening · 5:00 PM</li>
+          <li class="footer__link">Wed Bible Study · 6:30 PM</li>
+          <li class="footer__link">RU Recovery · Fri 6:30 PM</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__col-title">Find Us</h4>
+        <address class="footer__address">
+          1600 Ute Avenue<br>
+          Grand Junction, CO 81501<br>
+          <a href="tel:+19702437617">(970) 243-7617</a><br>
+          Office: Tue–Fri · 8am–5pm<br>
+          <a href="https://www.youtube.com/channel/UC9e5AkM0uXpXWitTW93j7Hw" target="_blank" rel="noopener" style="margin-top:var(--sp-2);display:inline-block;">YouTube ↗</a>
+        </address>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="yr">2026</span> Landmark Baptist Church · Grand Junction, CO · Founded 2001</p>
+      <a href="selah.html" class="selah-pill">☕ Selah Coffee Co.</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>

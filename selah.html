@@ -1,457 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selah Coffee Co. — Find Pause. Artisan coffee in Grand Junction, CO. Espresso, specialty lattes, teas, and locally-baked pastries. Est. 2024.">
-    <meta name="author" content="Selah Coffee Co.">
-    <title>Selah Coffee Co. | Find Pause | Grand Junction, CO</title>
-
-    <link rel="icon" type="image/png" href="coffee.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--
-      Cinzel    → Badge slab-serif matching "SELAH COFFEE CO." logo lettering
-      Caveat    → Hand-drawn chalk script for menu category headings
-      Josefin Sans → Thin geometric for menu items, prices, body text
-    -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Caveat:wght@400;600;700&family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-
-    <!--
-      ⚠️ THIS FILE LINKS TO styles-coffee.css — NOT styles.css
-         Linking styles.css would overwrite the entire church design system.
-    -->
-    <link rel="stylesheet" href="styles-coffee.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Selah Coffee Co. — A ministry of Landmark Baptist Church. Artisan coffee in Grand Junction, CO. A moment. A cup. A pause.">
+  <title>Selah Coffee Co. | Grand Junction, CO</title>
+  <link rel="icon" type="image/png" href="coffee.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-coffee.css">
 </head>
 <body>
 
-    <!-- Animated chalk-dust grain overlay -->
-    <div class="cc-grain" aria-hidden="true"></div>
+<!-- ══ HERO ══ -->
+<section class="coffee-hero">
+  <div class="coffee-hero__bg" aria-hidden="true"></div>
+  <div class="coffee-hero__content">
+    <div class="coffee-logo-wrap">
+      <img src="coffee.png" alt="Selah Coffee Co." class="coffee-hero__logo">
+    </div>
+    <h1 class="coffee-hero__tagline">A Moment. A Cup. A Pause.</h1>
+    <div class="coffee-hero__divider" aria-hidden="true">— ✦ —</div>
+    <p class="coffee-hero__sub">
+      <em>Selah</em> — a Hebrew word meaning pause; to reflect, to breathe, to be still.<br>
+      We believe the best cups slow you down.
+    </p>
+    <a href="#menu" class="coffee-btn">See Our Menu ↓</a>
+  </div>
+</section>
 
-    <!-- ── NAVIGATION ── -->
-    <nav class="cc-nav" id="ccNav" aria-label="Selah Coffee Co. navigation">
-        <div class="cc-nav__inner">
-            <div class="cc-nav__brand">
-                <img src="coffee.png" alt="Selah Coffee Co Logo" class="cc-nav__logo">
-                <div class="cc-nav__words">
-                    <span class="cc-nav__name">Selah Coffee Co.</span>
-                    <span class="cc-nav__sub">Find Pause.</span>
-                </div>
-            </div>
-            <a href="index.html" class="cc-nav__back" aria-label="Back to Landmark Baptist Church">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <line x1="19" y1="12" x2="5" y2="12"/>
-                    <polyline points="12 19 5 12 12 5"/>
-                </svg>
-                <span class="cc-nav__back-label">Landmark Baptist</span>
-            </a>
+<!-- ══ ABOUT ══ -->
+<section class="coffee-about">
+  <div class="coffee-container coffee-about__grid">
+    <div class="coffee-about__text">
+      <span class="coffee-eyebrow">Our Story</span>
+      <h2 class="coffee-heading">Born From the<br><em>Colorado High Country</em></h2>
+      <p>Selah Coffee Co. grew out of a simple belief — a great cup of coffee is more than caffeine. It's a ritual, a respite, a reason to sit still. Rooted in Grand Junction's red rock landscape, every blend we pour carries the warmth of the Western Slope.</p>
+      <p>We source ethically, roast locally, and serve with intention. Come find your selah.</p>
+    </div>
+    <div class="coffee-about__visual" aria-hidden="true">
+      <div class="coffee-about__ring">
+        <span class="coffee-about__cup">☕</span>
+      </div>
+      <div class="coffee-about__badge">
+        <span>Est.</span>
+        <strong>GJ, CO</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHALKBOARD MENU ══ -->
+<section class="chalkboard" id="menu" aria-label="Coffee menu">
+  <div class="coffee-container">
+
+    <div class="chalkboard__header">
+      <h2 class="chalkboard__title">Today's Menu</h2>
+      <p class="chalkboard__subtitle">All drinks available hot · iced · blended &nbsp;|&nbsp; Ask about seasonal specials</p>
+      <div class="chalkboard__rule" aria-hidden="true"></div>
+    </div>
+
+    <!-- ESPRESSO -->
+    <div class="menu-section">
+      <h3 class="menu-section__heading">✦ Espresso Drinks ✦</h3>
+      <ul class="menu-list" role="list">
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Cortado</span><span class="menu-item__desc">Equal parts espresso &amp; steamed milk, no foam</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$4.50</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Flat White</span><span class="menu-item__desc">Ristretto shots, velvety microfoam, small &amp; strong</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$5.00</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Oat Honey Latte</span><span class="menu-item__desc">Double shot, oat milk, raw Colorado wildflower honey</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$5.75</span>
+        </li>
+        <li class="menu-item menu-item--featured">
+          <div class="menu-item__left"><span class="menu-item__name">Selah Signature ★</span><span class="menu-item__desc">Brown butter, cardamom, espresso, steamed milk &amp; sea salt</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$6.50</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Americano</span><span class="menu-item__desc">Double shot over hot water</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$3.75</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Cappuccino</span><span class="menu-item__desc">Classic balance of espresso, steamed milk &amp; thick foam</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$4.75</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · ·</div>
+
+    <!-- COLD BREW -->
+    <div class="menu-section">
+      <h3 class="menu-section__heading">✦ Pour Over &amp; Cold Brew ✦</h3>
+      <ul class="menu-list" role="list">
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Single Origin Pour Over</span><span class="menu-item__desc">Today's featured origin — brewed to order</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$6.00</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Nitro Cold Brew</span><span class="menu-item__desc">24hr steep, nitrogen-charged, creamy cascade</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$5.50</span>
+        </li>
+        <li class="menu-item menu-item--featured">
+          <div class="menu-item__left"><span class="menu-item__name">Mesa Red Rock Cold Brew ★</span><span class="menu-item__desc">House cold brew, raspberry &amp; jalapeño syrup, splash of cream</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$6.00</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Iced Latte</span><span class="menu-item__desc">Espresso, choice of milk, over ice — add a syrup $0.50</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$5.00</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · ·</div>
+
+    <!-- TEA & MATCHA -->
+    <div class="menu-section">
+      <h3 class="menu-section__heading">✦ Tea, Matcha &amp; More ✦</h3>
+      <ul class="menu-list" role="list">
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Ceremonial Matcha Latte</span><span class="menu-item__desc">Grade-A matcha, oat or whole milk, honey</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$5.50</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Lavender Oat Steamer</span><span class="menu-item__desc">Housemade lavender syrup, steamed oat milk, vanilla — no coffee</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$4.75</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Loose Leaf Tea</span><span class="menu-item__desc">Earl Grey, Chamomile, Peppermint, English Breakfast</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$3.50</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Golden Milk</span><span class="menu-item__desc">Turmeric, ginger, cinnamon, oat milk, honey</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$5.00</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="chalkboard__divider" aria-hidden="true">· · · · · · · · · · · · · · · · · · · · ·</div>
+
+    <!-- PASTRIES -->
+    <div class="menu-section">
+      <h3 class="menu-section__heading">✦ Pastries &amp; Bites ✦</h3>
+      <ul class="menu-list" role="list">
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Almond Croissant</span><span class="menu-item__desc">Buttery, frangipane-filled, toasted almond — local bakery daily</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$4.25</span>
+        </li>
+        <li class="menu-item menu-item--featured">
+          <div class="menu-item__left"><span class="menu-item__name">Cardamom Tahini Blondie ★</span><span class="menu-item__desc">House recipe · walnut · dark chocolate chip · golden &amp; chewy</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$3.75</span>
+        </li>
+        <li class="menu-item">
+          <div class="menu-item__left"><span class="menu-item__name">Avocado Toast</span><span class="menu-item__desc">Sourdough, smashed avo, everything bagel seasoning, lemon</span></div>
+          <span class="menu-item__dots" aria-hidden="true"></span>
+          <span class="menu-item__price">$8.00</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="chalkboard__note">Milk options: Whole · Oat · Almond · Coconut · Soy &nbsp;|&nbsp; +$0.75 alt milk</p>
+
+  </div>
+</section>
+
+<!-- ══ HOURS & VALUES ══ -->
+<section class="coffee-location">
+  <div class="coffee-container coffee-location__grid">
+
+    <div class="coffee-location__hours">
+      <span class="coffee-eyebrow">Hours</span>
+      <h2 class="coffee-heading">Come Find Us</h2>
+      <ul class="hours-list">
+        <li class="hours-list__item">
+          <span class="hours-list__day">Monday – Friday</span>
+          <span class="hours-list__dots" aria-hidden="true"></span>
+          <span class="hours-list__time">7:00 AM – 6:00 PM</span>
+        </li>
+        <li class="hours-list__item">
+          <span class="hours-list__day">Saturday</span>
+          <span class="hours-list__dots" aria-hidden="true"></span>
+          <span class="hours-list__time">8:00 AM – 5:00 PM</span>
+        </li>
+        <li class="hours-list__item">
+          <span class="hours-list__day">Sunday</span>
+          <span class="hours-list__dots" aria-hidden="true"></span>
+          <span class="hours-list__time">Closed</span>
+        </li>
+      </ul>
+      <address class="coffee-address">
+        <strong>1600 Ute Avenue</strong><br>
+        Grand Junction, CO 81501<br>
+        <a href="tel:+19702437617">(970) 243-7617</a>
+      </address>
+    </div>
+
+    <div class="coffee-location__values">
+      <div class="coffee-value-card">
+        <span class="coffee-value-card__icon" aria-hidden="true">🌿</span>
+        <div>
+          <h3>Ethically Sourced</h3>
+          <p>Every bean traceable to a farm that pays fair wages and farms sustainably.</p>
         </div>
-    </nav>
-
-    <!-- ── HERO ── -->
-    <header class="cc-hero" id="top" aria-label="Selah Coffee Co. hero">
-
-        <div class="cc-hero__glow" aria-hidden="true"></div>
-
-        <div class="cc-hero__inner">
-
-            <!-- Primary logo — large, prominent per requirement -->
-            <img src="coffee.png" alt="Selah Coffee Co Logo" class="cc-hero__logo">
-
-            <!-- Headline in large Caveat chalk-script -->
-            <h1 class="cc-hero__title">Selah Coffee Co.</h1>
-
-            <!-- Ornament: ─── ✦ ✦ ✦ ─── -->
-            <div class="cc-hero__ornament" aria-hidden="true">
-                <span class="cc-hero__orn-line"></span>
-                <span class="cc-hero__orn-star">✦ ✦ ✦</span>
-                <span class="cc-hero__orn-line"></span>
-            </div>
-
-            <!-- Subheadline in Cinzel slab -->
-            <p class="cc-hero__sub">
-                Find Pause.
-                <span class="cc-hero__sep">|</span>
-                Grand Junction, CO
-                <span class="cc-hero__sep">|</span>
-                Established 2024
-            </p>
-
-            <a href="#menu" class="cc-hero__cta" aria-label="View the menu">
-                View the Menu
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </a>
-
+      </div>
+      <div class="coffee-value-card">
+        <span class="coffee-value-card__icon" aria-hidden="true">🔥</span>
+        <div>
+          <h3>Locally Roasted</h3>
+          <p>Small-batch roasting in Grand Junction. Fresh is never a marketing word — it's a promise.</p>
         </div>
-
-        <div class="cc-hero__scroll" aria-hidden="true">
-            <span>Menu Below</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </div>
+      <div class="coffee-value-card">
+        <span class="coffee-value-card__icon" aria-hidden="true">✝️</span>
+        <div>
+          <h3>Community First</h3>
+          <p>A ministry of Landmark Baptist Church — your cup supports community, service, and connection.</p>
         </div>
+      </div>
+    </div>
 
-    </header>
+  </div>
+</section>
 
-    <!-- ── TRANSITION BAND ── -->
-    <section class="cc-transition" id="menu" aria-label="Menu introduction">
-        <div class="cc-wrap">
-            <span class="cc-board-eyebrow">Grand Junction's Mountain Coffee House</span>
-            <h2 class="cc-board-title">Today's Menu</h2>
-            <!-- Sunburst rays referencing the radiating lines in the logo badge -->
-            <div class="cc-rays" aria-hidden="true">
-                <span class="cc-ray"></span><span class="cc-ray"></span><span class="cc-ray"></span>
-                <span class="cc-ray"></span><span class="cc-ray"></span><span class="cc-ray"></span>
-                <span class="cc-ray"></span><span class="cc-ray"></span><span class="cc-ray"></span>
-            </div>
-        </div>
-    </section>
+<!-- ══ CHURCH CTA ══ -->
+<section class="coffee-church-cta">
+  <div class="coffee-container coffee-church-cta__inner">
+    <div>
+      <span class="coffee-eyebrow">Part of Something Bigger</span>
+      <h2 class="coffee-heading">Selah is a Ministry of<br><em>Landmark Baptist Church</em></h2>
+      <p>The coffee is great, but the community is greater. Join us for worship, connection, and life together every week in Grand Junction.</p>
+    </div>
+    <div class="coffee-church-cta__actions">
+      <a href="index.html"   class="coffee-btn coffee-btn--light">Visit LBC →</a>
+      <a href="contact.html" class="coffee-btn coffee-btn--ghost">Get In Touch</a>
+    </div>
+  </div>
+</section>
 
-    <!-- ── CHALKBOARD MENU SECTION ── -->
-    <main class="cc-board" aria-label="Chalkboard menu board">
-        <div class="cc-wrap">
+<!-- ══ FOOTER ══ -->
+<footer class="coffee-footer">
+  <div class="coffee-container coffee-footer__inner">
+    <img src="coffee.png" alt="Selah Coffee Co." class="coffee-footer__logo">
+    <p class="coffee-footer__tagline">A Moment. A Cup. A Pause. · Grand Junction, CO</p>
+    <p class="coffee-footer__copy">© <span id="coffeeYr">2026</span> Selah Coffee Co. — A Ministry of <a href="index.html">Landmark Baptist Church</a></p>
+  </div>
+</footer>
 
-            <div class="cc-menu-grid" role="list">
-
-                <!-- BOX 1 — COFFEE & ESPRESSO -->
-                <section class="cc-box" role="listitem" aria-labelledby="cat-espresso">
-                    <h3 class="cc-cat" id="cat-espresso">Coffee &amp; Espresso</h3>
-                    <span class="cc-cat-sub">Classic · House Roast · Always Fresh</span>
-                    <ul class="cc-items" aria-label="Coffee and espresso drinks">
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">House Drip <span class="cc-item__mod">(Hot or Iced)</span></span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$3.50</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Latte <span class="cc-item__mod">(Hot or Iced)</span></span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$5.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Cappuccino <span class="cc-item__mod">(Hot only)</span></span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$4.75</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Cold Brew</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$5.25</span>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- BOX 2 — SPECIALTY LATTES -->
-                <section class="cc-box" role="listitem" aria-labelledby="cat-specialty">
-                    <h3 class="cc-cat" id="cat-specialty">Specialty Lattes</h3>
-                    <span class="cc-cat-sub">House Crafted · Grand Valley Inspired</span>
-                    <ul class="cc-items" aria-label="Specialty latte drinks">
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">The "Grand Valley" Maple</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$6.25</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Alpine Vanilla Oat</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$6.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Selah Mocha <span class="cc-item__mod">(Dark or White)</span></span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$6.25</span>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- BOX 3 — TEA & MORE -->
-                <section class="cc-box" role="listitem" aria-labelledby="cat-tea">
-                    <h3 class="cc-cat" id="cat-tea">Tea &amp; More</h3>
-                    <span class="cc-cat-sub">Ceremonial · Artisan · Classic Favorites</span>
-                    <ul class="cc-items" aria-label="Tea and other hot drinks">
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Chai Latte <span class="cc-item__mod">(Hot or Iced)</span></span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$5.50</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Matcha Latte</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$5.75</span>
-                            </div>
-                            <span class="cc-item-note">Ceremonial Grade</span>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Hot Chocolate</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$4.50</span>
-                            </div>
-                            <span class="cc-item-note">with house-made marshmallow</span>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- BOX 4 — PASTRIES -->
-                <section class="cc-box" role="listitem" aria-labelledby="cat-pastries">
-                    <h3 class="cc-cat" id="cat-pastries">Pastries</h3>
-                    <span class="cc-cat-sub">Baked Fresh Locally · Daily</span>
-                    <ul class="cc-items" aria-label="Pastry items">
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Cinnamon Roll</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$5.00</span>
-                            </div>
-                            <span class="cc-item-note">Grand Valley famous</span>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">Blueberry Mountain Scone</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$4.50</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="cc-item">
-                                <span class="cc-item__name">GF Almond Muffin</span>
-                                <span class="cc-item__leader" aria-hidden="true"></span>
-                                <span class="cc-item__price">$4.75</span>
-                            </div>
-                            <span class="cc-item-note">Gluten-free · baked in-house</span>
-                        </li>
-                    </ul>
-                </section>
-
-            </div><!-- /.cc-menu-grid -->
-
-            <!-- CTA STRIP -->
-            <div class="cc-cta-strip" aria-label="Location and visit information">
-                <div class="cc-cta-strip__text">
-                    <strong>Come find your pause.</strong>
-                    <p>Located on the Landmark Baptist Church campus at 1600 Ute Avenue, Grand Junction. A quiet corner crafted for rest, connection, and exceptionally good coffee.</p>
-                </div>
-                <div class="cc-cta-strip__btns">
-                    <a href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501" target="_blank" rel="noopener noreferrer" class="cc-btn cc-btn--gold">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Get Directions
-                    </a>
-                    <a href="index.html" class="cc-btn cc-btn--outline">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                        Landmark Baptist Church
-                    </a>
-                </div>
-            </div>
-
-        </div><!-- /.cc-wrap -->
-    </main>
-
-    <!-- ── FOOTER ── -->
-    <footer class="cc-footer" aria-label="Selah Coffee Co. footer">
-        <div class="cc-wrap">
-
-            <img src="coffee.png" alt="Selah Coffee Co. logo" class="cc-footer__logo">
-            <p class="cc-footer__name">Selah Coffee Co.</p>
-            <p class="cc-footer__tagline">Find Pause.</p>
-            <div class="cc-footer__rule" aria-hidden="true"></div>
-
-            <div class="cc-footer__info">
-                <div class="cc-footer__col">
-                    <span class="cc-footer__col-label">Location</span>
-                    <address class="cc-footer__col-text">
-                        <a href="https://maps.google.com/?q=1600+Ute+Avenue+Grand+Junction+CO+81501" target="_blank" rel="noopener noreferrer">
-                            1600 Ute Avenue<br>Grand Junction, CO 81501
-                        </a>
-                    </address>
-                </div>
-                <div class="cc-footer__col">
-                    <span class="cc-footer__col-label">Hours</span>
-                    <p class="cc-footer__col-text">
-                        <strong>Sundays</strong><br>
-                        Open during services<br>
-                        10:00 AM &amp; 11:00 AM<br><br>
-                        <strong>Select Weekdays</strong><br>
-                        Check in for current hours
-                    </p>
-                </div>
-                <div class="cc-footer__col">
-                    <span class="cc-footer__col-label">Contact</span>
-                    <p class="cc-footer__col-text">
-                        <a href="tel:9702437617">(970) 243-7617</a><br>
-                        <a href="mailto:info@lbcgj.com">info@lbcgj.com</a><br><br>
-                        A ministry of<br>
-                        <a href="index.html">Landmark Baptist Church</a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="cc-footer__bottom">
-                <p>
-                    &copy; 2024 Selah Coffee Co.
-                    <span class="sep">&middot;</span>
-                    A Ministry of <a href="index.html">Landmark Baptist Church</a>
-                    <span class="sep">&middot;</span>
-                    Grand Junction, CO
-                </p>
-            </div>
-
-        </div>
-    </footer>
-
-    <!--
-      ISOLATED JAVASCRIPT — completely self-contained.
-      Does NOT load script.js. Does NOT share state with the church site.
-    -->
-    <script>
-    (function () {
-        'use strict';
-
-        /* Lenis smooth scroll */
-        var lenis;
-        if (typeof Lenis !== 'undefined') {
-            lenis = new Lenis({
-                duration: 1.25,
-                easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-                smooth: true, smoothTouch: false,
-            });
-            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-            requestAnimationFrame(raf);
-            if (typeof ScrollTrigger !== 'undefined') lenis.on('scroll', ScrollTrigger.update);
-        }
-
-        /* Nav scroll state */
-        var nav = document.getElementById('ccNav');
-        if (nav) {
-            window.addEventListener('scroll', function() {
-                nav.classList.toggle('is-scrolled', window.scrollY > 80);
-            }, { passive: true });
-        }
-
-        /* Anchor scroll (hero CTA → #menu) */
-        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                var id = a.getAttribute('href');
-                if (!id || id === '#') return;
-                var target = document.querySelector(id);
-                if (!target) return;
-                e.preventDefault();
-                if (lenis) lenis.scrollTo(target, { offset: -72, duration: 1.5 });
-                else target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        if (typeof gsap === 'undefined') return;
-        if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
-
-        window.addEventListener('load', function() {
-
-            /* Hero entrance — logo develops from dark blur, then title, ornament, sub, CTA */
-            gsap.timeline({ defaults: { ease: 'power3.out' } })
-                .fromTo('.cc-hero__logo',
-                    { opacity: 0, scale: 0.84, filter: 'brightness(0.3) blur(6px)' },
-                    { opacity: 1, scale: 1,    filter: 'brightness(1) blur(0px)', duration: 1.5, delay: 0.1 })
-                .fromTo('.cc-hero__title',
-                    { opacity: 0, y: 35, filter: 'blur(3px)' },
-                    { opacity: 1, y: 0,  filter: 'blur(0px)', duration: 1.1 }, '-=0.7')
-                .fromTo('.cc-hero__ornament',
-                    { opacity: 0, scaleX: 0 },
-                    { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out', transformOrigin: 'center' }, '-=0.55')
-                .fromTo('.cc-hero__sub',
-                    { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 0.85 }, '-=0.5')
-                .fromTo('.cc-hero__cta',
-                    { opacity: 0, y: 14 },
-                    { opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.4)' }, '-=0.4')
-                .fromTo('.cc-hero__scroll',
-                    { opacity: 0 },
-                    { opacity: 1, duration: 0.6 }, '-=0.3');
-
-            if (typeof ScrollTrigger === 'undefined') return;
-
-            /* Transition band */
-            gsap.fromTo('.cc-board-eyebrow',
-                { opacity: 0, y: 22 },
-                { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out',
-                  scrollTrigger: { trigger: '.cc-transition', start: 'top 78%' } });
-            gsap.fromTo('.cc-board-title',
-                { opacity: 0, y: 40 },
-                { opacity: 1, y: 0, duration: 1.05, ease: 'power3.out', delay: 0.15,
-                  scrollTrigger: { trigger: '.cc-transition', start: 'top 78%' } });
-            gsap.fromTo('.cc-rays',
-                { opacity: 0, scaleX: 0 },
-                { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out', delay: 0.45,
-                  transformOrigin: 'center', scrollTrigger: { trigger: '.cc-transition', start: 'top 78%' } });
-
-            /* Chalk boxes — stagger with per-box rotation restore */
-            gsap.fromTo('.cc-box',
-                { opacity: 0, y: 55, scale: 0.96 },
-                {
-                    opacity: 1, y: 0, scale: 1,
-                    duration: 0.9, ease: 'power3.out',
-                    stagger: { amount: 0.55, grid: [2, 2], from: 'start' },
-                    onComplete: function() {
-                        var rots = ['-0.45deg', '0.5deg', '0.3deg', '-0.35deg'];
-                        document.querySelectorAll('.cc-box').forEach(function(b, i) {
-                            b.style.transform = 'rotate(' + (rots[i] || '0') + ')';
-                        });
-                    },
-                    scrollTrigger: { trigger: '.cc-menu-grid', start: 'top 78%' }
-                });
-
-            /* Menu items stagger per box */
-            document.querySelectorAll('.cc-box').forEach(function(box) {
-                var items = box.querySelectorAll('.cc-item');
-                if (!items.length) return;
-                gsap.fromTo(items,
-                    { opacity: 0, x: -14 },
-                    { opacity: 1, x: 0, duration: 0.55, stagger: 0.08, ease: 'power2.out',
-                      clearProps: 'transform,opacity',
-                      scrollTrigger: { trigger: box, start: 'top 74%' } });
-            });
-
-            /* CTA strip */
-            gsap.fromTo('.cc-cta-strip',
-                { opacity: 0, y: 34 },
-                { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
-                  scrollTrigger: { trigger: '.cc-cta-strip', start: 'top 82%' } });
-
-            /* Footer */
-            gsap.fromTo('.cc-footer__logo',
-                { opacity: 0, scale: 0.86 },
-                { opacity: 0.48, scale: 1, duration: 1, ease: 'back.out(1.4)',
-                  scrollTrigger: { trigger: '.cc-footer', start: 'top 84%' } });
-            gsap.fromTo('.cc-footer__info',
-                { opacity: 0, y: 26 },
-                { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out', delay: 0.2,
-                  scrollTrigger: { trigger: '.cc-footer', start: 'top 84%' } });
-
-            ScrollTrigger.refresh();
-        });
-
-        console.log('%c☕ Selah Coffee Co. — Find Pause.', 'font-size:14px;font-weight:bold;color:#D4B16F;background:#131211;padding:4px 10px;border-radius:2px;');
-
-    })();
-    </script>
-
+<script>document.getElementById('coffeeYr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
