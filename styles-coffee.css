@@ -627,6 +627,35 @@ body {
   padding-top: var(--sp-6);
 }
 
+/* Size header row (S M L) */
+.menu-size-header {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 820px;
+  margin-inline: auto;
+  padding: 0 var(--sp-5) var(--sp-2);
+}
+.menu-size-labels {
+  font-family: var(--font-chalk);
+  font-size: var(--text-sm);
+  color: var(--stone-dim);
+  letter-spacing: 0.18em;
+}
+
+/* Tagline at bottom of menu */
+.chalkboard__tagline {
+  text-align: center;
+  font-family: var(--font-chalk);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--stone-dim);
+  margin-top: var(--sp-8);
+  letter-spacing: 0.06em;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+}
+
 /* ═══════════════════════════════════════════════════════════
    HOURS & VALUES
    ═══════════════════════════════════════════════════════════ */
