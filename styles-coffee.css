@@ -657,60 +657,22 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   HOURS & VALUES
+   VALUES STRIP
    ═══════════════════════════════════════════════════════════ */
-.coffee-location {
-  padding-block: var(--sp-24);
-  background: var(--board);
+.coffee-values-strip {
+  background: var(--board-mid);
+  padding-block: var(--sp-16);
+  border-top: 1px solid var(--board-seam);
+  border-bottom: 1px solid var(--board-seam);
 }
 
-.coffee-location__grid {
+.coffee-values-strip__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-20);
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
 }
-
-/* Hours */
-.hours-list { margin-bottom: var(--sp-8); }
-.hours-list__item {
-  display: flex;
-  align-items: baseline;
-  gap: var(--sp-3);
-  padding: var(--sp-4) 0;
-  border-bottom: 1px solid rgba(200,186,168,0.07);
-}
-.hours-list__day {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: var(--text-sm);
-  color: var(--chalk);
-  white-space: nowrap;
-  min-width: 150px;
-}
-.hours-list__dots {
-  flex: 1;
-  border-bottom: 1px dashed rgba(200,186,168,0.18);
-  margin-bottom: 4px;
-}
-.hours-list__time {
-  font-family: var(--font-chalk);
-  font-size: var(--text-md);
-  color: var(--gold);
-  white-space: nowrap;
-}
-
-.coffee-address {
-  font-size: var(--text-sm);
-  color: var(--chalk-dim);
-  line-height: 1.95;
-  margin-top: var(--sp-6);
-}
-.coffee-address a { color: var(--teal); transition: color var(--t-fast); }
-.coffee-address a:hover { color: var(--gold); }
 
 /* Value cards — SVG icon, no emoji */
-.coffee-location__values { display: flex; flex-direction: column; gap: var(--sp-4); }
 
 .coffee-value-card {
   background: var(--board-mid);
@@ -875,13 +837,9 @@ body {
    RESPONSIVE
    ═══════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .coffee-about__grid,
-  .coffee-location__grid { grid-template-columns: 1fr; gap: var(--sp-12); }
-  .coffee-about__visual { order: -1; margin-inline: auto; }
-  .coffee-about__frame { width: clamp(160px, 45vw, 240px); }
+  .coffee-values-strip__grid { grid-template-columns: 1fr; }
   .coffee-church-cta__inner { grid-template-columns: 1fr; }
   .coffee-church-cta__actions { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
-  .hours-list__day { min-width: 120px; }
 }
 
 @media (max-width: 640px) {
